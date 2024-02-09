@@ -8,7 +8,7 @@ class Cart_page:
     CART_BUTTON = "//a[@id='cartur']"
     CART_PAGE_TITLE = "//*[@id='page-wrapper']/div/div[1]/h2"
     PLACE_ORDER = " //button[contains(text(),'Place Order')]"
-    DELETE_PRODUCT = "//*[@id='tbodyid']/tr/td/a"
+    DELETE_PRODUCT = "//*[@id='tbodyid']/tr/td[4]/a"
     NAME = "//input[@id='name']"
     COUNTRY = "//input[@id='country']"
     CITY = "//input[@id='city']"
@@ -41,9 +41,8 @@ class Cart_page:
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.alert_is_present())
         self.driver.switch_to.alert.accept()
-        self.driver.find_element(By.XPATH, self.HOME_BUTTON).click()
+        # self.driver.find_element(By.XPATH, self.HOME_BUTTON).click()
         self.driver.find_element(By.XPATH, self.CART_BUTTON).click()
-        self.driver.find_element(By.XPATH, self.PLACE_ORDER).click()
         self.driver.find_element(By.XPATH, self.DELETE_PRODUCT).click()
 
     def adding_product_to_cart(self):

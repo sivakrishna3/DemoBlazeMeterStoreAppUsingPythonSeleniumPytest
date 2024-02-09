@@ -18,7 +18,6 @@ class About_us_Page:
     FULL_SCREEN_BUTTON = "//*[@id='example-video']/div[4]/button[4]/span[1]"
     VIDEO_CLOSE_BUTTON = "//*[@id='videoModal']/div/div/div[3]/button"
     VIDEO_CLOSE_X_MARK = "//*[@id='videoModal']/div/div/div[1]/button/span"
-    About_us_open_message = "//*[@id='videoModalLabel']"
 
     def __init__(self, driver):
         self.driver = driver

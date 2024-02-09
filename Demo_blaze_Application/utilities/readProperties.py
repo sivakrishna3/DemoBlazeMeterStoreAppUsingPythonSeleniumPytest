@@ -182,3 +182,63 @@ class ReadConfig:
     def get_cart_no_year():
         cart_no_year = config.get("Cart_info", "no_year")
         return cart_no_year
+
+    @staticmethod
+    def get_sign_up_username():
+        username = config.get('Sign_up_info', 'sg_username')
+        return username
+
+    @staticmethod
+    def get_sign_up_password():
+        password = config.get('Sign_up_info', 'sg_password')
+        return password
+
+    @staticmethod
+    def get_sign_up_invalid_username():
+        invalid_username = config.get('Sign_up_info', 'invalid_username')
+        return invalid_username
+
+    @staticmethod
+    def get_sign_up_invalid_password():
+        invalid_password = config.get('Sign_up_info', 'invalid_password')
+        return invalid_password
+
+    @staticmethod
+    def get_sign_up_username_with_numbers():
+        username_with_numbers = config.get("Sign_up_info", "username_with_numbers")
+        return username_with_numbers
+
+    @staticmethod
+    def get_sign_up_password_with_numbers():
+        password_with_numbers = config.get("Sign_up_info", "password_with_numbers")
+        return password_with_numbers
+
+    @staticmethod
+    def get_sign_up_no_username():
+        no_username = config.get('Sign_up_info', 'no_username')
+        return no_username
+
+    @staticmethod
+    def get_sign_up_no_password():
+        no_password = config.get('Sign_up_info', 'no_password')
+        return no_password
+
+    @staticmethod
+    def get_sign_up_username_with_spl_chars():
+        username_with_spl_chars = config.get('Sign_up_info', 'username_with_spl_chars')
+        return username_with_spl_chars
+
+    @staticmethod
+    def get_sign_up_password_with_spl_chars():
+        password_with_spl_chars = config.get('Sign_up_info', 'password_with_spl_chars')
+        return password_with_spl_chars
+
+    @staticmethod
+    def get_sign_up_username_with_space():
+        username_with_space = config.get('Sign_up_info', 'username_with_space')
+        return username_with_space
+
+    @staticmethod
+    def get_sign_up_password_with_space():
+        password_with_space = config.get('Sign_up_info', 'password_with_space')
+        return password_with_space

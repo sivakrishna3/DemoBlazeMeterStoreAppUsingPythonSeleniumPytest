@@ -41,7 +41,7 @@ class TestCase001LoginPage:
                 self.logger.info("-----Login with valid username and valid password is Passed---------")
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_001.png")
                 self.logger.error("-------Login with valid username and valid password is Failed-----")
                 assert False
         except Exception as e:
@@ -66,7 +66,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_002.png")
                 self.logger.error("-----Login with valid username and invalid password is Failed--------------")
                 assert False
         except Exception as e:
@@ -91,7 +91,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_003.png")
                 self.logger.error("--------Login with valid username and password with spl chars i is Failed---------")
                 assert False
         except Exception as e:
@@ -116,7 +116,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_004.png")
                 self.logger.error("---------Login with valid username and password with numbers is Failed-----------")
                 assert False
         except Exception as e:
@@ -141,7 +141,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_005.png")
                 self.logger.error("-----Login with valid username and password with space is Failed--------------")
                 assert False
         except Exception as e:
@@ -166,7 +166,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_006.png")
                 self.logger.error("-----Login with valid username and no password is Failed--------------")
                 assert False
         except Exception as e:
@@ -191,7 +191,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_007.png")
                 self.logger.error("-----Login invalid username and valid password is Failed--------------")
                 assert False
         except Exception as e:
@@ -216,7 +216,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_008.png")
                 self.logger.error("-----Login with invalid username and invalid password is Failed--------------")
                 assert False
         except Exception as e:
@@ -241,7 +241,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_009.png")
                 self.logger.error("--------Login with invalid username and password with spl chars is Failed--------")
                 assert False
         except Exception as e:
@@ -267,7 +267,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_010.png")
                 self.logger.error("-------Login with invalid username and password with numbers is Failed-----------")
                 assert False
         except Exception as e:
@@ -292,7 +292,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_011.png")
                 self.logger.error("-----Login with invalid username and password with space is Failed--------------")
                 assert False
         except Exception as e:
@@ -317,7 +317,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_012.png")
                 self.logger.error("-----Login with invalid username and no password is Failed--------------")
                 assert False
         except Exception as e:
@@ -342,7 +342,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_013.png")
                 self.logger.error("-----Login username with space and valid password is Failed--------------")
                 assert False
         except Exception as e:
@@ -367,7 +367,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_014.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_014.png")
                 self.logger.error("-----Login username with space and invalid password is Failed--------------")
                 assert False
         except Exception as e:
@@ -392,7 +392,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_015.png")
                 self.logger.error("-------Login username with space and password with spl chars is Failed-----------")
                 assert False
         except Exception as e:
@@ -417,7 +417,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_016.png")
                 self.logger.error("-----Login username with space and password with numbers is Failed--------------")
                 assert False
         except Exception as e:
@@ -442,7 +442,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_017.png")
                 self.logger.error("-----Login username with space and password with space is Failed--------------")
                 assert False
         except Exception as e:
@@ -467,7 +467,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_018.png")
                 self.logger.error("-----Login username with space and no password is Failed--------------")
                 assert False
         except Exception as e:
@@ -492,7 +492,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_019.png")
                 self.logger.error("-------Login username with spl chars and valid password is Failed--------------")
                 assert False
         except Exception as e:
@@ -517,7 +517,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_020.png")
                 self.logger.error("-----Login username with spl chars and invalid password is Failed---------")
                 assert False
         except Exception as e:
@@ -542,7 +542,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_021.png")
                 self.logger.error("------Login username with spl chars and password with spl chars is Failed-----")
                 assert False
         except Exception as e:
@@ -567,7 +567,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_022.png")
                 self.logger.error("-----Login username with spl chars and password with numbers is Failed---------")
                 assert False
         except Exception as e:
@@ -592,7 +592,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_023.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_023.png")
                 self.logger.error("-----Login username with spl chars and password with space is Failed---------")
                 assert False
         except Exception as e:
@@ -617,7 +617,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_024.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_024.png")
                 self.logger.error("-----Login username with space and no password is Failed--------------")
                 assert False
         except Exception as e:
@@ -642,7 +642,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_025.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_025.png")
                 self.logger.error("-----Login username with numbers and valid password is Failed---------")
                 assert False
         except Exception as e:
@@ -667,7 +667,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_026.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_026.png")
                 self.logger.error("-----Login username with numbers and invalid password is Failed---------")
                 assert False
         except Exception as e:
@@ -692,7 +692,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_027.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_027.png")
                 self.logger.error("-----Login username with numbers and password with spl chars is Failed---------")
                 assert False
         except Exception as e:
@@ -717,7 +717,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_028.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_028.png")
                 self.logger.error("-----Login username with numbers and password with numbers is Failed---------")
                 assert False
         except Exception as e:
@@ -742,7 +742,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_029.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_029.png")
                 self.logger.error("-----Login username with numbers and password with space is Failed---------")
                 assert False
         except Exception as e:
@@ -767,7 +767,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_030.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_030.png")
                 self.logger.error("-----Login username with numbers and no password is Failed---------")
                 assert False
         except Exception as e:
@@ -792,7 +792,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_031.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_031.png")
                 self.logger.error("-----Login with no username and valid password is Failed---------")
                 assert False
         except Exception as e:
@@ -817,7 +817,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_032.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_032.png")
                 self.logger.error("-----Login with no username and invalid password is Failed---------")
                 assert False
         except Exception as e:
@@ -842,7 +842,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_033.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_033.png")
                 self.logger.error("-----Login with no username and password with spl chars is Failed---------")
                 assert False
         except Exception as e:
@@ -867,7 +867,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_034.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_034.png")
                 self.logger.error("-----Login with no username and password with numbers is Failed---------")
                 assert False
         except Exception as e:
@@ -892,7 +892,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_035.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_035.png")
                 self.logger.error("-----Login with no username and password with space is Failed---------")
                 assert False
         except Exception as e:
@@ -917,7 +917,7 @@ class TestCase001LoginPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_036.png")
+                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_036.png")
                 self.logger.error("-----Login with no username and no password is Failed---------")
                 assert False
         except Exception as e:

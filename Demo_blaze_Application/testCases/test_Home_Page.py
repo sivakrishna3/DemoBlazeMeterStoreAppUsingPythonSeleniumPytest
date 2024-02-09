@@ -1,5 +1,5 @@
-import pytest
-from selenium.webdriver import Chrome
+# import pytest
+# from selenium.webdriver import Chrome
 from pageObjects.Home_Page import Home_page
 from utilities.readProperties import ReadConfig
 

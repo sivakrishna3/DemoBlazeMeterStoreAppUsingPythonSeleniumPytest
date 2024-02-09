@@ -1,7 +1,7 @@
 # from selenium.webdriver import Chrome
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
 
 
 class Home_page:
@@ -24,7 +24,4 @@ class Home_page:
         # wait = WebDriverWait(self.driver, 10)
         # wait.until(EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.HOME_BUTTON)))
         self.driver.find_element(By.XPATH, self.HOME_BUTTON).click()
-
-
-
 
