@@ -40,3 +40,6 @@ class LoginPage:
         self.driver.find_element(By.XPATH, self.Login_Password_text).send_keys(password)
         self.driver.find_element(By.XPATH, self.Login_button_proceed).click()
         self.driver.find_element(By.XPATH, self.Logout_Button).click()
+
+    def click_on_log_out_in_DDT(self):
+        self.driver.find_element(By.XPATH, self.Logout_Button).click()
