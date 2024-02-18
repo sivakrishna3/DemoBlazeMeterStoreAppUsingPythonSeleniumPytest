@@ -6,7 +6,7 @@ class Log_Generator:
     @staticmethod
     def log_gen():
         # Create a file handler to store logs in a file
-        file_handler = logging.FileHandler(".\\Log_Files\\Login_Page_DDT.log", mode="w")
+        file_handler = logging.FileHandler(".\\Log_Files\\Login_Page_DataDrivenTest.log", mode="w")
         file_handler.setLevel(logging.INFO)
         logger = logging.getLogger()
         logger.setLevel(logging.INFO)
