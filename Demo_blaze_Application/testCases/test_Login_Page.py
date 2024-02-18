@@ -1,4 +1,4 @@
-# import pytest
+import pytest
 # from selenium.webdriver import Chrome
 import time
 
@@ -27,6 +27,8 @@ class TestCase001LoginPage:
     expected_message = ["User does not exist.", "Wrong password.", "Please fill out Username and Password."]
     logger = Log_Generator.log_gen()
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_001_validate_login_with_valid_username_valid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_001_validate_login_with_valid_username_valid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -47,6 +49,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_002_validate_login_with_valid_username_invalid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_002_validate_login_with_valid_username_invalid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -72,6 +76,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_003_validate_login_with_valid_username_password_with_spl_chars(self, setup_and_teardown):
         self.logger.info("-----test_case_003_validate_login_with_valid_username_password_with_spl_chars-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -97,6 +103,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_004_validate_login_with_valid_username_password_with_numbers(self, setup_and_teardown):
         self.logger.info("-----test_case_004_validate_login_with_valid_username_password_with_numbers-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -122,6 +130,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_005_validate_login_with_valid_username_password_with_space(self, setup_and_teardown):
         self.logger.info("-----test_case_005_validate_login_with_valid_username_password_with_space-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -147,6 +157,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_006_validate_login_with_valid_username_no_password(self, setup_and_teardown):
         self.logger.info("-----test_case_006_validate_login_with_valid_username_no_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -172,6 +184,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_007_validate_login_with_invalid_username_valid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_007_validate_login_with_invalid_username_valid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -197,6 +211,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_008_validate_login_invalid_username_and_invalid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_008_validate_login_invalid_username_and_invalid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -222,6 +238,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_009_validate_login_with_invalid_username_and_password_with_spl_chars(self, setup_and_teardown):
         self.logger.info("-----test_case_009_validate_login_with_invalid_username_and_password_with_spl_chars--------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -247,6 +265,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_010_validate_login_invalid_username_and_password_with_numbers(self, setup_and_teardown):
         self.logger.info("-----test_case_010_validate_login_invalid_username_and_password_with_numbers-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -273,6 +293,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_011_validate_login_with_invalid_username_and_password_with_space(self, setup_and_teardown):
         self.logger.info("-----test_case_011_validate_login_with_valid_username_and_password_with_space-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -298,6 +320,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_012_validate_login_with_invalid_username_and_no_password(self, setup_and_teardown):
         self.logger.info("-----test_case_012_validate_login_with_invalid_username_and_no_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -323,6 +347,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_013_validate_login_with_username_with_space_and_valid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_013_validate_login_with_username_with_space_and_valid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -348,6 +374,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_014_validate_login_with_username_with_space_and_invalid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_014_validate_login_with_username_with_invalid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -373,6 +401,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_015_validate_login_with_username_with_space_and_password_with_spl_chars(self, setup_and_teardown):
         self.logger.info("-----test_case_015_validate_login_with_username_with_space_and_password_with_spl_chars------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -398,6 +428,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_016_validate_login_with_username_with_space_and_password_with_numbers(self, setup_and_teardown):
         self.logger.info("-----test_case_016_validate_login_with_username_with_space_and_password_with_numbers--------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -423,6 +455,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_017_validate_login_with_username_with_space_and_password_with_space(self, setup_and_teardown):
         self.logger.info("-----test_case_017_validate_login_with_username_with_space_and_password_with_space-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -448,6 +482,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_018_validate_login_with_username_with_space_and_no_password(self, setup_and_teardown):
         self.logger.info("-----test_case_018_validate_login_with_username_with_space_and_no_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -473,6 +509,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_019_validate_login_username_with_spl_chars_and_valid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_019_validate_login_username_with_spl_chars_and_valid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -498,6 +536,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_020_validate_login_username_with_spl_chars_and_invalid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_020_validate_login_username_with_spl_chars_and_invalid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -523,8 +563,10 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_021_validate_login_username_with_spl_chars_and_password_with_spl_chars(self, setup_and_teardown):
-        self.logger.info("-----test_case_021_validate_login_username_with_spl_chars_and_password_with_spl_chars-----------")
+        self.logger.info("-----test_case_021_validate_login_username_with_spl_chars_and_password_with_spl_chars------")
         self.logger.info("-----Verifying Login functionality--------")
         self.driver = setup_and_teardown
         self.lgn_page = LoginPage(self.driver)
@@ -548,6 +590,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_022_validate_login_username_with_spl_chars_and_password_with_numbers(self, setup_and_teardown):
         self.logger.info("-----test_case_022_validate_login_username_with_spl_chars_and_password_with_numbers---------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -573,8 +617,10 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_023_validate_login_username_with_spl_chars_and_password_with_space(self, setup_and_teardown):
-        self.logger.info("-----test_case_023_validate_login_username_with_spl_chars_and_password_with_space-----------")
+        self.logger.info("-----test_case_023_validate_login_username_with_spl_chars_and_password_with_space------")
         self.logger.info("-----Verifying Login functionality--------")
         self.driver = setup_and_teardown
         self.lgn_page = LoginPage(self.driver)
@@ -598,6 +644,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_024_validate_login_username_with_spl_chars_and_no_password(self, setup_and_teardown):
         self.logger.info("-----test_case_024_validate_login_username_with_spl_chars_and_no_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -623,6 +671,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_025_validate_login_username_with_numbers_and_valid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_025_validate_login_username_with_numbers_and_valid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -648,6 +698,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_026_validate_login_username_with_numbers_and_invalid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_026_validate_login_username_with_numbers_and_invalid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -673,6 +725,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_027_validate_login_username_with_numbers_and_password_with_spl_chars(self, setup_and_teardown):
         self.logger.info("-----test_case_027_validate_login_username_with_numbers_and_password_with_spl_chars--------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -698,6 +752,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_028_validate_login_username_with_numbers_and_password_with_numbers(self, setup_and_teardown):
         self.logger.info("-----test_case_028_validate_login_username_with_numbers_and_password_with_numbers-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -723,6 +779,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_029_validate_login_username_with_numbers_and_password_with_space(self, setup_and_teardown):
         self.logger.info("-----test_case_029_validate_login_username_with_numbers_and_password_with_space-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -748,6 +806,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_030_validate_login_username_with_numbers_and_no_password(self, setup_and_teardown):
         self.logger.info("-----test_case_030_validate_login_username_with_numbers_and_no_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -773,6 +833,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_031_validate_login_with_no_username_and_valid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_031_validate_login_with_no_username_and_valid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -798,6 +860,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_032_validate_login_with_no_username_and_invalid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_032_validate_login_with_no_username_and_invalid_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -823,6 +887,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_033_validate_login_with_no_username_and_password_with_spl_chars(self, setup_and_teardown):
         self.logger.info("-----test_case_033_validate_login_with_no_username_and_password_with_spl_chars-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -848,6 +914,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_034_validate_login_with_no_username_and_password_with_numbers(self, setup_and_teardown):
         self.logger.info("-----test_case_034_validate_login_with_no_username_and_password_with_numbers-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -873,6 +941,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_035_validate_login_with_no_username_and_password_with_space(self, setup_and_teardown):
         self.logger.info("-----test_case_035_validate_login_with_no_username_and_password_with_space-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -898,6 +968,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_036_validate_login_with_no_username_and_no_password(self, setup_and_teardown):
         self.logger.info("-----test_case_036_validate_login_with_no_username_and_no_password-----------")
         self.logger.info("-----Verifying Login functionality--------")
@@ -923,6 +995,8 @@ class TestCase001LoginPage:
         except Exception as e:
             print(e)
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_037_validate_logout_button(self, setup_and_teardown):
         self.logger.info("-----test_case_037_validate_logout_button-----------")
         self.logger.info("-----Verifying Logout functionality--------")

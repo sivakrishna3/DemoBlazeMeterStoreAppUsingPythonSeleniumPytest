@@ -167,6 +167,8 @@ class TestCase002HomePage:
             self.logger.error("-----test case 006 is Failed------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_007_validate_Laptops_in_categories_button_at_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_007_validate_Laptops_in_categories_button_at_homepage-----")
         self.logger.info("-----Verifying Home Page-----")
@@ -191,6 +193,8 @@ class TestCase002HomePage:
             self.logger.error("-----test case 007 is Failed------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_008_validate_Monitors_in_categories_button_at_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_008_validate_Monitors_in_categories_button_at_homepage-----")
         self.logger.info("-----Verifying Home Page-----")
@@ -215,6 +219,8 @@ class TestCase002HomePage:
             self.logger.error("-----test case 008 is Failed------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_009_validate_phones_and_add_to_cart_the_products(self, setup_and_teardown):
         self.logger.info("-----test_case_009_validate_phones_and_add_to_cart_the_products-----")
         self.logger.info("-----Verifying Phones and add to cart-----")
@@ -407,6 +413,8 @@ class TestCase002HomePage:
         except TimeoutException:
             self.logger.error("-----Phones add to cart Test case 009 is not executed(Failed)-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_010_validate_Laptops_add_to_cart_the_products(self, setup_and_teardown):
         self.logger.info("-----test_case_010_validate_Laptops_add_to_cart_the_products-----")
         self.logger.info("-----Verifying Laptops in Home page-----")
@@ -556,6 +564,8 @@ class TestCase002HomePage:
         except TimeoutException:
             self.logger.error("-----Laptops add to cart Test case 010 not executed(Failed)-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_011_validate_monitors_add_to_cart_the_products(self, setup_and_teardown):
         self.logger.info("-----test_case_011_validate_monitors_add_to_cart_the_products-----")
         self.logger.info("-----Verifying Laptops in Home page-----")

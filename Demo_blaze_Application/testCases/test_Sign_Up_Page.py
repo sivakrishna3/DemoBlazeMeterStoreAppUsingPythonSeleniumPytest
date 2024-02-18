@@ -2,6 +2,7 @@ import random
 import string
 import time
 
+import pytest
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -33,6 +34,8 @@ class TestCase006SignUpPage:
     SIGN_UP_PAGE_TITLE = "//h5[@id='signInModalLabel' and contains(text(),'Sign up')]"
     logger = Log_Generator.log_gen()
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_cse_001_validate_sign_up_button(self, setup_and_teardown):
         self.logger.info("-----test_cse_001_validate_sign_up_button------")
         self.logger.info("-----Verifying Sign Up Page------")
@@ -62,6 +65,8 @@ class TestCase006SignUpPage:
             self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_001_failure.png")
             print(f"AssertionError: {e}")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_002_validate_sign_up_with_valid_username_valid_password(self, setup_and_teardown):
         self.valid_random_username = self.generate_random_email()
         self.logger.info("-----test_case_002_validate_sign_up_with_valid_username_valid_password------")
@@ -91,6 +96,8 @@ class TestCase006SignUpPage:
             self.logger.error("--------Sign up with valid username and valid password is Failed---------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_003_validate_sign_up_with_invalid_username_invalid_password(self, setup_and_teardown):
         self.logger.info("-----test_case_003_validate_sign_up_with_invalid_username_invalid_password------")
         self.logger.info("-----Verifying Sign Up Page------")
@@ -119,6 +126,8 @@ class TestCase006SignUpPage:
 
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_004_validate_sign_up_username_with_space_and_password_with_space(self, setup_and_teardown):
         self.logger.info("-----test_case_004_validate_sign_up_username_with_space_and_password_with_space------")
         self.logger.info("-----Verifying Sign Up Page------")
@@ -146,6 +155,8 @@ class TestCase006SignUpPage:
             self.logger.error("--------Sign up username with space and password with space is Failed---------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars(self, setup_and_teardown):
         self.logger.info("-----test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars------")
         self.logger.info("-----Verifying Sign Up Page------")
@@ -173,6 +184,8 @@ class TestCase006SignUpPage:
             self.logger.error("--------Sign up username with spl chars and password with spl chars is Failed---------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_006_validate_sign_up_username_with_numbers_and_password_with_numbers(self, setup_and_teardown):
         self.valid_random_username = self.generate_random_email()
         self.logger.info("-----test_case_006_validate_sign_up_username_with_numbers_and_password_with_numbers------")
@@ -201,6 +214,8 @@ class TestCase006SignUpPage:
             self.logger.error("--------Sign up username with numbers and password with numbers is Failed---------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_007_validate_sign_up_with_no_username_and_no_password(self, setup_and_teardown):
         self.logger.info("-----test_case_007_validate_sign_up_with_no_username_and_no_password------")
         self.logger.info("-----Verifying Sign Up Page------")
@@ -228,6 +243,8 @@ class TestCase006SignUpPage:
             self.logger.error("--------Sign up with no username and no password is Failed---------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_cse_008_validate_clicking_on_sign_up_close_button(self, setup_and_teardown):
         self.logger.info("-----test_cse_008_validate_clicking_on_sign_up_close_button------")
         self.logger.info("-----Verifying Sign Up Page------")
@@ -251,6 +268,8 @@ class TestCase006SignUpPage:
             self.logger.error("-------Clicking on sign up close button is Failed---------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_cse_009_validate_clicking_on_sign_up_x_mark(self, setup_and_teardown):
         self.logger.info("-----test_cse_009_validate_clicking_on_sign_up_x_mark------")
         self.logger.info("-----Verifying Sign Up Page------")

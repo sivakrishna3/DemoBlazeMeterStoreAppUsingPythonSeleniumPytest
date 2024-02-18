@@ -1,4 +1,5 @@
 import time
+import pytest
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -20,6 +21,8 @@ class Test_case_001_DDT:
     logger = Log_Generator.log_gen()
     read_data = Excel_Utils.read_data()
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_001_login_data_driven_test(self, setup_and_teardown):
         self.logger.info("-----test_case_001_login_data_driven_test-----")
         self.logger.info("-----Verifying log in functionality-----")
