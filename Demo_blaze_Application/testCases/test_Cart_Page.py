@@ -1,4 +1,6 @@
 import time
+
+import pytest
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -29,6 +31,8 @@ class TestCase005CartPage:
     year = ReadConfig.get_cart_year()
     no_year = ReadConfig.get_cart_no_year()
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_001_validate_Cart_button(self, setup_and_teardown):
         self.logger.info("-----test_case_001_validate_Cart_button-----")
         self.logger.info("-----Verifying Cart Page------")
@@ -58,6 +62,8 @@ class TestCase005CartPage:
             print(e)
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_002_validate_add_to_cart_button(self, setup_and_teardown):
         self.logger.info("-----test_case_002_validate_add_to_cart_button-----")
         self.logger.info("-------------------Verifying------------------")
@@ -86,6 +92,8 @@ class TestCase005CartPage:
             self.logger.error("-----test case 002 is Failed------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_003_validate_delete_the_product_button(self, setup_and_teardown):
         self.logger.info("-----test_case_003_validate_delete_the_product_button-----")
         self.logger.info("-------------------Verifying------------------")
@@ -112,6 +120,8 @@ class TestCase005CartPage:
             self.logger.error("-----test case 003 is Failed. Cart Page not displayed------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_004_validate_place_order_button(self, setup_and_teardown):
         self.logger.info("-----test_case_004_validate_place_order_button-----")
         self.logger.info("-----Verifying Place order button-------")
@@ -138,6 +148,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 004 is Failed. Place order button not displayed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_005_validate_place_order_and_set_all_fields_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_005_validate_place_order_and_set_all_fields_with_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -164,6 +175,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 005 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_006_validate_place_order_and_set_all_fields_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_006_validate_place_order_and_set_all_fields_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -190,6 +202,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 006 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_007_validate_place_order_and_set_no_name_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_007_validate_place_order_and_set_no_name_and_with_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -219,6 +232,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 007 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_008_validate_place_order_and_set_no_name_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_008_validate_place_order_and_set_no_name_and_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -248,6 +262,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 008 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_009_validate_place_order_and_set_no_country_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_009_validate_place_order_and_set_no_country_and_with_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -274,6 +289,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 009 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_010_validate_place_order_and_set_no_country_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_010_validate_place_order_and_set_no_country_and_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -300,6 +316,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 010 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_011_validate_place_order_and_set_no_city_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_011_validate_place_order_and_set_no_city_and_with_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -326,6 +343,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 011 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_012_validate_place_order_and_set_no_city_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_012_validate_place_order_and_set_no_city_and_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -352,6 +370,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 012 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_013_validate_place_order_and_set_no_credit_card_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_013_validate_place_order_and_set_no_credit_card_and_with_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -381,6 +400,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 013 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_014_validate_place_order_and_set_no_credit_card_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_014_validate_place_order_and_set_no_country_and_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -410,6 +430,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 014 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_015_validate_place_order_and_set_no_month_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_015_validate_place_order_and_set_no_month_and_with_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -436,6 +457,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 015 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_016_validate_place_order_and_set_no_month_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_016_validate_place_order_and_set_no_month_and_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -462,6 +484,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 016 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_017_validate_place_order_and_set_no_year_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_017_validate_place_order_and_set_no_year_and_with_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -488,6 +511,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 017 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_018_validate_place_order_and_set_no_year_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_018_validate_place_order_and_set_no_year_and_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -514,8 +538,9 @@ class TestCase005CartPage:
             self.logger.error("-----test case 018 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product(self, setup_and_teardown):
-        self.logger.info("-----test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product-----")
+        self.logger.info("-----test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product---")
         self.logger.info("-------------------Verifying------------------")
         self.driver = setup_and_teardown
         self.ct_page = Cart_page(self.driver)
@@ -543,6 +568,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 019 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_020_validate_place_order_and_not_setting_any_field_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_018_validate_place_order_and_not_setting_any_field_and_without_adding_product-----")
         self.logger.info("-------------------Verifying------------------")
@@ -572,6 +598,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 020 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_021_validate_click_on_place_order_x_mark(self, setup_and_teardown):
         self.logger.info("-----test_case_021_validate_click_on_place_order_x_mark-----")
         self.logger.info("-----Verifying Place order form x mark button-------")
@@ -596,6 +623,7 @@ class TestCase005CartPage:
             self.logger.error("-----test case 021 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_022_validate_close_button_and_set_all_fields(self, setup_and_teardown):
         self.logger.info("-----test_case_022_validate_close_button_and_set_all_fields-----")
         self.logger.info("-----Verifying Place order form x mark button-------")

@@ -2,6 +2,7 @@
 # from selenium.webdriver import Chrome
 import time
 
+import pytest
 from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,7 +13,6 @@ from utilities.custom_Logger import Log_Generator
 
 
 class TestCase003ContactPage:
-    
     valid_email = ReadConfig.get_contact_email()
     invalid_email = ReadConfig.get_contact_invalid_email()
     no_email = ReadConfig.get_contact_empty_email()
@@ -27,6 +27,8 @@ class TestCase003ContactPage:
 
     logger = Log_Generator.log_gen()
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_001_validate_contact_with_valid_email_valid_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_001_validate_contact_with_valid_email_valid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -51,6 +53,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_001_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_002_validate_contact_with_valid_email_valid_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_002_validate_contact_with_valid_email_valid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -75,6 +79,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_002_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_003_validate_contact_with_valid_email_valid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_003_validate_contact_with_valid_email_valid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -99,6 +105,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_003_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_004_validate_contact_with_valid_email_invalid_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_004_validate_contact_with_valid_email_invalid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -123,6 +131,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_004_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_005_validate_contact_with_valid_email_invalid_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_005_validate_contact_with_valid_email_invalid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -147,6 +157,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_005_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_006_validate_contact_with_valid_email_invalid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_006_validate_contact_with_valid_email_invalid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -171,6 +183,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_006_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_007_validate_contact_with_valid_email_no_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_007_validate_contact_with_valid_email_no_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -195,6 +209,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_007_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_008_validate_contact_with_valid_email_no_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_008_validate_contact_with_valid_email_no_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -219,6 +235,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_008_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_009_validate_contact_with_valid_email_no_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_009_validate_contact_with_valid_email_no_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -243,6 +261,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_009_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_010_validate_contact_with_invalid_email_valid_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_010_validate_contact_with_invalid_email_valid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -267,6 +287,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_010_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_011_validate_contact_with_invalid_email_valid_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_011_validate_contact_with_invalid_email_valid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -291,6 +313,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_011_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_012_validate_contact_with_invalid_email_valid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_012_validate_contact_with_invalid_email_valid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -315,6 +339,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_012_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_013_validate_contact_with_invalid_email_invalid_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_013_validate_contact_with_invalid_email_invalid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -339,6 +365,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_013_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_014_validate_contact_with_invalid_email_invalid_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_014_validate_contact_with_invalid_email_invalid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -363,6 +391,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_013_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_015_validate_contact_with_invalid_email_invalid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_015_validate_contact_with_invalid_email_invalid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -387,6 +417,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_015_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_016_validate_contact_with_invalid_email_no_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_016_validate_contact_with_invalid_email_no_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -411,6 +443,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_016_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_017_validate_contact_with_invalid_email_no_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_017_validate_contact_with_invalid_email_no_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -435,6 +469,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_017_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_018_validate_contact_with_invalid_email_no_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_018_validate_contact_with_invalid_email_no_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -459,6 +495,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_018_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_019_validate_contact_with_email_with_spl_chars_valid_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_019_validate_contact_with_email_with_spl_chars_valid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -483,8 +521,11 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_019_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_020_validate_contact_with_email_with_spl_chars_valid_name_invalid_message(self, setup_and_teardown):
-        self.logger.info("-----test_case_020_validate_contact_with_email_with_spl_chars_valid_name_invalid_message-----")
+        self.logger.info(
+            "-----test_case_020_validate_contact_with_email_with_spl_chars_valid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
         self.driver = setup_and_teardown
         self.cnt_page = Contact_page(self.driver)
@@ -507,6 +548,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_020_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_021_validate_contact_with_email_with_spl_chars_valid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_021_validate_contact_with_email_with_spl_chars_valid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -531,8 +574,11 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_021_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_022_validate_contact_with_email_with_spl_chars_invalid_name_valid_message(self, setup_and_teardown):
-        self.logger.info("-----test_case_022_validate_contact_with_email_with_spl_chars_invalid_name_valid_message-----")
+        self.logger.info(
+            "-----test_case_022_validate_contact_with_email_with_spl_chars_invalid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
         self.driver = setup_and_teardown
         self.cnt_page = Contact_page(self.driver)
@@ -555,8 +601,11 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_022_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_023_validate_contact_with_email_with_spl_chars_invalid_name_invalid_message(self, setup_and_teardown):
-        self.logger.info("-----test_case_023_validate_contact_with_email_with_spl_chars_invalid_name_invalid_message-----")
+        self.logger.info(
+            "-----test_case_023_validate_contact_with_email_with_spl_chars_invalid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
         self.driver = setup_and_teardown
         self.cnt_page = Contact_page(self.driver)
@@ -579,6 +628,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_023_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_024_validate_contact_with_email_with_spl_chars_invalid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_024_validate_contact_with_email_with_spl_chars_invalid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -603,6 +654,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_024_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_025_validate_contact_with_email_with_spl_chars_no_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_025_validate_contact_with_email_with_spl_chars_no_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -627,6 +680,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_025_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_026_validate_contact_with_email_with_spl_chars_no_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_026_validate_contact_with_email_with_spl_chars_no_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -651,6 +706,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_026_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_027_validate_contact_with_email_with_spl_chars_no_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_027_validate_contact_with_email_with_spl_chars_no_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -675,6 +732,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_027_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_028_validate_contact_with_no_email_valid_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_028_validate_contact_with_no_email_valid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -699,6 +758,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_028_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_029_validate_contact_with_no_email_valid_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_029_validate_contact_with_no_email_valid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -723,6 +784,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_029_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_030_validate_contact_with_no_email_valid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_030_validate_contact_with_no_email_valid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -747,6 +810,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_030_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_031_validate_contact_with_no_email_invalid_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_031_validate_contact_with_no_email_invalid_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -771,6 +836,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_031_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_032_validate_contact_with_no_email_invalid_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_032_validate_contact_with_no_email_invalid_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -795,6 +862,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_032_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_033_validate_contact_with_no_email_invalid_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_033_validate_contact_with_no_email_invalid_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -819,6 +888,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_033_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_034_validate_contact_with_no_email_no_name_valid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_034_validate_contact_with_no_email_no_name_valid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -843,6 +914,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_034_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_035_validate_contact_with_no_email_no_name_invalid_message(self, setup_and_teardown):
         self.logger.info("-----test_case_035_validate_contact_with_no_email_no_name_invalid_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -867,6 +940,8 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_035_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_036_validate_contact_with_no_email_no_name_no_message(self, setup_and_teardown):
         self.logger.info("-----test_case_036_validate_contact_with_no_email_no_name_no_message-----")
         self.logger.info("-----Verifying Contact Page-----")
@@ -891,6 +966,7 @@ class TestCase003ContactPage:
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_036_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
+    @pytest.mark.regression
     def test_case_037_click_on_contact_button(self, setup_and_teardown):
         self.logger.info("")
         self.logger.info("-----Verifying Contact Page-----")
@@ -921,6 +997,7 @@ class TestCase003ContactPage:
             self.logger.error("-----TimeoutException: Contact page not displayed------")
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_037.png")
 
+    @pytest.mark.regression
     def test_case_038_click_on_contact_close_button(self, setup_and_teardown):
         self.logger.info("")
         self.logger.info("-----Verifying Contact Page-----")
@@ -941,6 +1018,7 @@ class TestCase003ContactPage:
             self.logger.error("-----TimeoutException: Contact page not displayed------")
             self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_037_timeout.png")
 
+    @pytest.mark.regression
     def test_case_039_click_on_contact_x_mark(self, setup_and_teardown):
         self.logger.info("")
         self.logger.info("-----Verifying Contact Page-----")

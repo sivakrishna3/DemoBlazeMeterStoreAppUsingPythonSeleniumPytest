@@ -1,4 +1,4 @@
-# import pytest
+import pytest
 # from selenium.webdriver import Chrome
 import time
 from selenium.common import TimeoutException
@@ -15,6 +15,7 @@ class TestCase002HomePage:
     HOME_BUTTON = "//a[contains(text(),'Home')]"
     logger = Log_Generator.log_gen()
 
+    @pytest.mark.regression
     def test_case_001_validate_homepage_button(self, setup_and_teardown):
         self.logger.info("-----test_case_001_validate_homepage_button-----")
         self.logger.info("-----Verifying Home Page-----")
@@ -39,6 +40,7 @@ class TestCase002HomePage:
             self.logger.error("-----test case 001 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_002_validate_homepage_logo_button(self, setup_and_teardown):
         self.logger.info("-----test_case_002_validate_homepage_logo_button-----")
         self.logger.info("-----Verifying Home Page-----")
@@ -63,6 +65,7 @@ class TestCase002HomePage:
             self.logger.error("-----test case 002 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_003_validate_next_and_previous_slide_buttons_in_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_003_validate_next_and_previous_slide_buttons_in_homepage-----")
         self.logger.info("-----Verifying Home Page-----")
@@ -87,6 +90,7 @@ class TestCase002HomePage:
             self.logger.error("-----test case 003 is Failed------")
             assert False
 
+    @pytest.mark.regression
     def test_case_004_validate_next_and_previous_buttons_at_below_the_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_004_validate_next_and_previous_buttons_at_below_the_homepage-----")
         self.logger.info("-----Verifying Home Page-----")
@@ -111,6 +115,8 @@ class TestCase002HomePage:
             self.logger.error("-----test case 004 is Failed------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_005_validate_categories_button_in_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_005_validate_categories_button_in_homepage-----")
         self.logger.info("-----Verifying Home Page-----")
@@ -135,6 +141,8 @@ class TestCase002HomePage:
             self.logger.error("-----test case 005 is Failed------")
             assert False
 
+    @pytest.mark.regression
+    @pytest.mark.sanity
     def test_case_006_validate_phones_in_categories_button_at_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_006_validate_phones_in_categories_button_at_homepage-----")
         self.logger.info("-----Verifying Home Page-----")

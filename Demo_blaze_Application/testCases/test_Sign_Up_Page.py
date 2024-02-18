@@ -12,8 +12,9 @@ from utilities.readProperties import ReadConfig
 
 
 class TestCase006SignUpPage:
+
     def generate_random_email(self):
-        random_username = ''.join(random.choices(string.ascii_letters, k=8))
+        random_username = ''.join(random.choices(string.ascii_letters.lower(), k=8))
         return f'{random_username}@gmail.com'
 
     valid_username = ReadConfig.get_sign_up_username()
