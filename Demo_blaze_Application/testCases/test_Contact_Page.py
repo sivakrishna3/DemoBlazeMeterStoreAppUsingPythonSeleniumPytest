@@ -979,7 +979,7 @@ class TestCase003ContactPage:
         try:
             if is_displayed:
                 actual_text = self.driver.find_element(By.XPATH, self.Contact_page_text).text
-                expected_text = "Sign up"
+                expected_text = "New message"
                 if actual_text == expected_text:
                     self.logger.info("-----test case 037 is Passed------")
                     assert True

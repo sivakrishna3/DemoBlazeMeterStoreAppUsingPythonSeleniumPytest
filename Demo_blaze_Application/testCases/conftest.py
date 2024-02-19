@@ -14,16 +14,16 @@ def setup_and_teardown(request):
     # browser_list = ['chrome', 'firefox', 'edge']
     if browser == 'chrome':
         driver = Chrome()
-        logger.info("-----Chrome browser launched----")
+        # logger.info("-----Chrome browser launched----")
     elif browser == 'firefox':
         driver = Firefox()
-        logger.info("-----Firefox browser launched----")
+        # logger.info("-----Firefox browser launched----")
     elif browser == ' edge':
         driver = Edge()
-        logger.info("-----Edge browser launched----")
+        # logger.info("-----Edge browser launched----")
     else:
-        driver = Chrome()
-        logger.info("-----Chrome browser launched----")
+        driver = Edge()
+        # logger.info("-----Chrome browser launched----")
     driver.get(ReadConfig.get_base_url())
     driver.implicitly_wait(10)
     driver.maximize_window()

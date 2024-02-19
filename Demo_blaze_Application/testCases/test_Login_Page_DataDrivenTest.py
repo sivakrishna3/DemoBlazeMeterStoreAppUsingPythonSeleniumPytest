@@ -50,7 +50,7 @@ class Test_case_001_DDT:
                             if self.expected_result == "Pass":
                                 self.logger.info("-----Login successful and test case Passed----")
                                 lst_status.append("Pass")
-                                print(lst_status,"passed")
+                                print(lst_status, "passed")
                             elif self.expected_result == "Fail":
                                 self.logger.error("-----Failed-----")
                                 lst_status.append("Fail")
@@ -90,6 +90,7 @@ class Test_case_001_DDT:
                         self.logger.error("----Login test of DDT is Failed-----")
             except Exception as e:
                 print(f"Exception Error : {e}")
+        print(lst_status)
         if "Fail" not in lst_status:
             self.logger.info("-----Login test DDT is Passed-----")
             assert True
