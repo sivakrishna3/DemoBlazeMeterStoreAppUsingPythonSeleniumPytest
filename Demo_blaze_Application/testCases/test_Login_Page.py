@@ -1,3 +1,5 @@
+import json
+
 import pytest
 # from selenium.webdriver import Chrome
 import time
@@ -23,7 +25,12 @@ class TestCase001LoginPage:
     password_with_space = ReadConfig.get_password_with_space()
     username_with_numbers = ReadConfig.get_username_with_numbers()
     password_with_numbers = ReadConfig.get_password_with_numbers()
-    CLOSE_BUTTON = "//*[@id='logInModal']/div/div/div[3]/button[1]"
+
+    json_file_path = "./Locators/Login_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    CLOSE_BUTTON = data["Login_Page"]["CLOSE_BUTTON"]
     expected_message = ["User does not exist.", "Wrong password.", "Please fill out Username and Password."]
     logger = Log_Generator.log_gen()
 
@@ -40,11 +47,11 @@ class TestCase001LoginPage:
         try:
             if act_title == 'STORE':
                 assert True
-                self.logger.info("-----Login with valid username and valid password is Passed---------")
+                self.logger.info("-----Test case 001 is Passed---------")
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_001.png")
-                self.logger.error("-------Login with valid username and valid password is Failed-----")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_login_page.png")
+                self.logger.error("-----Test case 001 is Failed-----")
                 assert False
         except Exception as e:
             print(e)
@@ -66,12 +73,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with valid username and invalid password is Passed--------------")
+                self.logger.info("-----Test case 002 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_002.png")
-                self.logger.error("-----Login with valid username and invalid password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_login_page.png")
+                self.logger.error("-----Test case 002 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -93,12 +100,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("--------Login with valid username and password with spl chars is Passed-----------")
+                self.logger.info("--------Test case 003 is Passed-----------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_003.png")
-                self.logger.error("--------Login with valid username and password with spl chars i is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_login_page.png")
+                self.logger.error("--------Test case 003 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -120,12 +127,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("---------Login with valid username and password with numbers is Passed--------------")
+                self.logger.info("---------Test case 004 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_004.png")
-                self.logger.error("---------Login with valid username and password with numbers is Failed-----------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_login_page.png")
+                self.logger.error("---------Test case 004 is Failed-----------")
                 assert False
         except Exception as e:
             print(e)
@@ -147,12 +154,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with valid username and password with space is Passed--------------")
+                self.logger.info("-----Test case 005 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_005.png")
-                self.logger.error("-----Login with valid username and password with space is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_login_page.png")
+                self.logger.error("-----Test case 005 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -174,12 +181,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with valid username and no password is Passed--------------")
+                self.logger.info("-----Test case 006 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_006.png")
-                self.logger.error("-----Login with valid username and no password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_login_page.png")
+                self.logger.error("-----Test case 006 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -201,12 +208,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with invalid username and valid password is Passed--------------")
+                self.logger.info("-----Test case 007 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_007.png")
-                self.logger.error("-----Login invalid username and valid password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_login_page.png")
+                self.logger.error("-----Test case 007 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -228,12 +235,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login  with invalid username and invalid password is Passed--------------")
+                self.logger.info("-----Test case 008 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_008.png")
-                self.logger.error("-----Login with invalid username and invalid password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_login_page.png")
+                self.logger.error("-----Test case 008 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -255,12 +262,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("--------Login with invalid username and password with spl chars is Passed----------")
+                self.logger.info("--------Test case 009 is Passed----------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_009.png")
-                self.logger.error("--------Login with invalid username and password with spl chars is Failed--------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_login_page.png")
+                self.logger.error("--------Test case 009 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
@@ -282,13 +289,13 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("--------Login with invalid username and password with numbers is Passed-----------")
+                self.logger.info("--------Test case 010 is Passed-----------")
 
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_010.png")
-                self.logger.error("-------Login with invalid username and password with numbers is Failed-----------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_login_page.png")
+                self.logger.error("-------Test case 010 is Failed-----------")
                 assert False
         except Exception as e:
             print(e)
@@ -310,12 +317,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with invalid username and password with space is Passed--------------")
+                self.logger.info("-----Test case 011 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_011.png")
-                self.logger.error("-----Login with invalid username and password with space is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_login_page.png")
+                self.logger.error("-----Test case 011 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -337,12 +344,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with invalid username and no password is Passed--------------")
+                self.logger.info("-----Test case 012 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_012.png")
-                self.logger.error("-----Login with invalid username and no password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_login_page.png")
+                self.logger.error("-----Test case 012 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -364,12 +371,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with space and valid password is Passed--------------")
+                self.logger.info("-----Test case 013 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_013.png")
-                self.logger.error("-----Login username with space and valid password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_login_page.png")
+                self.logger.error("-----Test case 013 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -391,12 +398,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with space and invalid password is Passed--------------")
+                self.logger.info("-----Test case 014 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_014.png")
-                self.logger.error("-----Login username with space and invalid password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_014_login_page.png")
+                self.logger.error("-----Test case 014 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -418,12 +425,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-------Login username with space and password with spl chars is Passed------------")
+                self.logger.info("-------Test case 015 is Passed------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_015.png")
-                self.logger.error("-------Login username with space and password with spl chars is Failed-----------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_login_page.png")
+                self.logger.error("-------Test case 015 is Failed-----------")
                 assert False
         except Exception as e:
             print(e)
@@ -445,12 +452,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with space and password with numbers is Passed--------------")
+                self.logger.info("-----Test case 016 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_016.png")
-                self.logger.error("-----Login username with space and password with numbers is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_login_page.png")
+                self.logger.error("-----Test case 016 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -472,12 +479,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with space and password with space is Passed--------------")
+                self.logger.info("-----Test case 017 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_017.png")
-                self.logger.error("-----Login username with space and password with space is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_login_page.png")
+                self.logger.error("-----Test case 017 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -499,12 +506,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with space and no password is Passed--------------")
+                self.logger.info("-----Test case 018 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_018.png")
-                self.logger.error("-----Login username with space and no password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_login_page.png")
+                self.logger.error("-----Test case 018 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -526,12 +533,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-------Login username with spl chars and valid password is Passed-----------")
+                self.logger.info("-----Test case 019 is Passed-----------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_019.png")
-                self.logger.error("-------Login username with spl chars and valid password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_login_page.png")
+                self.logger.error("-----Test case 019 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -553,12 +560,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with spl chars and invalid password is Passed---------")
+                self.logger.info("-----Test case 020 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_020.png")
-                self.logger.error("-----Login username with spl chars and invalid password is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_login_page.png")
+                self.logger.error("-----Test case 020 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -580,12 +587,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-------Login username with spl chars and password with spl chars is Passed-----")
+                self.logger.info("-----Test case 021 is Passed-----")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_021.png")
-                self.logger.error("------Login username with spl chars and password with spl chars is Failed-----")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_login_page.png")
+                self.logger.error("----Test case 021 is Failed-----")
                 assert False
         except Exception as e:
             print(e)
@@ -607,12 +614,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with spl chars and password with numbers is Passed---------")
+                self.logger.info("-----Test case 022 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_022.png")
-                self.logger.error("-----Login username with spl chars and password with numbers is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_login_page.png")
+                self.logger.error("-----Test case 022 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -634,12 +641,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with spl chars and password with space is Passed---------")
+                self.logger.info("-----Test case 023 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_023.png")
-                self.logger.error("-----Login username with spl chars and password with space is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_023_login_page.png")
+                self.logger.error("-----Test case 023 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -661,12 +668,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with space and no password is Passed--------------")
+                self.logger.info("-----Test case 024 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_024.png")
-                self.logger.error("-----Login username with space and no password is Failed--------------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_024_login_page.png")
+                self.logger.error("-----Test case 024 is Failed--------------")
                 assert False
         except Exception as e:
             print(e)
@@ -688,12 +695,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with numbers and valid password is Passed---------")
+                self.logger.info("-----Test case 025 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_025.png")
-                self.logger.error("-----Login username with numbers and valid password is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_025_login_page.png")
+                self.logger.error("-----Test case 025 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -715,12 +722,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with numbers and invalid password is Passed---------")
+                self.logger.info("-----Test case 026 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_026.png")
-                self.logger.error("-----Login username with numbers and invalid password is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_026_login_page.png")
+                self.logger.error("-----Test case 026 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -742,12 +749,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with numbers and password with spl chars is Passed---------")
+                self.logger.info("-----Test case 027 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_027.png")
-                self.logger.error("-----Login username with numbers and password with spl chars is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_027_login_page.png")
+                self.logger.error("-----Test case 027 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -769,12 +776,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with numbers and password with numbers is Passed---------")
+                self.logger.info("-----Test case 028 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_028.png")
-                self.logger.error("-----Login username with numbers and password with numbers is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_028_login_page.png")
+                self.logger.error("-----Test case 028 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -796,12 +803,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with numbers and password with space is Passed---------")
+                self.logger.info("-----Test case 029 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_029.png")
-                self.logger.error("-----Login username with numbers and password with space is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_029_login_page.png")
+                self.logger.error("-----Test case 029 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -823,12 +830,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login username with numbers and no password is Passed---------")
+                self.logger.info("-----Test case 030 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_030.png")
-                self.logger.error("-----Login username with numbers and no password is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_030_login_page.png")
+                self.logger.error("-----Test case 030 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -850,12 +857,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with no username and valid password is Passed---------")
+                self.logger.info("-----Test case 031 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_031.png")
-                self.logger.error("-----Login with no username and valid password is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_031_login_page.png")
+                self.logger.error("-----Test case 031 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -877,12 +884,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with no username and invalid password is Passed---------")
+                self.logger.info("-----Test case 032 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_032.png")
-                self.logger.error("-----Login with no username and invalid password is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_032_login_page.png")
+                self.logger.error("-----Test case 032 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -904,12 +911,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with no username and password with spl chars is Passed---------")
+                self.logger.info("-----Test case 033 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_033.png")
-                self.logger.error("-----Login with no username and password with spl chars is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_033_login_page.png")
+                self.logger.error("-----Test case 033 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -931,12 +938,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with no username and password with numbers is Passed---------")
+                self.logger.info("-----Test case 034 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_034.png")
-                self.logger.error("-----Login with no username and password with numbers is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_034_login_page.png")
+                self.logger.error("-----Test case 034 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -958,12 +965,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with no username and password with space is Passed---------")
+                self.logger.info("-----Test case 035 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_035.png")
-                self.logger.error("-----Login with no username and password with space is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_035_login_page.png")
+                self.logger.error("-----Test case 035 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -985,12 +992,12 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("-----Login with no username and no password is Passed---------")
+                self.logger.info("-----Test case 036 is Passed---------")
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Login_Page\\" + "test_case_036.png")
-                self.logger.error("-----Login with no username and no password is Failed---------")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_036_login_page.png")
+                self.logger.error("-----Test case 036 is Failed---------")
                 assert False
         except Exception as e:
             print(e)
@@ -1006,11 +1013,11 @@ class TestCase001LoginPage:
         act_title = self.driver.title
         try:
             if act_title == "STORE":
-                self.logger.info("-----Log out functionality is Passed------------------")
+                self.logger.info("-----Test case 037 is Passed------------------")
                 assert True
             else:
                 time.sleep(5)
-                self.logger.error("-----Log out functionality is Failed------------------")
+                self.logger.error("-----Test case 037 is Failed------------------")
                 assert False
         except Exception as e:
             print(e)

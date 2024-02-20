@@ -1,0 +1,19 @@
+{"About_Us_Page": {
+    "ABOUT_US_BUTTON": "//*[@id='navbarExample']/ul/li[3]/a",
+    "VIDEO_BUTTON": "//*[@id='example-video']/button",
+    "VIDEO_PAUSE_BUTTON": "//button[@title='Pause']//span[@class='vjs-icon-placeholder']",
+    "VOLUME_MUTE_BUTTON": "//button[@title='Mute']//span[@class='vjs-icon-placeholder']",
+    "VOLUME_BUTTON": "//*[@id='example-video']/div[4]/div[1]/div/div/div",
+    "VIDEO_CONTROL_BUTTON": "//*[@id='example-video']/div[4]/div[5]",
+    "SCREEN_PIC_IN_PIC_BUTTON": "//*[@id='example-video']/div[4]/button[3]",
+    "FULL_SCREEN_BUTTON": "//*[@id='example-video']/div[4]/button[4]/span[1]",
+    "VIDEO_CLOSE_BUTTON": "//div[@id='videoModal']//button[@type='button'][normalize-space()='Close']",
+    "VIDEO_CLOSE_X_MARK": "//div[@id='videoModal']//span[@aria-hidden='true'][normalize-space()='×']",
+    "VOLUME_SLIDER": "//button[@title='Mute']//span[@class='vjs-icon-placeholder']",
+    "About_us_open_message" : "//h5[@id='videoModalLabel']",
+    "Pause_text" : "//*[@id='example-video']/div[4]/button[1]/span[2]",
+    "unmute_text" : "//span[normalize-space()='Unmute']",
+    "pic_in_pic" : "//span[normalize-space()='Exit Picture-in-Picture']",
+    "full_screen" : "//span[normalize-space()='Non-Fullscreen']"}
+
+}

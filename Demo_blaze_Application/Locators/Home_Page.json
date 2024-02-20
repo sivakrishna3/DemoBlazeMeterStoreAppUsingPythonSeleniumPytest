@@ -1,0 +1,32 @@
+{
+    "Home_Page": {
+        "HOME_BUTTON" : "//a[contains(text(),'Home')]",
+        "LOGO_HOMEPAGE" : "//*[@id='nava']",
+        "PREV_SLIDE" : "//*[@id='carouselExampleIndicators']/a[1]/span[1]",
+        "NEXT_SLIDE" : "//*[@id='carouselExampleIndicators']/a[2]/span[1]",
+        "CATEGORIES" : "//div/a[@id='cat']",
+        "PHONES" : "//*[@id='itemc' and contains(text(), 'Phones')]",
+        "LAPTOPS" : "//*[@id='itemc' and contains(text(), 'Laptops')]",
+        "MONITORS" : "//*[@id='itemc' and contains(text(), 'Monitors')]",
+        "PREV_BUTTON" : "//*[@id='prev2']",
+        "NEXT_BUTTON" : "//*[@id='next2']",
+        "Add_To_Cart" : "//*[@id='tbodyid']/div[2]/div/a"},
+    "Phones": {
+        "Samsung_galaxy_s6" : "//a[contains(text(), 'Samsung galaxy s6')]",
+        "Nokia_lumia_1520" : "//a[contains(text(), 'Nokia lumia 1520')]",
+        "Nexus_6" : "//a[contains(text(), 'Nexus 6')]",
+        "Samsung_galaxy_s7" : "//a[contains(text(), 'Samsung galaxy s7')]",
+        "Iphone_6_32_gb" : "//a[contains(text(), 'Iphone 6 32gb')]",
+        "Sony_xperia_z5" : "//a[contains(text(), 'Sony xperia z5')]",
+        "HTC_One_M9" : "//a[contains(text(), 'HTC One M9')]"},
+    "Laptops": {
+        "Sony_vaio_i5" : "//a[contains(text(), 'Sony vaio i5')]",
+        "Sony_vaio_i7" : "//a[contains(text(), 'Sony vaio i7')]",
+        "MacBook_air" : "//a[contains(text(), 'MacBook air')]",
+        "Dell_i7_8_gb" : "//a[contains(text(), 'Dell i7 8gb')]",
+        "_2017_Dell_15_6_Inch" : "//a[contains(text(), '2017 Dell 15.6 Inch')]",
+        "MacBook_Pro" : "//a[contains(text(), 'MacBook Pro')]"},
+    "Monitors": {
+        "Apple_monitor_24" : "//a[contains(text(), 'Apple monitor 24')]",
+        "ASUS_Full_HD" : "//a[contains(text(), 'ASUS Full HD')]"}
+}

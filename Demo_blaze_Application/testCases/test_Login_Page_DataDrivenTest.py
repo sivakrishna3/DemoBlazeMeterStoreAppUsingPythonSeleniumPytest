@@ -1,3 +1,4 @@
+import json
 import time
 import pytest
 from selenium.webdriver.support.wait import WebDriverWait
@@ -9,14 +10,19 @@ from utilities import Excel_Utils
 
 
 class Test_case_001_DDT:
-    file_path = ".\\Test_Data\\Test_Data_for_DDT.xlsx"
-    CLOSE_BUTTON = "//*[@id='logInModal']/div/div/div[3]/button[1]"
-    HOME_BUTTON = "//a[contains(text(),'Home')]"
-    Login_Button = "//a[@id='login2' and contains(text(),'Log in')]"
-    Login_Username_text = "//input[@id='loginusername']"
-    Login_Password_text = "//input[@id='loginpassword']"
-    Login_button_proceed = "//button[@onclick='logIn()' and contains(text(),'Log in')]"
-    Logout_Button = "//a[@id='logout2']"
+
+    Excel_file_path = ".\\Test_Data\\Test_Data_for_DDT.xlsx"
+
+    json_file_path = "./Locators/Login_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    Login_Button = data["Login_Page"]["Login_Button"]
+    CLOSE_BUTTON = data["Login_Page"]["CLOSE_BUTTON"]
+    Login_Username_text = data["Login_Page"]["Login_Username_text"]
+    Login_Password_text = data["Login_Page"]["Login_Password_text"]
+    Login_button_proceed = data["Login_Page"]["Login_button_proceed"]
+    Logout_Button = data["Login_Page"]["Logout_Button"]
 
     logger = Log_Generator.log_gen()
     read_data = Excel_Utils.read_data()
@@ -28,7 +34,7 @@ class Test_case_001_DDT:
         self.logger.info("-----Verifying log in functionality-----")
         self.driver = setup_and_teardown
         self.lg_page = LoginPage(self.driver)
-        self.rows = Excel_Utils.get_row_count(self.file_path, 'Login_Data')
+        self.rows = Excel_Utils.get_row_count(self.Excel_file_path, 'Login_Data')
         print("Number of rows in a Excel : ", self.rows)
 
         lst_status = []

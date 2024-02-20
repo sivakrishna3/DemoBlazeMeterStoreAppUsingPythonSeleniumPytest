@@ -3,18 +3,22 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+import json
 
 
 class Contact_page:
-    CONTACT_BUTTON = "//a[@class = 'nav-link' and contains(text(),'Contact')]"
-    CONTACT_EMAIL_TEXT = "//*[@id='recipient-email']"
-    CONTACT_NAME_TEXT = "//*[@id='recipient-name']"
-    CONTACT_MESSAGE_TEXT = "//*[@id='message-text']"
-    CONTACT_SEND_MESSAGE_BUTTON = ("//button[contains(text(),'Send message') and //*["
-                                   "@id='exampleModal']/div/div/div/button]")
-    CONTACT_CLOSE_BUTTON = "//*[@id='exampleModal' and //button[contains(text(),'Close')]]/div/div/div[3]/button[1]"
-    CONTACT_X_MARK = "//*[@id='exampleModal']/div/div/div[1]/button"
-    CONTACT_NEW_MESSAGE_TEXT = "//*[@id='exampleModalLabel']"
+    json_file_path = "./Locators/Contact_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    CONTACT_BUTTON = data["Contact_Page"]["CONTACT_BUTTON"]
+    CONTACT_EMAIL_TEXT = data["Contact_Page"]["CONTACT_EMAIL_TEXT"]
+    CONTACT_NAME_TEXT = data["Contact_Page"]["CONTACT_NAME_TEXT"]
+    CONTACT_MESSAGE_TEXT = data["Contact_Page"]["CONTACT_MESSAGE_TEXT"]
+    CONTACT_SEND_MESSAGE_BUTTON = data["Contact_Page"]["CONTACT_SEND_MESSAGE_BUTTON"]
+    CONTACT_CLOSE_BUTTON = data["Contact_Page"]["CONTACT_CLOSE_BUTTON"]
+    CONTACT_X_MARK = data["Contact_Page"]["CONTACT_X_MARK"]
+    CONTACT_NEW_MESSAGE_TEXT = data["Contact_Page"]["CONTACT_NEW_MESSAGE_TEXT"]
 
     def __init__(self, driver):
         self.driver = driver

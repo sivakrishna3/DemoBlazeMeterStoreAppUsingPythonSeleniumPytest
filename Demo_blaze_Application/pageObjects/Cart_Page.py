@@ -1,28 +1,32 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import json
 
 
 class Cart_page:
+    json_file_path = "./Locators/Cart_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
 
-    CART_BUTTON = "//a[@id='cartur']"
-    CART_PAGE_TITLE = "//*[@id='page-wrapper']/div/div[1]/h2"
-    PLACE_ORDER = " //button[contains(text(),'Place Order')]"
-    DELETE_PRODUCT = "//*[@id='tbodyid']/tr/td[4]/a"
-    NAME = "//input[@id='name']"
-    COUNTRY = "//input[@id='country']"
-    CITY = "//input[@id='city']"
-    CREDIT_CARD = "//input[@id='card']"
-    MONTH = "//input[@id='month']"
-    YEAR = "//input[@id='year']"
-    PURCHASE_BUTTON = "//*[@id='orderModal']/div/div/div[3]/button[2]"
-    PLACE_ORDER_CLOSE_BUTTON = "//*[@id='orderModal']/div/div/div[3]/button[1]"
-    PLACE_ORDER_X_MARK = "//*[@id='orderModal']/div/div/div[1]/button/span"
-    ORDER_SUCCESSFUL_MSG = "/html/body/div[10]/h2"
-    ORDER_SUCCESSFUL_OK_BUTTON = "/html/body/div[10]/div[7]/div/button"
-    HOME_BUTTON = "//a[contains(text(),'Home')]"
-    Samsung_galaxy_s6 = "//a[contains(text(),'Samsung galaxy s6')]"
-    ADD_TO_CART = "//*[@id='tbodyid']/div[2]/div/a"
+    CART_BUTTON = data["Cart_Page"]["CART_BUTTON"]
+    CART_PAGE_TITLE = data["Cart_Page"]["CART_PAGE_TITLE"]
+    PLACE_ORDER = data["Cart_Page"]["PLACE_ORDER"]
+    DELETE_PRODUCT = data["Cart_Page"]["DELETE_PRODUCT"]
+    NAME = data["Cart_Page"]["NAME"]
+    COUNTRY = data["Cart_Page"]["COUNTRY"]
+    CITY = data["Cart_Page"]["CITY"]
+    CREDIT_CARD = data["Cart_Page"]["CREDIT_CARD"]
+    MONTH = data["Cart_Page"]["MONTH"]
+    YEAR = data["Cart_Page"]["YEAR"]
+    PURCHASE_BUTTON = data["Cart_Page"]["PURCHASE_BUTTON"]
+    PLACE_ORDER_CLOSE_BUTTON = data["Cart_Page"]["PLACE_ORDER_CLOSE_BUTTON"]
+    PLACE_ORDER_X_MARK = data["Cart_Page"]["PLACE_ORDER_X_MARK"]
+    ORDER_SUCCESSFUL_MSG = data["Cart_Page"]["ORDER_SUCCESSFUL_MSG"]
+    ORDER_SUCCESSFUL_OK_BUTTON = data["Cart_Page"]["ORDER_SUCCESSFUL_OK_BUTTON"]
+    HOME_BUTTON = data["Cart_Page"]["HOME_BUTTON"]
+    Samsung_galaxy_s6 = data["Cart_Page"]["Samsung_galaxy_s6"]
+    ADD_TO_CART = data["Cart_Page"]["ADD_TO_CART"]
 
     def __init__(self, driver):
         self.driver = driver
@@ -112,4 +116,3 @@ class Cart_page:
         self.driver.find_element(By.XPATH, self.CART_BUTTON).click()
         self.driver.find_element(By.XPATH, self.PLACE_ORDER).click()
         self.driver.find_element(By.XPATH, self.PLACE_ORDER_X_MARK).click()
-

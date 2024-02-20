@@ -1,5 +1,6 @@
 # import pytest
 # from selenium.webdriver import Chrome
+import json
 import time
 
 import pytest
@@ -13,6 +14,7 @@ from utilities.custom_Logger import Log_Generator
 
 
 class TestCase003ContactPage:
+
     valid_email = ReadConfig.get_contact_email()
     invalid_email = ReadConfig.get_contact_invalid_email()
     no_email = ReadConfig.get_contact_empty_email()
@@ -23,8 +25,12 @@ class TestCase003ContactPage:
     valid_message = ReadConfig.get_contact_message()
     invalid_message = ReadConfig.get_contact_invalid_message()
     no_message = ReadConfig.get_contact_empty_message()
-    Contact_page_text = "//*[@id='exampleModalLabel']"
 
+    json_file_path = "./Locators/Contact_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    Contact_page_text = data["Contact_Page"]["Contact_page_text"]
     logger = Log_Generator.log_gen()
 
     @pytest.mark.regression
@@ -47,10 +53,10 @@ class TestCase003ContactPage:
             else:
                 time.sleep(5)
                 self.logger.error("-----test case 001 is Failed-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_001_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_contact.png")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_001_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -72,11 +78,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_002_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_contact.png")
                 self.logger.error("-----test case 002 is Failed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_002_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -98,11 +104,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_003_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_contact.png")
                 self.logger.error("-----test case 003 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_003_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -124,11 +130,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_004_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_contact.png")
                 self.logger.error("-----test case 004 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_004_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -150,11 +156,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_005_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_contact.png")
                 self.logger.error("-----test case 005 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_005_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -176,11 +182,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_006_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_contact.png")
                 self.logger.error("-----test case 006 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_006_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -202,11 +208,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_007_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_contact.png")
                 self.logger.error("-----test case 007 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_007_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -228,11 +234,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_008_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_contact.png")
                 self.logger.error("-----test case 008 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_008_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -254,11 +260,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_009_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_contact.png")
                 self.logger.error("-----test case 009 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_009_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -280,11 +286,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_010_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_contact.png")
                 self.logger.error("-----test case 010 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_010_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -306,11 +312,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_011_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_contact.png")
                 self.logger.error("-----test case 011 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_011_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -332,11 +338,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_012_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_contact.png")
                 self.logger.error("-----test case 012 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_012_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -358,11 +364,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_013_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_contact.png")
                 self.logger.error("-----test case 013 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_013_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -384,11 +390,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_013_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_contact.png")
                 self.logger.error("-----test case 013 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_013_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -410,11 +416,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_015_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_contact.png")
                 self.logger.error("-----test case 015 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_015_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -436,11 +442,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_016_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_contact.png")
                 self.logger.error("-----test case 016 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_016_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -462,11 +468,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_017_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_contact.png")
                 self.logger.error("-----test case 017 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_017_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -488,11 +494,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_018_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_contact.png")
                 self.logger.error("-----test case 018 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_018_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -514,11 +520,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_019_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_contact.png")
                 self.logger.error("-----test case 019 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_019_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -541,11 +547,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_020_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_contact.png")
                 self.logger.error("-----test case 020 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_020_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -567,11 +573,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_021_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_contact.png")
                 self.logger.error("-----test case 021 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_021_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -594,11 +600,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_022_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_contact.png")
                 self.logger.error("-----test case 022 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_022_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -621,11 +627,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_023_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_023_contact.png")
                 self.logger.error("-----test case 023 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_023_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_023_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -647,11 +653,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_024_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_024_contact.png")
                 self.logger.error("-----test case 024 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_024_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_024_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -673,11 +679,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_025_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_025_contact.png")
                 self.logger.error("-----test case 025 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_025_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_025_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -699,11 +705,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_026_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_026_contact.png")
                 self.logger.error("-----test case 026 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_026_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_026_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -725,11 +731,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_027_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_027_contact.png")
                 self.logger.error("-----test case 027 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_027_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_027_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -751,11 +757,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_028_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_028_contact.png")
                 self.logger.error("-----test case 028 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_028_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_028_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -777,11 +783,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_029_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_029_contact.png")
                 self.logger.error("-----test case 029 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_029_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_029_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -803,11 +809,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_030_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_030_contact.png")
                 self.logger.error("-----test case 030 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_030_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_030_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -829,11 +835,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_031_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_031_contact.png")
                 self.logger.error("-----test case 031 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_031_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_031_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -855,11 +861,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_032_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_032_contact.png")
                 self.logger.error("-----test case 032 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_032_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_032_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -881,11 +887,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_033_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_033_contact.png")
                 self.logger.error("-----test case 033 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_033_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_033_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -907,11 +913,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_034_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_034_contact.png")
                 self.logger.error("-----test case 034 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_034_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_034_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -933,11 +939,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_035_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_035_contact.png")
                 self.logger.error("-----test case 035 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_035_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_035_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -959,11 +965,11 @@ class TestCase003ContactPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_036_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_036_contact.png")
                 self.logger.error("-----test case 036 is Passed-----")
                 assert False
         except TimeoutException:
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_036_contact.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_036_contact.png")
             self.logger.error("-----Timeout Exception Occurred and Contact page Failed-----")
 
     @pytest.mark.regression
@@ -986,16 +992,16 @@ class TestCase003ContactPage:
                 else:
                     time.sleep(5)
                     self.logger.error("------test case 037 is Failed-----")
-                    self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_037_contact.png")
+                    self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_037_contact.png")
                     assert False
             else:
                 time.sleep(5)
                 self.logger.error("------Contact title text not Displayed-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_037_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_037_contact.png")
                 assert False
         except TimeoutException:
             self.logger.error("-----TimeoutException: Contact page not displayed------")
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_037.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_037.png")
 
     @pytest.mark.regression
     def test_case_038_click_on_contact_close_button(self, setup_and_teardown):
@@ -1012,11 +1018,11 @@ class TestCase003ContactPage:
             else:
                 time.sleep(5)
                 self.logger.error("------test case 038 is Failed-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_038_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_038_contact.png")
                 assert False
         except TimeoutException:
             self.logger.error("-----TimeoutException: Contact page not displayed------")
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_037_timeout.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_037_contact.png")
 
     @pytest.mark.regression
     def test_case_039_click_on_contact_x_mark(self, setup_and_teardown):
@@ -1033,8 +1039,8 @@ class TestCase003ContactPage:
             else:
                 time.sleep(5)
                 self.logger.error("------test case 039 is Failed-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_039_contact.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_039_contact.png")
                 assert False
         except TimeoutException:
             self.logger.error("-----TimeoutException: Contact page not displayed------")
-            self.driver.save_screenshot(".\\ScreenShots\\Contact_Page\\" + "test_case_039_timeout.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_039_contact.png")

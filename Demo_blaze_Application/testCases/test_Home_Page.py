@@ -1,3 +1,5 @@
+import json
+
 import pytest
 # from selenium.webdriver import Chrome
 import time
@@ -12,7 +14,11 @@ from utilities.readProperties import ReadConfig
 
 class TestCase002HomePage:
 
-    HOME_BUTTON = "//a[contains(text(),'Home')]"
+    json_file_path = "./Locators/Home_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    HOME_BUTTON = data["Home_Page"]["HOME_BUTTON"]
     logger = Log_Generator.log_gen()
 
     @pytest.mark.regression
@@ -31,12 +37,12 @@ class TestCase002HomePage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_001_Home_page.png")
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_001_Home_page.png")
                 self.logger.error("-----test case 001 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_001_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_Home_page.png")
             self.logger.error("-----test case 001 is Failed------")
             assert False
 
@@ -56,12 +62,12 @@ class TestCase002HomePage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_002_Home_page.png")
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_002_Home_page.png")
                 self.logger.error("-----test case 002 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_002_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_Home_page.png")
             self.logger.error("-----test case 002 is Failed------")
             assert False
 
@@ -81,12 +87,12 @@ class TestCase002HomePage:
             assert True
         except AssertionError:
             time.sleep(5)
-            self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_003_Home_page.png")
+            self.driver.save_screenshot(".\\Screenshots\\" + "test_case_003_Home_page.png")
             self.logger.error("-----test case 003 is Failed-----")
             assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_003_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_Home_page.png")
             self.logger.error("-----test case 003 is Failed------")
             assert False
 
@@ -106,12 +112,12 @@ class TestCase002HomePage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_004_Home_page.png")
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_004_Home_page.png")
                 self.logger.error("-----test case 004 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_004_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_Home_page.png")
             self.logger.error("-----test case 004 is Failed------")
             assert False
 
@@ -132,12 +138,12 @@ class TestCase002HomePage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_005_Home_page.png")
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_005_Home_page.png")
                 self.logger.error("-----test case 005 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_005_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_Home_page.png")
             self.logger.error("-----test case 005 is Failed------")
             assert False
 
@@ -158,12 +164,12 @@ class TestCase002HomePage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_006_Home_page.png")
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_006_Home_page.png")
                 self.logger.error("-----test case 006 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_006_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_Home_page.png")
             self.logger.error("-----test case 006 is Failed------")
             assert False
 
@@ -184,12 +190,12 @@ class TestCase002HomePage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_007_Home_page.png")
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_007_Home_page.png")
                 self.logger.error("-----test case 007 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_007_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_Home_page.png")
             self.logger.error("-----test case 007 is Failed------")
             assert False
 
@@ -210,12 +216,12 @@ class TestCase002HomePage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\Screenshots\\Home_Page\\" + "test_case_008_Home_page.png")
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_008_Home_page.png")
                 self.logger.error("-----test case 008 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_008_Home_page.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_Home_page.png")
             self.logger.error("-----test case 008 is Failed------")
             assert False
 
@@ -243,7 +249,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Samsung_galaxy_s6 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Samsung_galaxy_s6.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Samsung_galaxy_s6.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -265,7 +271,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Nokia_lumia_1520 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Nokia_lumia_1520.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Nokia_lumia_1520.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -287,7 +293,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Nexus_6 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Nexus_6.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Nexus_6.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -309,7 +315,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Samsung_galaxy_s7 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Samsung_galaxy_s7.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Samsung_galaxy_s7.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -331,7 +337,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Iphone_6_32_gb not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Iphone_6_32_gb.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Iphone_6_32_gb.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -353,7 +359,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Iphone_6_32_gb not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Iphone_6_32_gb.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Iphone_6_32_gb.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -375,7 +381,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Sony_xperia_z5 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Sony_xperia_z5.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Sony_xperia_z5.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -397,7 +403,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----HTC_One_M9 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_HTC_One_M9.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_HTC_One_M9.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -437,7 +443,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Sony_vaio_i5 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Sony_vaio_i5.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Sony_vaio_i5.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -459,7 +465,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Sony_vaio_i7 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Sony_vaio_i7.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Sony_vaio_i7.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -481,7 +487,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----MacBook_air not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_MacBook_air.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_MacBook_air.png")
                 lst_result.append('fail')
 
         except Exception as e:
@@ -504,7 +510,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Dell_i7_8_gb not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Dell_i7_8_gb.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Dell_i7_8_gb.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -526,7 +532,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----2017_Dell_15_6_Inch not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_2017_Dell_15_6_Inch.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_2017_Dell_15_6_Inch.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -548,7 +554,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----MacBook_Pro not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_MacBook_Pro.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_MacBook_Pro.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -588,7 +594,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Apple_monitor_24 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_Apple_monitor_24.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Apple_monitor_24.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -611,7 +617,7 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----ASUS_Full_HD not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\Home_Page\\" + "test_case_009_ASUS_Full_HD.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_ASUS_Full_HD.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)

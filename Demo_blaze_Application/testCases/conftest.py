@@ -22,11 +22,12 @@ def setup_and_teardown(request):
         driver = Edge()
         # logger.info("-----Edge browser launched----")
     else:
-        driver = Edge()
+        driver = Chrome()
         # logger.info("-----Chrome browser launched----")
     driver.get(ReadConfig.get_base_url())
     driver.implicitly_wait(10)
     driver.maximize_window()
+    request.cls.driver = driver
 
     yield driver
     driver.close()

@@ -1,3 +1,5 @@
+import json
+
 import pytest
 from selenium.webdriver import Chrome
 from selenium.webdriver.support.wait import WebDriverWait
@@ -6,13 +8,18 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage:
-    Login_Button = "//a[@id='login2' and contains(text(),'Log in')]"
-    Login_Username_text = "//input[@id='loginusername']"
-    Login_Password_text = "//input[@id='loginpassword']"
-    Login_button_proceed = "//button[@onclick='logIn()' and contains(text(),'Log in')]"
-    Login_close_button = "//*[@id='logInModal']/div/div/div[3]/button[1]"
-    Logout_Button = "//a[@id='logout2']"
-    Welcome_button = "//a[@id='nameofuser']"
+
+    json_file_path = "./Locators/Login_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    Login_Button = data["Login_Page"]["Login_Button"]
+    Login_Username_text = data["Login_Page"]["Login_Username_text"]
+    Login_Password_text = data["Login_Page"]["Login_Password_text"]
+    Login_button_proceed = data["Login_Page"]["Login_button_proceed"]
+    Login_close_button = data["Login_Page"]["Login_close_button"]
+    Logout_Button = data["Login_Page"]["Logout_Button"]
+    Welcome_button = data["Login_Page"]["Welcome_button"]
 
     def __init__(self, driver):
         self.driver = driver

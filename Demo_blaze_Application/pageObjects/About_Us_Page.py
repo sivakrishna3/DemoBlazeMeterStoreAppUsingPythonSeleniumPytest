@@ -1,23 +1,29 @@
 import time
-
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+import json
 
 
 class About_us_Page:
-    ABOUT_US_BUTTON = "//*[@id='navbarExample']/ul/li[3]/a"
-    VIDEO_BUTTON = "//*[@id='example-video']/button"
-    VIDEO_PAUSE_BUTTON = "//button[@title='Pause']//span[@class='vjs-icon-placeholder']"
-    VOLUME_MUTE_BUTTON = "//button[@title='Mute']//span[@class='vjs-icon-placeholder']"
-    VOLUME_BUTTON = "//*[@id='example-video']/div[4]/div[1]/div/div/div"
-    VIDEO_CONTROL_BUTTON = "//*[@id='example-video']/div[4]/div[5]"
-    SCREEN_PIC_IN_PIC_BUTTON = "//*[@id='example-video']/div[4]/button[3]"
-    FULL_SCREEN_BUTTON = "//*[@id='example-video']/div[4]/button[4]/span[1]"
-    VIDEO_CLOSE_BUTTON = "//*[@id='videoModal']/div/div/div[3]/button"
-    VIDEO_CLOSE_X_MARK = "//*[@id='videoModal']/div/div/div[1]/button/span"
-    VOLUME_SLIDER = "//button[@title='Mute']//span[@class='vjs-icon-placeholder']"
+
+    json_file_path = "./Locators/About_us_page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    ABOUT_US_BUTTON = data['About_Us_Page']["ABOUT_US_BUTTON"]
+    VIDEO_BUTTON = data['About_Us_Page']["VIDEO_BUTTON"]
+    VIDEO_PAUSE_BUTTON = data['About_Us_Page']["VIDEO_PAUSE_BUTTON"]
+    VOLUME_MUTE_BUTTON = data['About_Us_Page']["VOLUME_MUTE_BUTTON"]
+    VOLUME_BUTTON = data['About_Us_Page']["VOLUME_BUTTON"]
+    VIDEO_CONTROL_BUTTON = data['About_Us_Page']["VIDEO_CONTROL_BUTTON"]
+    SCREEN_PIC_IN_PIC_BUTTON = data['About_Us_Page']["SCREEN_PIC_IN_PIC_BUTTON"]
+    FULL_SCREEN_BUTTON = data['About_Us_Page']["FULL_SCREEN_BUTTON"]
+    VIDEO_CLOSE_BUTTON = data['About_Us_Page']["VIDEO_CLOSE_BUTTON"]
+    VIDEO_CLOSE_X_MARK = data['About_Us_Page']["VIDEO_CLOSE_X_MARK"]
+    VOLUME_SLIDER = data['About_Us_Page']["VOLUME_SLIDER"]
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -31,12 +37,16 @@ class About_us_Page:
         # wait = WebDriverWait(self.driver, 10)
         # wait.until((EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON))))
         self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON).click()
-        self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_BUTTON).click()
+        self.driver.find_element(By.XPATH, self.VIDEO_BUTTON).click()
+        time.sleep(3)
+        # self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_BUTTON).click()
 
     def click_on_video_close_x_mark(self):
         # wait = WebDriverWait(self.driver, 10)
         # wait.until((EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON))))
         self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON).click()
+        # self.driver.find_element(By.XPATH, self.VIDEO_BUTTON).click()
+        time.sleep(3)
         # self.driver.fine_element(By.XPATH, self.VIDEO_CLOSE_X_MARK).click()
 
     def click_on_video_button(self):

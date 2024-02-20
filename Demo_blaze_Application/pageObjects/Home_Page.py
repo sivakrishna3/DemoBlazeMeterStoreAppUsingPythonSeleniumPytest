@@ -1,3 +1,5 @@
+import json
+
 from selenium.webdriver import Chrome
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -5,40 +7,42 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Home_page:
+    json_file_path = "./Locators/Home_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
 
-    HOME_BUTTON = "//a[contains(text(),'Home')]"
-    LOGO_HOMEPAGE = "//*[@id='nava']"
-    PREV_SLIDE = "//*[@id='carouselExampleIndicators']/a[1]/span[1]"
-    NEXT_SLIDE = "//*[@id='carouselExampleIndicators']/a[2]/span[1]"
-    CATEGORIES = "//div/a[@id='cat']"
-    PHONES = "//*[@id='itemc' and contains(text(), 'Phones')]"
-    LAPTOPS = "//*[@id='itemc' and contains(text(), 'Laptops')]"
-    MONITORS = "//*[@id='itemc' and contains(text(), 'Monitors')]"
-    PREV_BUTTON = "//*[@id='prev2']"
-    NEXT_BUTTON = "//*[@id='next2']"
+    HOME_BUTTON = data["Home_Page"]["HOME_BUTTON"]
+    LOGO_HOMEPAGE = data["Home_Page"]["LOGO_HOMEPAGE"]
+    PREV_SLIDE = data["Home_Page"]["PREV_SLIDE"]
+    NEXT_SLIDE = data["Home_Page"]["NEXT_SLIDE"]
+    CATEGORIES = data["Home_Page"]["CATEGORIES"]
+    PHONES = data["Home_Page"]["PHONES"]
+    LAPTOPS = data["Home_Page"]["LAPTOPS"]
+    MONITORS = data["Home_Page"]["MONITORS"]
+    PREV_BUTTON = data["Home_Page"]["PREV_BUTTON"]
+    NEXT_BUTTON = data["Home_Page"]["NEXT_BUTTON"]
+    Add_To_Cart = data["Home_Page"]["Add_To_Cart"]
 
     # Phones details
-    Samsung_galaxy_s6 = "//a[contains(text(), 'Samsung galaxy s6')]"
-    Nokia_lumia_1520 = "//a[contains(text(), 'Nokia lumia 1520')]"
-    Nexus_6 = "//a[contains(text(), 'Nexus 6')]"
-    Samsung_galaxy_s7 = "//a[contains(text(), 'Samsung galaxy s7')]"
-    Iphone_6_32_gb = "//a[contains(text(), 'Iphone 6 32gb')]"
-    Sony_xperia_z5 = "//a[contains(text(), 'Sony xperia z5')]"
-    HTC_One_M9 = "//a[contains(text(), 'HTC One M9')]"
+    Samsung_galaxy_s6 = data["Phones"]["Samsung_galaxy_s6"]
+    Nokia_lumia_1520 = data["Phones"]["Nokia_lumia_1520"]
+    Nexus_6 = data["Phones"]["Nexus_6"]
+    Samsung_galaxy_s7 = data["Phones"]["Samsung_galaxy_s7"]
+    Iphone_6_32_gb = data["Phones"]["Iphone_6_32_gb"]
+    Sony_xperia_z5 = data["Phones"]["Sony_xperia_z5"]
+    HTC_One_M9 = data["Phones"]["HTC_One_M9"]
 
     # Laptops details
-    Sony_vaio_i5 = "//a[contains(text(), 'Sony vaio i5')]"
-    Sony_vaio_i7 = "//a[contains(text(), 'Sony vaio i7')]"
-    MacBook_air = "//a[contains(text(), 'MacBook air')]"
-    Dell_i7_8_gb = "//a[contains(text(), 'Dell i7 8gb')]"
-    _2017_Dell_15_6_Inch = "//a[contains(text(), '2017 Dell 15.6 Inch')]"
-    MacBook_Pro = "//a[contains(text(), 'MacBook Pro')]"
+    Sony_vaio_i5 = data["Laptops"]["Sony_vaio_i5"]
+    Sony_vaio_i7 = data["Laptops"]["Sony_vaio_i7"]
+    MacBook_air = data["Laptops"]["MacBook_air"]
+    Dell_i7_8_gb = data["Laptops"]["Dell_i7_8_gb"]
+    _2017_Dell_15_6_Inch = data["Laptops"]["_2017_Dell_15_6_Inch"]
+    MacBook_Pro = data["Laptops"]["MacBook_Pro"]
 
     # Monitors details
-    Apple_monitor_24 = "//a[contains(text(), 'Apple monitor 24')]"
-    ASUS_Full_HD = "//a[contains(text(), 'ASUS Full HD')]"
-
-    Add_To_Cart = "//*[@id='tbodyid']/div[2]/div/a"
+    Apple_monitor_24 = data["Monitors"]["Apple_monitor_24"]
+    ASUS_Full_HD = data["Monitors"]["ASUS_Full_HD"]
 
     def __init__(self, driver):
         self.driver = driver
@@ -160,4 +164,3 @@ class Home_page:
         self.driver.find_element(By.XPATH, self.MONITORS).click()
         self.driver.find_element(By.XPATH, self.ASUS_Full_HD).click()
         self.driver.find_element(By.XPATH, self.Add_To_Cart).click()
-

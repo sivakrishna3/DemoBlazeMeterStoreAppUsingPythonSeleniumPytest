@@ -1,14 +1,20 @@
+import json
+
 from selenium.webdriver.common.by import By
 
 
 class Sign_Up_Page:
 
-    SIGN_UP_BUTTON = "//a[@id='signin2']"
-    USERNAME = "//input[@id='sign-username']"
-    PASSWORD = "//input[@id='sign-password']"
-    SIGN_UP_BUTTON_TO_PROCEED = "//*[@id='signInModal']/div/div/div[3]/button[2]"
-    SIGN_UP_CLOSE_BUTTON = "//*[@id='signInModal']/div/div/div[3]/button[1]"
-    SIGN_UP_X_MARK = "//*[@id='signInModal']/div/div/div[1]/button/span"
+    json_file_path = "./Locators/Sign_Up_page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    SIGN_UP_BUTTON = data["Sign_Up_Page"]["SIGN_UP_BUTTON"]
+    USERNAME = data["Sign_Up_Page"]["USERNAME"]
+    PASSWORD = data["Sign_Up_Page"]["PASSWORD"]
+    SIGN_UP_BUTTON_TO_PROCEED = data["Sign_Up_Page"]["SIGN_UP_BUTTON_TO_PROCEED"]
+    SIGN_UP_CLOSE_BUTTON = data["Sign_Up_Page"]["SIGN_UP_CLOSE_BUTTON"]
+    SIGN_UP_X_MARK = data["Sign_Up_Page"]["SIGN_UP_X_MARK"]
 
     def __init__(self, driver):
         self.driver = driver

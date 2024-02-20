@@ -1,3 +1,4 @@
+import json
 import random
 import string
 import time
@@ -31,7 +32,11 @@ class TestCase006SignUpPage:
     password_with_numbers = ReadConfig.get_sign_up_password_with_numbers()
     no_password = ReadConfig.get_sign_up_no_password()
 
-    SIGN_UP_PAGE_TITLE = "//h5[@id='signInModalLabel' and contains(text(),'Sign up')]"
+    json_file_path = "./Locators/Sign_Up_page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    SIGN_UP_PAGE_TITLE = data["Sign_Up_Page"]["SIGN_UP_PAGE_TITLE"]
     logger = Log_Generator.log_gen()
 
     @pytest.mark.regression

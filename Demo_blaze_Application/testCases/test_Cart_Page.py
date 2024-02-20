@@ -1,3 +1,4 @@
+import json
 import time
 
 import pytest
@@ -13,10 +14,15 @@ from utilities.readProperties import ReadConfig
 class TestCase005CartPage:
 
     logger = Log_Generator.log_gen()
-    cart_page_text = "//*[@id='page-wrapper']/div/div[1]/h2"
-    place_order_text = "//*[@id='orderModalLabel']"
-    order_success_message = "/html/body/div[10]/h2"
-    order_success_ok_button = "/html/body/div[10]/div[7]/div/button"
+
+    json_file_path = "./Locators/Cart_Page.json"
+    with open(json_file_path, 'r') as file:
+        data = json.load(file)
+
+    cart_page_text = data["Cart_Page"]["cart_page_text"]
+    place_order_text = data["Cart_Page"]["place_order_text"]
+    order_success_message = data["Cart_Page"]["order_success_message"]
+    order_success_ok_button = data["Cart_Page"]["order_success_ok_button"]
 
     name = ReadConfig.get_cart_name()
     no_name = ReadConfig.get_cart_no_name()
@@ -50,12 +56,12 @@ class TestCase005CartPage:
                     assert True
                 else:
                     time.sleep(5)
-                    self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_001.png")
+                    self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_cart_page.png")
                     self.logger.error("-----test case 001 is Failed.------")
                     assert False
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_001.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_cart_page.png")
                 self.logger.error("-----test case 001 is Failed. Cart Page not displayed------")
                 assert False
         except Exception as e:
@@ -83,12 +89,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_002.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_cart_page.png")
                 self.logger.error("-----test case 002 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_002.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_cart_page.png")
             self.logger.error("-----test case 002 is Failed------")
             assert False
 
@@ -111,12 +117,12 @@ class TestCase005CartPage:
                     assert True
                 else:
                     time.sleep(5)
-                    self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_003.png")
+                    self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_cart_page.png")
                     self.logger.error("-----test case 003 is Failed.------")
                     assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_003.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_cart_page.png")
             self.logger.error("-----test case 003 is Failed. Cart Page not displayed------")
             assert False
 
@@ -139,12 +145,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_004.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_cart_page.png")
                 self.logger.error("-----test case 004 is Failed. Unexpected Place order button text------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_004.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_cart_page.png")
             self.logger.error("-----test case 004 is Failed. Place order button not displayed------")
             assert False
 
@@ -166,12 +172,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_005.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_cart_page.png")
                 self.logger.error("-----test case 005 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_005.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_cart_page.png")
             self.logger.error("-----test case 005 is Failed------")
             assert False
 
@@ -193,12 +199,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_006.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_cart_page.png")
                 self.logger.error("-----test case 006 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_006.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_cart_page.png")
             self.logger.error("-----test case 006 is Failed------")
             assert False
 
@@ -223,12 +229,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_007.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_cart_page.png")
                 self.logger.error("-----test case 007 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_007.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_cart_page.png")
             self.logger.error("-----test case 007 is Failed------")
             assert False
 
@@ -253,12 +259,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_008.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_cart_page.png")
                 self.logger.error("-----test case 008 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_008.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_cart_page.png")
             self.logger.error("-----test case 008 is Failed------")
             assert False
 
@@ -280,12 +286,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_009.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_cart_page.png")
                 self.logger.error("-----test case 009 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_009.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_cart_page.png")
             self.logger.error("-----test case 009 is Failed------")
             assert False
 
@@ -307,12 +313,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_010.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_cart_page.png")
                 self.logger.error("-----test case 010 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_010.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_cart_page.png")
             self.logger.error("-----test case 010 is Failed------")
             assert False
 
@@ -334,12 +340,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_011.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_cart_page.png")
                 self.logger.error("-----test case 011 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_011.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_cart_page.png")
             self.logger.error("-----test case 011 is Failed------")
             assert False
 
@@ -361,12 +367,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_012.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_cart_page.png")
                 self.logger.error("-----test case 012 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_012.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_cart_page.png")
             self.logger.error("-----test case 012 is Failed------")
             assert False
 
@@ -391,12 +397,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_013.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_cart_page.png")
                 self.logger.error("-----test case 013 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_013.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_cart_page.png")
             self.logger.error("-----test case 013 is Failed------")
             assert False
 
@@ -421,12 +427,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_014.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_014_cart_page.png")
                 self.logger.error("-----test case 014 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_014.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_014_cart_page.png")
             self.logger.error("-----test case 014 is Failed------")
             assert False
 
@@ -448,12 +454,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_015.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_cart_page.png")
                 self.logger.error("-----test case 015 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_015.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_cart_page.png")
             self.logger.error("-----test case 015 is Failed------")
             assert False
 
@@ -475,12 +481,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_016.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_cart_page.png")
                 self.logger.error("-----test case 016 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_016.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_cart_page.png")
             self.logger.error("-----test case 016 is Failed------")
             assert False
 
@@ -502,12 +508,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_017.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_cart_page.png")
                 self.logger.error("-----test case 017 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_017.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_cart_page.png")
             self.logger.error("-----test case 017 is Failed------")
             assert False
 
@@ -529,12 +535,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_018.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_cart_page.png")
                 self.logger.error("-----test case 018 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_018.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_cart_page.png")
             self.logger.error("-----test case 018 is Failed------")
             assert False
 
@@ -559,12 +565,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_019.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_cart_page.png")
                 self.logger.error("-----test case 019 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_019.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_cart_page.png")
             self.logger.error("-----test case 019 is Failed------")
             assert False
 
@@ -589,12 +595,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_020.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_cart_page.png")
                 self.logger.error("-----test case 020 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_020.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_cart_page.png")
             self.logger.error("-----test case 020 is Failed------")
             assert False
 
@@ -614,12 +620,12 @@ class TestCase005CartPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_021.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_cart_page.png")
                 self.logger.error("-----test case 021 is Failed.------")
                 assert False
         except TimeoutException:
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_021.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_cart_page.png")
             self.logger.error("-----test case 021 is Failed------")
             assert False
 
@@ -642,12 +648,12 @@ class TestCase005CartPage:
                     assert True
                 else:
                     time.sleep(5)
-                    self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_022.png")
+                    self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_cart_page.png")
                     self.logger.error("-----test case 022 is Failed.------")
                     assert False
         except TimeoutException:
 
             time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\Cart_Page\\" + "test_case_022.png")
+            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_cart_page.png")
             self.logger.error("-----test case 022 is Failed. Cart Page not displayed------")
             assert False
