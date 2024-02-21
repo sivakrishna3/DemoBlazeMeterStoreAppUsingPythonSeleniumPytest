@@ -7,7 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Home_page:
-    json_file_path = "./Locators/Home_Page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 

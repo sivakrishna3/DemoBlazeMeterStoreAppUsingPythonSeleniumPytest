@@ -26,7 +26,7 @@ class TestCase003ContactPage:
     invalid_message = ReadConfig.get_contact_invalid_message()
     no_message = ReadConfig.get_contact_empty_message()
 
-    json_file_path = "./Locators/Contact_Page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 

@@ -7,7 +7,7 @@ import json
 
 
 class Contact_page:
-    json_file_path = "./Locators/Contact_Page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 

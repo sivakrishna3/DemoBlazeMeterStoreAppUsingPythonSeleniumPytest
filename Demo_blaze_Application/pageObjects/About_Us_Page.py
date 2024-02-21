@@ -8,7 +8,7 @@ import json
 
 class About_us_Page:
 
-    json_file_path = "./Locators/About_us_page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 
@@ -45,9 +45,9 @@ class About_us_Page:
         # wait = WebDriverWait(self.driver, 10)
         # wait.until((EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON))))
         self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON).click()
-        # self.driver.find_element(By.XPATH, self.VIDEO_BUTTON).click()
+        self.driver.find_element(By.XPATH, self.VIDEO_BUTTON).click()
         time.sleep(3)
-        # self.driver.fine_element(By.XPATH, self.VIDEO_CLOSE_X_MARK).click()
+        self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_X_MARK).click()
 
     def click_on_video_button(self):
         # wait = WebDriverWait(self.driver, 10)
@@ -102,21 +102,21 @@ class About_us_Page:
         time.sleep(3)
         # self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_BUTTON).click()
 
-    def click_on_video_volume_handle_button(self, volume):
-        # wait = WebDriverWait(self.driver, 10)
-        # wait.until((EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON))))
-        self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON).click()
-        self.driver.find_element(By.XPATH, self.VIDEO_BUTTON).click()
-        time.sleep(5)
-        volume_slider = self.driver.find_element(By.CLASS_NAME, "vjs-mute-control")
-        ac = ActionChains(self.driver)
-        ac.move_to_element(volume_slider).perform()
-        slider = self.driver.find_element(By.XPATH, self.VOLUME_SLIDER)
-        current_position = slider.get_attribute("aria-valuenow")
-        new_position = int(current_position) + volume
-        ac = ActionChains(self.driver)
-        ac.click_and_hold(slider).move_by_offset(new_position,0).release().perform()
-        time.sleep(3)
+    # def click_on_video_volume_handle_button(self, volume):
+    #     # wait = WebDriverWait(self.driver, 10)
+    #     # wait.until((EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON))))
+    #     self.driver.find_element(By.XPATH, self.ABOUT_US_BUTTON).click()
+    #     self.driver.find_element(By.XPATH, self.VIDEO_BUTTON).click()
+    #     time.sleep(5)
+    #     volume_slider = self.driver.find_element(By.CLASS_NAME, "vjs-mute-control")
+    #     ac = ActionChains(self.driver)
+    #     ac.move_to_element(volume_slider).perform()
+    #     slider = self.driver.find_element(By.XPATH, self.VOLUME_SLIDER)
+    #     current_position = slider.get_attribute("aria-valuenow")
+    #     new_position = int(current_position) + volume
+    #     ac = ActionChains(self.driver)
+    #     ac.click_and_hold(slider).move_by_offset(new_position,0).release().perform()
+    #     time.sleep(3)
 
 
 

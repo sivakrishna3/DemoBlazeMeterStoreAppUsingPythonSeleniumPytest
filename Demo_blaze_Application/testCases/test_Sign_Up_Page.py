@@ -32,7 +32,7 @@ class TestCase006SignUpPage:
     password_with_numbers = ReadConfig.get_sign_up_password_with_numbers()
     no_password = ReadConfig.get_sign_up_no_password()
 
-    json_file_path = "./Locators/Sign_Up_page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 
@@ -280,7 +280,7 @@ class TestCase006SignUpPage:
         self.logger.info("-----Verifying Sign Up Page------")
         self.driver = setup_and_teardown
         self.sg_page = Sign_Up_Page(self.driver)
-        self.sg_page.click_on_sign_up_close_button()
+        self.sg_page.click_on_sign_up_x_mark_to_close()
         act_title = self.driver.title
         exp_title = "STORE"
         try:

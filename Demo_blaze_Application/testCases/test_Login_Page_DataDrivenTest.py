@@ -13,7 +13,7 @@ class Test_case_001_DDT:
 
     Excel_file_path = ".\\Test_Data\\Test_Data_for_DDT.xlsx"
 
-    json_file_path = "./Locators/Login_Page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 

@@ -15,7 +15,7 @@ class TestCase005CartPage:
 
     logger = Log_Generator.log_gen()
 
-    json_file_path = "./Locators/Cart_Page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 

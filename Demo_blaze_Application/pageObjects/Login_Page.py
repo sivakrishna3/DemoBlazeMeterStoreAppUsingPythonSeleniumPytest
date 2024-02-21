@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 
 class LoginPage:
 
-    json_file_path = "./Locators/Login_Page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 
@@ -46,7 +46,7 @@ class LoginPage:
         self.driver.find_element(By.XPATH, self.Login_Password_text).clear()
         self.driver.find_element(By.XPATH, self.Login_Password_text).send_keys(password)
         self.driver.find_element(By.XPATH, self.Login_button_proceed).click()
-        self.driver.find_element(By.XPATH, self.Logout_Button).click()
+        # self.driver.find_element(By.XPATH, self.Logout_Button).click()
 
-    def click_on_log_out_in_DDT(self):
-        self.driver.find_element(By.XPATH, self.Logout_Button).click()
+    # def click_on_log_out_in_DDT(self):
+    #     self.driver.find_element(By.XPATH, self.Logout_Button).click()

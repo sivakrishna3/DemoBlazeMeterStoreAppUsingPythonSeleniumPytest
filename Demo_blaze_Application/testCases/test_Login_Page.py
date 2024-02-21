@@ -4,6 +4,7 @@ import pytest
 # from selenium.webdriver import Chrome
 import time
 
+from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -26,11 +27,12 @@ class TestCase001LoginPage:
     username_with_numbers = ReadConfig.get_username_with_numbers()
     password_with_numbers = ReadConfig.get_password_with_numbers()
 
-    json_file_path = "./Locators/Login_Page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 
     CLOSE_BUTTON = data["Login_Page"]["CLOSE_BUTTON"]
+    Logout_Button = data["Login_Page"]["Logout_Button"]
     expected_message = ["User does not exist.", "Wrong password.", "Please fill out Username and Password."]
     logger = Log_Generator.log_gen()
 
@@ -53,7 +55,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_login_page.png")
                 self.logger.error("-----Test case 001 is Failed-----")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -80,7 +82,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_login_page.png")
                 self.logger.error("-----Test case 002 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -100,14 +102,14 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("--------Test case 003 is Passed-----------")
+                self.logger.info("-----Test case 003 is Passed-----------")
                 assert True
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_login_page.png")
-                self.logger.error("--------Test case 003 is Failed---------")
+                self.logger.error("-----Test case 003 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -127,14 +129,14 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("---------Test case 004 is Passed--------------")
+                self.logger.info("------Test case 004 is Passed--------------")
                 assert True
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_login_page.png")
-                self.logger.error("---------Test case 004 is Failed-----------")
+                self.logger.error("------Test case 004 is Failed-----------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -161,7 +163,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_login_page.png")
                 self.logger.error("-----Test case 005 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -188,7 +190,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_login_page.png")
                 self.logger.error("-----Test case 006 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -215,7 +217,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_login_page.png")
                 self.logger.error("-----Test case 007 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -242,7 +244,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_login_page.png")
                 self.logger.error("-----Test case 008 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -262,14 +264,14 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("--------Test case 009 is Passed----------")
+                self.logger.info("-----Test case 009 is Passed----------")
                 assert True
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_login_page.png")
-                self.logger.error("--------Test case 009 is Failed--------")
+                self.logger.error("-----Test case 009 is Failed--------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -289,7 +291,7 @@ class TestCase001LoginPage:
         self.driver.find_element(By.XPATH, self.CLOSE_BUTTON).click()
         try:
             if actual_message in self.expected_message:
-                self.logger.info("--------Test case 010 is Passed-----------")
+                self.logger.info("-----Test case 010 is Passed-----------")
 
                 assert True
             else:
@@ -297,7 +299,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_login_page.png")
                 self.logger.error("-------Test case 010 is Failed-----------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -324,7 +326,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_login_page.png")
                 self.logger.error("-----Test case 011 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -351,7 +353,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_login_page.png")
                 self.logger.error("-----Test case 012 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -378,7 +380,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_login_page.png")
                 self.logger.error("-----Test case 013 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -405,7 +407,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_014_login_page.png")
                 self.logger.error("-----Test case 014 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -432,7 +434,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_login_page.png")
                 self.logger.error("-------Test case 015 is Failed-----------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -459,7 +461,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_login_page.png")
                 self.logger.error("-----Test case 016 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -486,7 +488,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_login_page.png")
                 self.logger.error("-----Test case 017 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -513,7 +515,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_login_page.png")
                 self.logger.error("-----Test case 018 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -540,7 +542,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_login_page.png")
                 self.logger.error("-----Test case 019 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -567,7 +569,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_login_page.png")
                 self.logger.error("-----Test case 020 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -594,7 +596,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_login_page.png")
                 self.logger.error("----Test case 021 is Failed-----")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -621,7 +623,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_login_page.png")
                 self.logger.error("-----Test case 022 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -648,7 +650,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_023_login_page.png")
                 self.logger.error("-----Test case 023 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -675,7 +677,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_024_login_page.png")
                 self.logger.error("-----Test case 024 is Failed--------------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -702,7 +704,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_025_login_page.png")
                 self.logger.error("-----Test case 025 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -729,7 +731,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_026_login_page.png")
                 self.logger.error("-----Test case 026 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -756,7 +758,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_027_login_page.png")
                 self.logger.error("-----Test case 027 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -783,7 +785,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_028_login_page.png")
                 self.logger.error("-----Test case 028 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -810,7 +812,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_029_login_page.png")
                 self.logger.error("-----Test case 029 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -837,7 +839,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_030_login_page.png")
                 self.logger.error("-----Test case 030 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -864,7 +866,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_031_login_page.png")
                 self.logger.error("-----Test case 031 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -891,7 +893,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_032_login_page.png")
                 self.logger.error("-----Test case 032 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -918,7 +920,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_033_login_page.png")
                 self.logger.error("-----Test case 033 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -945,7 +947,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_034_login_page.png")
                 self.logger.error("-----Test case 034 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -972,7 +974,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_035_login_page.png")
                 self.logger.error("-----Test case 035 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -999,7 +1001,7 @@ class TestCase001LoginPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_036_login_page.png")
                 self.logger.error("-----Test case 036 is Failed---------")
                 assert False
-        except Exception as e:
+        except TimeoutException as e:
             print(e)
 
     @pytest.mark.regression
@@ -1010,14 +1012,19 @@ class TestCase001LoginPage:
         self.driver = setup_and_teardown
         self.lgn_page = LoginPage(self.driver)
         self.lgn_page.click_on_logout_button(self.valid_username, self.valid_password)
-        act_title = self.driver.title
+
         try:
-            if act_title == "STORE":
-                self.logger.info("-----Test case 037 is Passed------------------")
-                assert True
-            else:
-                time.sleep(5)
-                self.logger.error("-----Test case 037 is Failed------------------")
-                assert False
-        except Exception as e:
+            is_displayed = self.driver.find_element(By.XPATH, self.Logout_Button).is_displayed()
+            if is_displayed:
+                message = self.driver.find_element(By.XPATH, self.Logout_Button).text
+                print(message)
+                self.driver.find_element(By.XPATH, self.Logout_Button).click()
+                if message == "Log out":
+                    self.logger.info("-----Test case 037 is Passed------------------")
+                    assert True
+                else:
+                    time.sleep(5)
+                    self.logger.error("-----Test case 037 is Failed------------------")
+                    assert False
+        except TimeoutException as e:
             print(e)

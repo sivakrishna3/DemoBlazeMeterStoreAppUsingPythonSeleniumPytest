@@ -1,9 +1,0 @@
-{"Sign_Up_Page": {
-    "SIGN_UP_BUTTON" : "//a[@id='signin2']",
-    "USERNAME" : "//input[@id='sign-username']",
-    "PASSWORD" : "//input[@id='sign-password']",
-    "SIGN_UP_BUTTON_TO_PROCEED" : "//*[@id='signInModal']/div/div/div[3]/button[2]",
-    "SIGN_UP_CLOSE_BUTTON" : "//*[@id='signInModal']/div/div/div[3]/button[1]",
-    "SIGN_UP_X_MARK" : "//*[@id='signInModal']/div/div/div[1]/button/span",
-    "SIGN_UP_PAGE_TITLE" : "//h5[@id='signInModalLabel' and contains(text(),'Sign up')]"}
-}

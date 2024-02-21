@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 class Sign_Up_Page:
 
-    json_file_path = "./Locators/Sign_Up_page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 

@@ -1,0 +1,111 @@
+{"About_Us_Page": {
+
+        "ABOUT_US_BUTTON": "//*[@id='navbarExample']/ul/li[3]/a",
+        "VIDEO_BUTTON": "//*[@id='example-video']/button",
+        "VIDEO_PAUSE_BUTTON": "//button[@title='Pause']//span[@class='vjs-icon-placeholder']",
+        "VOLUME_MUTE_BUTTON": "//button[@title='Mute']//span[@class='vjs-icon-placeholder']",
+        "VOLUME_BUTTON": "//*[@id='example-video']/div[4]/div[1]/div/div/div",
+        "VIDEO_CONTROL_BUTTON": "//*[@id='example-video']/div[4]/div[5]",
+        "SCREEN_PIC_IN_PIC_BUTTON": "//*[@id='example-video']/div[4]/button[3]",
+        "FULL_SCREEN_BUTTON": "//*[@id='example-video']/div[4]/button[4]/span[1]",
+        "VIDEO_CLOSE_BUTTON": "//div[@id='videoModal']//button[@type='button'][normalize-space()='Close']",
+        "VIDEO_CLOSE_X_MARK": "//*[@id='videoModal']/div/div/div[1]/button/span",
+        "VOLUME_SLIDER": "//button[@title='Mute']//span[@class='vjs-icon-placeholder']",
+        "About_us_open_message" : "//h5[@id='videoModalLabel']",
+        "Pause_text" : "//*[@id='example-video']/div[4]/button[1]/span[2]",
+        "unmute_text" : "//span[normalize-space()='Unmute']",
+        "pic_in_pic" : "//span[normalize-space()='Exit Picture-in-Picture']",
+        "non_full_screen" : "//span[normalize-space()='Non-Fullscreen']"},
+
+    "Cart_Page" : {
+
+        "CART_BUTTON": "//a[@id='cartur']",
+        "CART_PAGE_TITLE" : "//*[@id='page-wrapper']/div/div[1]/h2",
+        "PLACE_ORDER" : " //button[contains(text(),'Place Order')]",
+        "DELETE_PRODUCT" : "//*[@id='tbodyid']/tr/td[4]/a",
+        "NAME" : "//input[@id='name']",
+        "COUNTRY" : "//input[@id='country']",
+        "CITY" : "//input[@id='city']",
+        "CREDIT_CARD" : "//input[@id='card']",
+        "MONTH" : "//input[@id='month']",
+        "YEAR" : "//input[@id='year']",
+        "PURCHASE_BUTTON" : "//*[@id='orderModal']/div/div/div[3]/button[2]",
+        "PLACE_ORDER_CLOSE_BUTTON" : "//*[@id='orderModal']/div/div/div[3]/button[1]",
+        "PLACE_ORDER_X_MARK" : "//*[@id='orderModal']/div/div/div[1]/button/span",
+        "ORDER_SUCCESSFUL_MSG" : "/html/body/div[10]/h2",
+        "ORDER_SUCCESSFUL_OK_BUTTON" : "/html/body/div[10]/div[7]/div/button",
+        "HOME_BUTTON" : "//a[contains(text(),'Home')]",
+        "Samsung_galaxy_s6" : "//a[contains(text(),'Samsung galaxy s6')]",
+        "ADD_TO_CART" : "//*[@id='tbodyid']/div[2]/div/a",
+        "cart_page_text" : "//*[@id='page-wrapper']/div/div[1]/h2",
+        "place_order_text" : "//*[@id='orderModalLabel']",
+        "order_success_message" : "/html/body/div[10]/h2",
+        "order_success_ok_button" : "/html/body/div[10]/div[7]/div/button"},
+
+    "Contact_Page": {
+
+        "CONTACT_BUTTON" : "//a[@class = 'nav-link' and contains(text(),'Contact')]",
+        "CONTACT_EMAIL_TEXT" : "//*[@id='recipient-email']",
+        "CONTACT_NAME_TEXT" : "//*[@id='recipient-name']",
+        "CONTACT_MESSAGE_TEXT" : "//*[@id='message-text']",
+        "CONTACT_SEND_MESSAGE_BUTTON" : "//button[normalize-space()='Send message']",
+        "CONTACT_CLOSE_BUTTON" : "//div[@id='exampleModal']//button[@type='button'][normalize-space()='Close']",
+        "CONTACT_X_MARK" : "//*[@id='exampleModal']/div/div/div[1]/button",
+        "CONTACT_NEW_MESSAGE_TEXT" : "//*[@id='exampleModalLabel']",
+        "Contact_page_text" : "//*[@id='exampleModalLabel']"},
+
+    "Home_Page": {
+
+        "HOME_BUTTON" : "//a[contains(text(),'Home')]",
+        "LOGO_HOMEPAGE" : "//*[@id='nava']",
+        "PREV_SLIDE" : "//*[@id='carouselExampleIndicators']/a[1]/span[1]",
+        "NEXT_SLIDE" : "//*[@id='carouselExampleIndicators']/a[2]/span[1]",
+        "CATEGORIES" : "//div/a[@id='cat']",
+        "PHONES" : "//*[@id='itemc' and contains(text(), 'Phones')]",
+        "LAPTOPS" : "//*[@id='itemc' and contains(text(), 'Laptops')]",
+        "MONITORS" : "//*[@id='itemc' and contains(text(), 'Monitors')]",
+        "PREV_BUTTON" : "//*[@id='prev2']",
+        "NEXT_BUTTON" : "//*[@id='next2']",
+        "Add_To_Cart" : "//*[@id='tbodyid']/div[2]/div/a"},
+    "Phones": {
+        "Samsung_galaxy_s6" : "//a[contains(text(), 'Samsung galaxy s6')]",
+        "Nokia_lumia_1520" : "//a[contains(text(), 'Nokia lumia 1520')]",
+        "Nexus_6" : "//a[contains(text(), 'Nexus 6')]",
+        "Samsung_galaxy_s7" : "//a[contains(text(), 'Samsung galaxy s7')]",
+        "Iphone_6_32_gb" : "//a[contains(text(), 'Iphone 6 32gb')]",
+        "Sony_xperia_z5" : "//a[contains(text(), 'Sony xperia z5')]",
+        "HTC_One_M9" : "//a[contains(text(), 'HTC One M9')]"},
+    "Laptops": {
+        "Sony_vaio_i5" : "//a[contains(text(), 'Sony vaio i5')]",
+        "Sony_vaio_i7" : "//a[contains(text(), 'Sony vaio i7')]",
+        "MacBook_air" : "//a[contains(text(), 'MacBook air')]",
+        "Dell_i7_8_gb" : "//a[contains(text(), 'Dell i7 8gb')]",
+        "_2017_Dell_15_6_Inch" : "//a[contains(text(), '2017 Dell 15.6 Inch')]",
+        "MacBook_Pro" : "//a[contains(text(), 'MacBook Pro')]"},
+    "Monitors": {
+        "Apple_monitor_24" : "//a[contains(text(), 'Apple monitor 24')]",
+        "ASUS_Full_HD" : "//a[contains(text(), 'ASUS Full HD')]"},
+
+    "Login_Page": {
+
+        "Login_Button" : "//a[@id='login2' and contains(text(),'Log in')]",
+        "Login_Username_text" : "//input[@id='loginusername']",
+        "Login_Password_text" : "//input[@id='loginpassword']",
+        "Login_button_proceed" : "//button[@onclick='logIn()' and contains(text(),'Log in')]",
+        "Login_close_button" : "//*[@id='logInModal']/div/div/div[3]/button[1]",
+        "Logout_Button" : "//a[@id='logout2']",
+        "Welcome_button" : "//a[@id='nameofuser']",
+        "CLOSE_BUTTON" : "//*[@id='logInModal']/div/div/div[3]/button[1]"},
+
+    "Sign_Up_Page": {
+
+        "SIGN_UP_BUTTON" : "//a[@id='signin2']",
+        "USERNAME" : "//input[@id='sign-username']",
+        "PASSWORD" : "//input[@id='sign-password']",
+        "SIGN_UP_BUTTON_TO_PROCEED" : "//*[@id='signInModal']/div/div/div[3]/button[2]",
+        "SIGN_UP_CLOSE_BUTTON" : "//*[@id='signInModal']/div/div/div[3]/button[1]",
+        "SIGN_UP_X_MARK" : "//*[@id='signInModal']/div/div/div[1]/button/span",
+        "SIGN_UP_PAGE_TITLE" : "//h5[@id='signInModalLabel' and contains(text(),'Sign up')]"}
+
+}
+

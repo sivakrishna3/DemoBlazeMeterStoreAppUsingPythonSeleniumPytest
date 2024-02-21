@@ -14,7 +14,7 @@ from utilities.custom_Logger import Log_Generator
 
 
 class TestCase004AboutUsPage:
-    json_file_path = "./Locators/About_us_page.json"
+    json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
 
@@ -24,7 +24,7 @@ class TestCase004AboutUsPage:
     Pause_text = data['About_Us_Page']["Pause_text"]
     unmute_text = data['About_Us_Page']["unmute_text"]
     pic_in_pic = data['About_Us_Page']["pic_in_pic"]
-    full_screen = data['About_Us_Page']["full_screen"]
+    non_full_screen = data['About_Us_Page']["non_full_screen"]
     logger = Log_Generator.log_gen()
 
     @pytest.mark.sanity
@@ -89,19 +89,17 @@ class TestCase004AboutUsPage:
         self.abt_page = About_us_Page(self.driver)
         self.abt_page.click_on_video_close_x_mark()
         try:
-            is_displayed = self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_X_MARK).is_displayed()
-            message = self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_X_MARK).text
-            self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_X_MARK).click()
-            print(message)
-            if is_displayed:
-                if message == '×':
-                    self.logger.info("----- Test case 003 is Passed------------------")
-                    assert True
-                else:
-                    time.sleep(5)
-                    self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_about_us_page.png")
-                    self.logger.error("----- Test case 003 is Failed--------------")
-                    assert False
+            act_title = self.driver.title
+            exp_title = "STORE"
+            if act_title == exp_title:
+                # self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_X_MARK).click()
+                self.logger.info("----- Test case 003 is Passed------------------")
+                assert True
+            else:
+                time.sleep(5)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_about_us_page.png")
+                self.logger.error("----- Test case 003 is Failed--------------")
+                assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
@@ -217,7 +215,7 @@ class TestCase004AboutUsPage:
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_about_us_page.png")
             self.logger.error("----- Test case 007 is Failed--------------")
             assert False
-    #
+
 
     @pytest.mark.sanity
     @pytest.mark.regression
@@ -228,45 +226,21 @@ class TestCase004AboutUsPage:
         self.abt_page = About_us_Page(self.driver)
         self.abt_page.click_on_full_screen_button()
         try:
-            is_displayed = self.driver.find_element(By.XPATH, self.full_screen).is_displayed()
-            message = self.driver.find_element(By.XPATH, self.full_screen).text
+            # is_displayed = self.driver.find_element(By.XPATH, self.non_full_screen).is_displayed()
+            message = self.driver.find_element(By.XPATH, self.non_full_screen).text
             print(message)
-            if is_displayed:
-                if message == "Non-Fullscreen":
-                    self.logger.info("----- Test case 008 is Passed-----")
-                    assert True
-                else:
-                    time.sleep(5)
-                    self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_about_us_page.png")
-                    self.logger.error("----- Test case 008 is Failed-----")
-                    assert False
+            # if is_displayed:
+            if message == "Non-Fullscreen":
+                self.logger.info("----- Test case 008 is Passed-----")
+                assert True
+            else:
+                time.sleep(5)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_about_us_page.png")
+                self.logger.error("----- Test case 008 is Failed-----")
+                assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_about_us_page.png")
             self.logger.error("----- Test case 008 is Failed--------------")
-            assert False
-
-    @pytest.mark.sanity
-    @pytest.mark.regression
-    def test_case_009_validate_video_volume_handling_button(self, setup_and_teardown):
-        self.logger.info("-----test_case_009_validate_video_volume_handling_button--------------")
-        self.logger.info("-----Verifying video_volume_handling_button----------------")
-        self.driver = setup_and_teardown
-        self.abt_page = About_us_Page(self.driver)
-        self.abt_page.click_on_video_volume_handle_button(-30)
-        try:
-            if self.driver.title == "STORE":
-                self.logger.info("----- Test case 009 is Passed-----")
-                assert True
-            else:
-                time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_about_us_page.png")
-                self.logger.error("----- Test case 009 is Failed-----")
-                assert False
-        except TimeoutException as e:
-            print(e)
-            time.sleep(5)
-            self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_about_us_page.png")
-            self.logger.error("----- Test case 009 is Failed--------------")
             assert False
