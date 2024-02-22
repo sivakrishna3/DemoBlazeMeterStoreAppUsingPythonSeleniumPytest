@@ -1,0 +1,66 @@
+2024-02-22 11:56:58,596 - INFO - -----test_case_001_validate_Cart_button-----
+2024-02-22 11:56:58,596 - INFO - -----Verifying Cart Page------
+2024-02-22 11:57:00,713 - INFO - -----test case 001 is Passed------
+2024-02-22 11:57:08,834 - INFO - -----test_case_002_validate_add_to_cart_button-----
+2024-02-22 11:57:08,835 - INFO - -------------------Verifying------------------
+2024-02-22 11:57:13,160 - INFO - -----test case 002 is Passed------
+2024-02-22 11:57:19,226 - INFO - -----test_case_003_validate_delete_the_product_button-----
+2024-02-22 11:57:19,226 - INFO - -------------------Verifying------------------
+2024-02-22 11:57:24,944 - INFO - -----test case 003 is Passed------
+2024-02-22 11:57:30,994 - INFO - -----test_case_004_validate_place_order_button-----
+2024-02-22 11:57:30,999 - INFO - -----Verifying Place order button-------
+2024-02-22 11:57:32,708 - INFO - -----test case 004 is Passed------
+2024-02-22 11:57:39,090 - INFO - -----test_case_005_validate_place_order_and_set_all_fields_with_adding_product-----
+2024-02-22 11:57:39,090 - INFO - -------------------Verifying------------------
+2024-02-22 11:57:45,625 - INFO - -----test case 005 is Passed------
+2024-02-22 11:57:51,546 - INFO - -----test_case_006_validate_place_order_and_set_all_fields_without_adding_product-----
+2024-02-22 11:57:51,546 - INFO - -------------------Verifying------------------
+2024-02-22 11:57:54,126 - INFO - -----test case 006 is Passed------
+2024-02-22 11:58:00,369 - INFO - -----test_case_007_validate_place_order_and_set_no_name_and_with_adding_product-----
+2024-02-22 11:58:00,369 - INFO - -------------------Verifying------------------
+2024-02-22 11:58:07,137 - INFO - -----test case 007 is Passed------
+2024-02-22 11:58:13,154 - INFO - -----test_case_008_validate_place_order_and_set_no_name_and_without_adding_product-----
+2024-02-22 11:58:13,154 - INFO - -------------------Verifying------------------
+2024-02-22 11:58:15,866 - INFO - -----test case 008 is Passed------
+2024-02-22 11:58:22,092 - INFO - -----test_case_009_validate_place_order_and_set_no_country_and_with_adding_product-----
+2024-02-22 11:58:22,092 - INFO - -------------------Verifying------------------
+2024-02-22 11:58:28,248 - INFO - -----test case 009 is Passed------
+2024-02-22 11:58:34,149 - INFO - -----test_case_010_validate_place_order_and_set_no_country_and_without_adding_product-----
+2024-02-22 11:58:34,149 - INFO - -------------------Verifying------------------
+2024-02-22 11:58:36,792 - INFO - -----test case 010 is Passed------
+2024-02-22 11:58:42,752 - INFO - -----test_case_011_validate_place_order_and_set_no_city_and_with_adding_product-----
+2024-02-22 11:58:42,752 - INFO - -------------------Verifying------------------
+2024-02-22 11:58:51,002 - INFO - -----test case 011 is Passed------
+2024-02-22 11:58:56,833 - INFO - -----test_case_012_validate_place_order_and_set_no_city_and_without_adding_product-----
+2024-02-22 11:58:56,833 - INFO - -------------------Verifying------------------
+2024-02-22 11:58:59,532 - INFO - -----test case 012 is Passed------
+2024-02-22 11:59:05,374 - INFO - -----test_case_013_validate_place_order_and_set_no_credit_card_and_with_adding_product-----
+2024-02-22 11:59:05,374 - INFO - -------------------Verifying------------------
+2024-02-22 11:59:11,714 - INFO - -----test case 013 is Passed------
+2024-02-22 11:59:17,574 - INFO - -----test_case_014_validate_place_order_and_set_no_country_and_without_adding_product-----
+2024-02-22 11:59:17,575 - INFO - -------------------Verifying------------------
+2024-02-22 11:59:20,046 - INFO - -----test case 014 is Passed------
+2024-02-22 11:59:25,575 - INFO - -----test_case_015_validate_place_order_and_set_no_month_and_with_adding_product-----
+2024-02-22 11:59:25,576 - INFO - -------------------Verifying------------------
+2024-02-22 11:59:32,095 - INFO - -----test case 015 is Passed------
+2024-02-22 11:59:37,834 - INFO - -----test_case_016_validate_place_order_and_set_no_month_and_without_adding_product-----
+2024-02-22 11:59:37,834 - INFO - -------------------Verifying------------------
+2024-02-22 11:59:40,412 - INFO - -----test case 016 is Passed------
+2024-02-22 11:59:46,446 - INFO - -----test_case_017_validate_place_order_and_set_no_year_and_with_adding_product-----
+2024-02-22 11:59:46,446 - INFO - -------------------Verifying------------------
+2024-02-22 11:59:53,298 - INFO - -----test case 017 is Passed------
+2024-02-22 11:59:59,181 - INFO - -----test_case_018_validate_place_order_and_set_no_year_and_without_adding_product-----
+2024-02-22 11:59:59,181 - INFO - -------------------Verifying------------------
+2024-02-22 12:00:01,679 - INFO - -----test case 018 is Passed------
+2024-02-22 12:00:07,474 - INFO - -----test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product---
+2024-02-22 12:00:07,474 - INFO - -------------------Verifying------------------
+2024-02-22 12:00:13,788 - INFO - -----test case 019 is Passed------
+2024-02-22 12:00:19,681 - INFO - -----test_case_018_validate_place_order_and_not_setting_any_field_and_without_adding_product-----
+2024-02-22 12:00:19,682 - INFO - -------------------Verifying------------------
+2024-02-22 12:00:21,953 - INFO - -----test case 020 is Passed------
+2024-02-22 12:00:27,429 - INFO - -----test_case_021_validate_click_on_place_order_x_mark-----
+2024-02-22 12:00:27,429 - INFO - -----Verifying Place order form x mark button-------
+2024-02-22 12:00:29,055 - INFO - -----test case 021 is Passed------
+2024-02-22 12:00:34,956 - INFO - -----test_case_022_validate_close_button_and_set_all_fields-----
+2024-02-22 12:00:34,956 - INFO - -----Verifying Place order form x mark button-------
+2024-02-22 12:00:37,712 - INFO - -----test case 022 is Passed------

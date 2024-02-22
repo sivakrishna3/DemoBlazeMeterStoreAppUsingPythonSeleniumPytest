@@ -1,0 +1,23 @@
+2024-02-22 01:19:05,902 - INFO - -----test_case_001_validate_about_us_button--------------
+2024-02-22 01:19:05,902 - INFO - -----Verifying About Us Page----------------
+2024-02-22 01:19:11,991 - INFO - -----test_case_002_validate_video_close_button--------------
+2024-02-22 01:19:11,992 - INFO - -----Verifying video_close_button----------------
+2024-02-22 01:19:15,664 - INFO - ----- Test case 002 is Passed------------------
+2024-02-22 01:19:21,193 - INFO - -----test_case_003_validate_video_close_x_mark--------------
+2024-02-22 01:19:21,193 - INFO - -----Verifying validate_video_close_x_mark----------------
+2024-02-22 01:19:24,814 - INFO - ----- Test case 003 is Passed------------------
+2024-02-22 01:19:30,725 - INFO - -----test_case_004_validate_clicking_on_video_button--------------
+2024-02-22 01:19:30,725 - INFO - -----Verifying clicking_on_video_button----------------
+2024-02-22 01:19:34,156 - INFO - ----- Test case 004 is Passed------------------
+2024-02-22 01:19:39,726 - INFO - -----test_case_005_validate_video_pause_button--------------
+2024-02-22 01:19:39,727 - INFO - -----Verifying video_pause_button----------------
+2024-02-22 01:19:46,573 - INFO - ----- Test case 005 is Passed-----
+2024-02-22 01:19:52,265 - INFO - -----test_case_006_validate_video_volume_mute_button--------------
+2024-02-22 01:19:52,266 - INFO - -----Verifying video_volume_mute_button----------------
+2024-02-22 01:19:59,339 - INFO - ----- Test case 006 is Passed-----
+2024-02-22 01:20:04,944 - INFO - -----test_case_007_validate_video_picture_in_picture_button--------------
+2024-02-22 01:20:04,945 - INFO - -----Verifying video_picture_in_picture_button----------------
+2024-02-22 01:20:11,913 - INFO - ----- Test case 007 is Passed-----
+2024-02-22 01:20:17,518 - INFO - -----test_case_008_validate_video_full_screen_button--------------
+2024-02-22 01:20:17,518 - INFO - -----Verifying video_full_screen_button----------------
+2024-02-22 01:20:24,462 - INFO - ----- Test case 008 is Passed-----

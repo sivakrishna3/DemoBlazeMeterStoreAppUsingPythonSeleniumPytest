@@ -1,0 +1,49 @@
+2024-02-22 13:37:17,772 - INFO - -----test_case_001_validate_homepage_button-----
+2024-02-22 13:37:17,773 - INFO - -----Verifying Home Page-----
+2024-02-22 13:37:18,715 - INFO - -----Test case 001 Passed-----
+2024-02-22 13:37:24,776 - INFO - -----test_case_002_validate_homepage_logo_button-----
+2024-02-22 13:37:24,776 - INFO - -----Verifying Home Page-----
+2024-02-22 13:37:25,667 - INFO - -----Test case 002 Passed-----
+2024-02-22 13:37:31,823 - INFO - -----test_case_003_validate_next_and_previous_slide_buttons_in_homepage-----
+2024-02-22 13:37:31,823 - INFO - -----Verifying Home Page-----
+2024-02-22 13:37:32,450 - INFO - -----Test case 003 Passed-----
+2024-02-22 13:37:38,071 - INFO - -----test_case_004_validate_next_and_previous_buttons_at_below_the_homepage-----
+2024-02-22 13:37:38,072 - INFO - -----Verifying Home Page-----
+2024-02-22 13:37:38,394 - INFO - -----Test case 004 Passed-----
+2024-02-22 13:37:44,015 - INFO - -----test_case_005_validate_categories_button_in_homepage-----
+2024-02-22 13:37:44,015 - INFO - -----Verifying Home Page-----
+2024-02-22 13:37:44,474 - INFO - -----Test case 005 Passed-----
+2024-02-22 13:37:50,274 - INFO - -----test_case_006_validate_phones_in_categories_button_at_homepage-----
+2024-02-22 13:37:50,275 - INFO - -----Verifying Home Page-----
+2024-02-22 13:37:50,525 - INFO - -----Test case 006 Passed-----
+2024-02-22 13:37:55,942 - INFO - -----test_case_007_validate_Laptops_in_categories_button_at_homepage-----
+2024-02-22 13:37:55,942 - INFO - -----Verifying Home Page-----
+2024-02-22 13:37:56,220 - INFO - -----Test case 007 Passed-----
+2024-02-22 13:38:01,768 - INFO - -----test_case_008_validate_Monitors_in_categories_button_at_homepage-----
+2024-02-22 13:38:01,769 - INFO - -----Verifying Home Page-----
+2024-02-22 13:38:01,969 - INFO - -----Test case 008 Passed-----
+2024-02-22 13:38:07,578 - INFO - -----test_case_009_validate_phones_and_add_to_cart_the_products-----
+2024-02-22 13:38:07,578 - INFO - -----Verifying Phones and add to cart-----
+2024-02-22 13:38:11,050 - INFO - -----Samsung_galaxy_s6 added-----
+2024-02-22 13:38:13,293 - INFO - -----Nokia_lumia_1520 added-----
+2024-02-22 13:38:16,040 - INFO - -----Nexus_6 added-----
+2024-02-22 13:38:18,846 - INFO - -----Samsung_galaxy_s7 added-----
+2024-02-22 13:38:22,278 - INFO - -----Iphone_6_32_gb added-----
+2024-02-22 13:38:24,414 - INFO - -----Iphone_6_32_gb added-----
+2024-02-22 13:38:27,658 - INFO - -----Sony_xperia_z5 added-----
+2024-02-22 13:38:29,877 - INFO - -----HTC_One_M9 added-----
+2024-02-22 13:38:29,877 - INFO - -----Phones add to cart test case 009 is Passed-----
+2024-02-22 13:38:35,890 - INFO - -----test_case_010_validate_Laptops_add_to_cart_the_products-----
+2024-02-22 13:38:35,891 - INFO - -----Verifying Laptops in Home page-----
+2024-02-22 13:38:39,640 - INFO - -----Sony_vaio_i5 added-----
+2024-02-22 13:38:41,865 - INFO - -----Sony_vaio_i7 added-----
+2024-02-22 13:38:45,753 - INFO - -----MacBook_air added-----
+2024-02-22 13:38:48,187 - INFO - -----Dell_i7_8_gb added-----
+2024-02-22 13:38:52,011 - INFO - -----2017_Dell_15_6_Inch added-----
+2024-02-22 13:38:54,354 - INFO - -----MacBook_Pro added-----
+2024-02-22 13:38:54,354 - INFO - -----Laptops add to cart test case 010 is Passed-----
+2024-02-22 13:38:59,932 - INFO - -----test_case_011_validate_monitors_add_to_cart_the_products-----
+2024-02-22 13:38:59,932 - INFO - -----Verifying Laptops in Home page-----
+2024-02-22 13:39:03,895 - INFO - -----Apple_monitor_24 added-----
+2024-02-22 13:39:05,972 - INFO - -----ASUS_Full_HD added-----
+2024-02-22 13:39:05,973 - INFO - -----Monitors add to cart test case 011 is Passed-----

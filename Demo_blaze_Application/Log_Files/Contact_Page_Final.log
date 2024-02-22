@@ -1,0 +1,108 @@
+2024-02-22 12:04:18,962 - INFO - -----test_case_001_validate_contact_with_valid_email_valid_name_valid_message-----
+2024-02-22 12:04:18,963 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:04:20,644 - INFO - -----test case 001 is Passed-----
+2024-02-22 12:04:26,626 - INFO - -----test_case_002_validate_contact_with_valid_email_valid_name_invalid_message-----
+2024-02-22 12:04:26,626 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:04:33,405 - ERROR - -----test case 002 is Failed-----
+2024-02-22 12:04:41,411 - INFO - -----test_case_003_validate_contact_with_valid_email_valid_name_no_message-----
+2024-02-22 12:04:41,412 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:04:48,138 - ERROR - -----test case 003 is Passed-----
+2024-02-22 12:04:54,089 - INFO - -----test_case_004_validate_contact_with_valid_email_invalid_name_valid_message-----
+2024-02-22 12:04:54,090 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:05:01,135 - ERROR - -----test case 004 is Passed-----
+2024-02-22 12:05:07,137 - INFO - -----test_case_005_validate_contact_with_valid_email_invalid_name_invalid_message-----
+2024-02-22 12:05:07,139 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:05:14,023 - ERROR - -----test case 005 is Passed-----
+2024-02-22 12:05:20,687 - INFO - -----test_case_006_validate_contact_with_valid_email_invalid_name_no_message-----
+2024-02-22 12:05:20,690 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:05:27,573 - ERROR - -----test case 006 is Passed-----
+2024-02-22 12:05:35,337 - INFO - -----test_case_007_validate_contact_with_valid_email_no_name_valid_message-----
+2024-02-22 12:05:35,337 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:05:41,874 - ERROR - -----test case 007 is Passed-----
+2024-02-22 12:05:48,242 - INFO - -----test_case_008_validate_contact_with_valid_email_no_name_invalid_message-----
+2024-02-22 12:05:48,243 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:05:55,100 - ERROR - -----test case 008 is Passed-----
+2024-02-22 12:06:01,020 - INFO - -----test_case_009_validate_contact_with_valid_email_no_name_no_message-----
+2024-02-22 12:06:01,020 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:06:07,671 - ERROR - -----test case 009 is Passed-----
+2024-02-22 12:06:13,650 - INFO - -----test_case_010_validate_contact_with_invalid_email_valid_name_valid_message-----
+2024-02-22 12:06:13,651 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:06:20,599 - ERROR - -----test case 010 is Passed-----
+2024-02-22 12:06:26,477 - INFO - -----test_case_011_validate_contact_with_invalid_email_valid_name_invalid_message-----
+2024-02-22 12:06:26,477 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:06:33,449 - ERROR - -----test case 011 is Passed-----
+2024-02-22 12:06:40,477 - INFO - -----test_case_012_validate_contact_with_invalid_email_valid_name_no_message-----
+2024-02-22 12:06:40,477 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:06:46,857 - ERROR - -----test case 012 is Passed-----
+2024-02-22 12:06:52,552 - INFO - -----test_case_013_validate_contact_with_invalid_email_invalid_name_valid_message-----
+2024-02-22 12:06:52,553 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:06:59,447 - ERROR - -----test case 013 is Passed-----
+2024-02-22 12:07:05,164 - INFO - -----test_case_014_validate_contact_with_invalid_email_invalid_name_invalid_message-----
+2024-02-22 12:07:05,164 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:07:12,047 - ERROR - -----test case 013 is Passed-----
+2024-02-22 12:07:17,752 - INFO - -----test_case_015_validate_contact_with_invalid_email_invalid_name_no_message-----
+2024-02-22 12:07:17,752 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:07:24,654 - ERROR - -----test case 015 is Passed-----
+2024-02-22 12:07:30,347 - INFO - -----test_case_016_validate_contact_with_invalid_email_no_name_valid_message-----
+2024-02-22 12:07:30,348 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:07:37,240 - ERROR - -----test case 016 is Passed-----
+2024-02-22 12:07:43,051 - INFO - -----test_case_017_validate_contact_with_invalid_email_no_name_invalid_message-----
+2024-02-22 12:07:43,051 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:07:49,922 - ERROR - -----test case 017 is Passed-----
+2024-02-22 12:07:55,836 - INFO - -----test_case_018_validate_contact_with_invalid_email_no_name_no_message-----
+2024-02-22 12:07:55,837 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:02,633 - ERROR - -----test case 018 is Passed-----
+2024-02-22 12:08:08,666 - INFO - -----test_case_019_validate_contact_with_email_with_spl_chars_valid_name_valid_message-----
+2024-02-22 12:08:08,667 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:14,929 - INFO - -----test_case_020_validate_contact_with_email_with_spl_chars_valid_name_invalid_message-----
+2024-02-22 12:08:14,929 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:20,961 - INFO - -----test_case_021_validate_contact_with_email_with_spl_chars_valid_name_no_message-----
+2024-02-22 12:08:20,961 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:27,264 - INFO - -----test_case_022_validate_contact_with_email_with_spl_chars_invalid_name_valid_message-----
+2024-02-22 12:08:27,265 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:33,402 - INFO - -----test_case_023_validate_contact_with_email_with_spl_chars_invalid_name_invalid_message-----
+2024-02-22 12:08:33,402 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:39,898 - INFO - -----test_case_024_validate_contact_with_email_with_spl_chars_invalid_name_no_message-----
+2024-02-22 12:08:39,898 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:45,948 - INFO - -----test_case_025_validate_contact_with_email_with_spl_chars_no_name_valid_message-----
+2024-02-22 12:08:45,948 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:52,773 - INFO - -----test_case_026_validate_contact_with_email_with_spl_chars_no_name_invalid_message-----
+2024-02-22 12:08:52,774 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:08:58,918 - INFO - -----test_case_027_validate_contact_with_email_with_spl_chars_no_name_no_message-----
+2024-02-22 12:08:58,918 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:09:05,026 - INFO - -----test_case_028_validate_contact_with_no_email_valid_name_valid_message-----
+2024-02-22 12:09:05,026 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:09:11,927 - ERROR - -----test case 028 is Passed-----
+2024-02-22 12:09:17,779 - INFO - -----test_case_029_validate_contact_with_no_email_valid_name_invalid_message-----
+2024-02-22 12:09:17,779 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:09:24,524 - ERROR - -----test case 029 is Passed-----
+2024-02-22 12:09:30,164 - INFO - -----test_case_030_validate_contact_with_no_email_valid_name_no_message-----
+2024-02-22 12:09:30,165 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:09:36,962 - ERROR - -----test case 030 is Passed-----
+2024-02-22 12:09:42,808 - INFO - -----test_case_031_validate_contact_with_no_email_invalid_name_valid_message-----
+2024-02-22 12:09:42,808 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:09:49,476 - ERROR - -----test case 031 is Passed-----
+2024-02-22 12:09:55,364 - INFO - -----test_case_032_validate_contact_with_no_email_invalid_name_invalid_message-----
+2024-02-22 12:09:55,364 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:10:02,150 - ERROR - -----test case 032 is Passed-----
+2024-02-22 12:10:07,911 - INFO - -----test_case_033_validate_contact_with_no_email_invalid_name_no_message-----
+2024-02-22 12:10:07,911 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:10:14,697 - ERROR - -----test case 033 is Passed-----
+2024-02-22 12:10:20,588 - INFO - -----test_case_034_validate_contact_with_no_email_no_name_valid_message-----
+2024-02-22 12:10:20,588 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:10:27,333 - ERROR - -----test case 034 is Passed-----
+2024-02-22 12:10:33,089 - INFO - -----test_case_035_validate_contact_with_no_email_no_name_invalid_message-----
+2024-02-22 12:10:33,089 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:10:39,818 - ERROR - -----test case 035 is Passed-----
+2024-02-22 12:10:45,902 - INFO - -----test_case_036_validate_contact_with_no_email_no_name_no_message-----
+2024-02-22 12:10:45,902 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:10:52,622 - ERROR - -----test case 036 is Passed-----
+2024-02-22 12:10:58,477 - INFO - 
+2024-02-22 12:10:58,477 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:10:59,446 - INFO - -----test case 037 is Passed------
+2024-02-22 12:11:04,857 - INFO - 
+2024-02-22 12:11:04,857 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:11:05,361 - INFO - -----test case 038 is Passed------
+2024-02-22 12:11:11,123 - INFO - 
+2024-02-22 12:11:11,124 - INFO - -----Verifying Contact Page-----
+2024-02-22 12:11:11,611 - INFO - -----test case 039 is Passed------

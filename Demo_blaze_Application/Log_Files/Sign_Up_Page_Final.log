@@ -1,0 +1,27 @@
+2024-02-22 13:54:19,132 - INFO - -----test_cse_001_validate_sign_up_button------
+2024-02-22 13:54:19,133 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:54:20,033 - INFO - -----test case 001 is Passed------
+2024-02-22 13:54:25,907 - INFO - -----test_case_002_validate_sign_up_with_valid_username_valid_password------
+2024-02-22 13:54:25,907 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:54:28,069 - INFO - --------test case 002 is Passed---------
+2024-02-22 13:54:34,298 - INFO - -----test_case_003_validate_sign_up_with_invalid_username_invalid_password------
+2024-02-22 13:54:34,298 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:54:35,272 - INFO - --------test case 003 is Passed---------
+2024-02-22 13:54:40,591 - INFO - -----test_case_004_validate_sign_up_username_with_space_and_password_with_space------
+2024-02-22 13:54:40,592 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:54:42,732 - INFO - --------test case 004 is Passed---------
+2024-02-22 13:54:48,264 - INFO - -----test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars------
+2024-02-22 13:54:48,265 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:54:50,341 - INFO - --------test case 005 is Passed---------
+2024-02-22 13:54:56,083 - INFO - -----test_case_006_validate_sign_up_username_with_numbers_and_password_with_numbers------
+2024-02-22 13:54:56,083 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:54:58,165 - INFO - --------test case 006 is Passed---------
+2024-02-22 13:55:03,543 - INFO - -----test_case_007_validate_sign_up_with_no_username_and_no_password------
+2024-02-22 13:55:03,543 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:55:04,598 - INFO - --------test case 007 is Passed---------
+2024-02-22 13:55:10,151 - INFO - -----test_cse_008_validate_clicking_on_sign_up_close_button------
+2024-02-22 13:55:10,152 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:55:10,668 - INFO - --------test case 008 is Passed---------
+2024-02-22 13:55:16,304 - INFO - -----test_cse_009_validate_clicking_on_sign_up_x_mark------
+2024-02-22 13:55:16,305 - INFO - -----Verifying Sign Up Page------
+2024-02-22 13:55:16,843 - INFO - --------test case 009 is Passed---------

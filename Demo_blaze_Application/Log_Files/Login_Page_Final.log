@@ -1,0 +1,110 @@
+2024-02-22 13:41:14,845 - INFO - -----test_case_001_validate_login_with_valid_username_valid_password-----------
+2024-02-22 13:41:14,845 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:41:15,696 - INFO - -----Test case 001 is Passed---------
+2024-02-22 13:41:21,364 - INFO - -----test_case_002_validate_login_with_valid_username_invalid_password-----------
+2024-02-22 13:41:21,365 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:41:23,612 - INFO - -----Test case 002 is Passed--------------
+2024-02-22 13:41:29,251 - INFO - -----test_case_003_validate_login_with_valid_username_password_with_spl_chars-----------
+2024-02-22 13:41:29,251 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:41:31,566 - INFO - -----Test case 003 is Passed-----------
+2024-02-22 13:41:37,263 - INFO - -----test_case_004_validate_login_with_valid_username_password_with_numbers-----------
+2024-02-22 13:41:37,264 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:41:39,489 - INFO - ------Test case 004 is Passed--------------
+2024-02-22 13:41:44,991 - INFO - -----test_case_005_validate_login_with_valid_username_password_with_space-----------
+2024-02-22 13:41:44,991 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:41:47,315 - INFO - -----Test case 005 is Passed--------------
+2024-02-22 13:41:52,983 - INFO - -----test_case_006_validate_login_with_valid_username_no_password-----------
+2024-02-22 13:41:52,983 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:41:54,128 - INFO - -----Test case 006 is Passed--------------
+2024-02-22 13:42:00,065 - INFO - -----test_case_007_validate_login_with_invalid_username_valid_password-----------
+2024-02-22 13:42:00,065 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:01,337 - INFO - -----Test case 007 is Passed--------------
+2024-02-22 13:42:06,958 - INFO - -----test_case_008_validate_login_invalid_username_and_invalid_password-----------
+2024-02-22 13:42:06,958 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:08,213 - INFO - -----Test case 008 is Passed--------------
+2024-02-22 13:42:13,558 - INFO - -----test_case_009_validate_login_with_invalid_username_and_password_with_spl_chars--------
+2024-02-22 13:42:13,558 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:15,812 - INFO - -----Test case 009 is Passed----------
+2024-02-22 13:42:21,099 - INFO - -----test_case_010_validate_login_invalid_username_and_password_with_numbers-----------
+2024-02-22 13:42:21,100 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:22,344 - INFO - -----Test case 010 is Passed-----------
+2024-02-22 13:42:27,913 - INFO - -----test_case_011_validate_login_with_valid_username_and_password_with_space-----------
+2024-02-22 13:42:27,913 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:30,301 - INFO - -----Test case 011 is Passed--------------
+2024-02-22 13:42:35,897 - INFO - -----test_case_012_validate_login_with_invalid_username_and_no_password-----------
+2024-02-22 13:42:35,897 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:37,158 - INFO - -----Test case 012 is Passed--------------
+2024-02-22 13:42:42,484 - INFO - -----test_case_013_validate_login_with_username_with_space_and_valid_password-----------
+2024-02-22 13:42:42,484 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:44,824 - INFO - -----Test case 013 is Passed--------------
+2024-02-22 13:42:50,348 - INFO - -----test_case_014_validate_login_with_username_with_invalid_password-----------
+2024-02-22 13:42:50,348 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:42:52,661 - INFO - -----Test case 014 is Passed--------------
+2024-02-22 13:42:57,914 - INFO - -----test_case_015_validate_login_with_username_with_space_and_password_with_spl_chars------
+2024-02-22 13:42:57,914 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:00,194 - INFO - -------Test case 015 is Passed------------
+2024-02-22 13:43:05,715 - INFO - -----test_case_016_validate_login_with_username_with_space_and_password_with_numbers--------
+2024-02-22 13:43:05,715 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:07,997 - INFO - -----Test case 016 is Passed--------------
+2024-02-22 13:43:13,186 - INFO - -----test_case_017_validate_login_with_username_with_space_and_password_with_space-----------
+2024-02-22 13:43:13,186 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:15,530 - INFO - -----Test case 017 is Passed--------------
+2024-02-22 13:43:20,865 - INFO - -----test_case_018_validate_login_with_username_with_space_and_no_password-----------
+2024-02-22 13:43:20,865 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:22,160 - INFO - -----Test case 018 is Passed--------------
+2024-02-22 13:43:27,883 - INFO - -----test_case_019_validate_login_username_with_spl_chars_and_valid_password-----------
+2024-02-22 13:43:27,884 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:30,021 - INFO - -----Test case 019 is Passed-----------
+2024-02-22 13:43:35,401 - INFO - -----test_case_020_validate_login_username_with_spl_chars_and_invalid_password-----------
+2024-02-22 13:43:35,401 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:37,719 - INFO - -----Test case 020 is Passed---------
+2024-02-22 13:43:43,178 - INFO - -----test_case_021_validate_login_username_with_spl_chars_and_password_with_spl_chars------
+2024-02-22 13:43:43,178 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:45,390 - INFO - -----Test case 021 is Passed-----
+2024-02-22 13:43:51,110 - INFO - -----test_case_022_validate_login_username_with_spl_chars_and_password_with_numbers---------
+2024-02-22 13:43:51,111 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:43:53,255 - INFO - -----Test case 022 is Passed---------
+2024-02-22 13:43:58,857 - INFO - -----test_case_023_validate_login_username_with_spl_chars_and_password_with_space------
+2024-02-22 13:43:58,858 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:01,005 - INFO - -----Test case 023 is Passed---------
+2024-02-22 13:44:06,690 - INFO - -----test_case_024_validate_login_username_with_spl_chars_and_no_password-----------
+2024-02-22 13:44:06,690 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:07,844 - INFO - -----Test case 024 is Passed--------------
+2024-02-22 13:44:13,312 - INFO - -----test_case_025_validate_login_username_with_numbers_and_valid_password-----------
+2024-02-22 13:44:13,312 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:15,596 - INFO - -----Test case 025 is Passed---------
+2024-02-22 13:44:21,217 - INFO - -----test_case_026_validate_login_username_with_numbers_and_invalid_password-----------
+2024-02-22 13:44:21,218 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:23,454 - INFO - -----Test case 026 is Passed---------
+2024-02-22 13:44:29,020 - INFO - -----test_case_027_validate_login_username_with_numbers_and_password_with_spl_chars--------
+2024-02-22 13:44:29,021 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:30,248 - INFO - -----Test case 027 is Passed---------
+2024-02-22 13:44:35,941 - INFO - -----test_case_028_validate_login_username_with_numbers_and_password_with_numbers-----------
+2024-02-22 13:44:35,942 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:38,165 - INFO - -----Test case 028 is Passed---------
+2024-02-22 13:44:43,852 - INFO - -----test_case_029_validate_login_username_with_numbers_and_password_with_space-----------
+2024-02-22 13:44:43,852 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:46,086 - INFO - -----Test case 029 is Passed---------
+2024-02-22 13:44:51,690 - INFO - -----test_case_030_validate_login_username_with_numbers_and_no_password-----------
+2024-02-22 13:44:51,691 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:52,840 - INFO - -----Test case 030 is Passed---------
+2024-02-22 13:44:58,393 - INFO - -----test_case_031_validate_login_with_no_username_and_valid_password-----------
+2024-02-22 13:44:58,393 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:44:59,664 - INFO - -----Test case 031 is Passed---------
+2024-02-22 13:45:05,464 - INFO - -----test_case_032_validate_login_with_no_username_and_invalid_password-----------
+2024-02-22 13:45:05,465 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:45:06,657 - INFO - -----Test case 032 is Passed---------
+2024-02-22 13:45:12,190 - INFO - -----test_case_033_validate_login_with_no_username_and_password_with_spl_chars-----------
+2024-02-22 13:45:12,190 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:45:13,248 - INFO - -----Test case 033 is Passed---------
+2024-02-22 13:45:18,862 - INFO - -----test_case_034_validate_login_with_no_username_and_password_with_numbers-----------
+2024-02-22 13:45:18,863 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:45:20,106 - INFO - -----Test case 034 is Passed---------
+2024-02-22 13:45:25,854 - INFO - -----test_case_035_validate_login_with_no_username_and_password_with_space-----------
+2024-02-22 13:45:25,855 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:45:26,980 - INFO - -----Test case 035 is Passed---------
+2024-02-22 13:45:32,486 - INFO - -----test_case_036_validate_login_with_no_username_and_no_password-----------
+2024-02-22 13:45:32,486 - INFO - -----Verifying Login functionality--------
+2024-02-22 13:45:33,736 - INFO - -----Test case 036 is Passed---------
+2024-02-22 13:45:39,516 - INFO - -----test_case_037_validate_logout_button-----------
+2024-02-22 13:45:39,516 - INFO - -----Verifying Logout functionality--------
