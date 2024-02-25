@@ -1,24 +1,24 @@
 # import pytest
 # from selenium.webdriver import Chrome
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import json
+from utilities.readProperties import ReadConfig
 
 
 class Contact_page:
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
-
-    CONTACT_BUTTON = data["Contact_Page"]["CONTACT_BUTTON"]
-    CONTACT_EMAIL_TEXT = data["Contact_Page"]["CONTACT_EMAIL_TEXT"]
-    CONTACT_NAME_TEXT = data["Contact_Page"]["CONTACT_NAME_TEXT"]
-    CONTACT_MESSAGE_TEXT = data["Contact_Page"]["CONTACT_MESSAGE_TEXT"]
-    CONTACT_SEND_MESSAGE_BUTTON = data["Contact_Page"]["CONTACT_SEND_MESSAGE_BUTTON"]
-    CONTACT_CLOSE_BUTTON = data["Contact_Page"]["CONTACT_CLOSE_BUTTON"]
-    CONTACT_X_MARK = data["Contact_Page"]["CONTACT_X_MARK"]
-    CONTACT_NEW_MESSAGE_TEXT = data["Contact_Page"]["CONTACT_NEW_MESSAGE_TEXT"]
+    data = ReadConfig.get_json_data()
+    try:
+        CONTACT_BUTTON = data["Contact_Page"]["CONTACT_BUTTON"]
+        CONTACT_EMAIL_TEXT = data["Contact_Page"]["CONTACT_EMAIL_TEXT"]
+        CONTACT_NAME_TEXT = data["Contact_Page"]["CONTACT_NAME_TEXT"]
+        CONTACT_MESSAGE_TEXT = data["Contact_Page"]["CONTACT_MESSAGE_TEXT"]
+        CONTACT_SEND_MESSAGE_BUTTON = data["Contact_Page"]["CONTACT_SEND_MESSAGE_BUTTON"]
+        CONTACT_CLOSE_BUTTON = data["Contact_Page"]["CONTACT_CLOSE_BUTTON"]
+        CONTACT_X_MARK = data["Contact_Page"]["CONTACT_X_MARK"]
+        CONTACT_NEW_MESSAGE_TEXT = data["Contact_Page"]["CONTACT_NEW_MESSAGE_TEXT"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
     def __init__(self, driver):
         self.driver = driver
@@ -39,30 +39,6 @@ class Contact_page:
         self.driver.find_element(By.XPATH, self.CONTACT_MESSAGE_TEXT).clear()
         self.driver.find_element(By.XPATH, self.CONTACT_MESSAGE_TEXT).send_keys(contact_message_text)
         self.driver.find_element(By.XPATH, self.CONTACT_SEND_MESSAGE_BUTTON).click()
-
-    # def set_contact_email_data(self, contact_email_text):
-    #     wait = WebDriverWait(self.driver, 10)
-    #     wait.until(EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.CONTACT_EMAIL_TEXT)))
-    #     self.driver.find_element(By.XPATH, self.CONTACT_EMAIL_TEXT).clear()
-    #     self.driver.find_element(By.XPATH, self.CONTACT_EMAIL_TEXT).send_keys(contact_email_text)
-
-    # def set_contact_name_text(self, contact_name_text):
-    #     wait = WebDriverWait(self.driver, 10)
-    #     wait.until(EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.CONTACT_NAME_TEXT)))
-    #     self.driver.find_element(By.XPATH, self.CONTACT_NAME_TEXT).clear()
-    #     self.driver.find_element(By.XPATH, self.CONTACT_NAME_TEXT).send_keys(contact_name_text)
-
-    # def set_contact_message_text(self, contact_message_text):
-    #     wait = WebDriverWait(self.driver, 10)
-    #     wait.until(EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.CONTACT_MESSAGE_TEXT)))
-    #     self.driver.find_element(By.XPATH, self.CONTACT_MESSAGE_TEXT).clear()
-    #     self.driver.find_element(By.XPATH, self.CONTACT_MESSAGE_TEXT).send_keys(contact_message_text)
-
-    # def click_on_contact_send_message_button(self):
-    #     wait = WebDriverWait(self.driver, 10)
-    #     wait.until(
-    #         EC.visibility_of_element_located(self.driver.find_element(By.XPATH, self.CONTACT_SEND_MESSAGE_BUTTON)))
-    #     self.driver.find_element(By.XPATH, self.CONTACT_SEND_MESSAGE_BUTTON).click()
 
     def click_on_contact_close_button(self):
         # wait = WebDriverWait(self.driver, 10)

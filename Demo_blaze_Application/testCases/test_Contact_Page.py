@@ -1,6 +1,5 @@
 # import pytest
 # from selenium.webdriver import Chrome
-import json
 import time
 
 import pytest
@@ -15,22 +14,26 @@ from utilities.custom_Logger import Log_Generator
 
 class TestCase003ContactPage:
 
-    valid_email = ReadConfig.get_contact_email()
-    invalid_email = ReadConfig.get_contact_invalid_email()
-    no_email = ReadConfig.get_contact_empty_email()
-    email_with_spl_chars = ReadConfig.get_contact_email_with_spl_chars()
-    valid_name = ReadConfig.get_contact_name()
-    invalid_name = ReadConfig.get_contact_invalid_name()
-    no_name = ReadConfig.get_contact_empty_name()
-    valid_message = ReadConfig.get_contact_message()
-    invalid_message = ReadConfig.get_contact_invalid_message()
-    no_message = ReadConfig.get_contact_empty_message()
+    try:
+        valid_email = ReadConfig.get_contact_email()
+        invalid_email = ReadConfig.get_contact_invalid_email()
+        no_email = ReadConfig.get_contact_empty_email()
+        email_with_spl_chars = ReadConfig.get_contact_email_with_spl_chars()
+        valid_name = ReadConfig.get_contact_name()
+        invalid_name = ReadConfig.get_contact_invalid_name()
+        no_name = ReadConfig.get_contact_empty_name()
+        valid_message = ReadConfig.get_contact_message()
+        invalid_message = ReadConfig.get_contact_invalid_message()
+        no_message = ReadConfig.get_contact_empty_message()
+    except Exception as e:
+        print(f"{e}, There is no such element found in ini file.")
 
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
+    data = ReadConfig.get_json_data()
+    try:
+        Contact_page_text = data["Contact_Page"]["Contact_page_text"]
+    except Exception as e:
+        print(f"{e}, There is no such element found in json file.")
 
-    Contact_page_text = data["Contact_Page"]["Contact_page_text"]
     logger = Log_Generator.log_gen()
 
     @pytest.mark.regression

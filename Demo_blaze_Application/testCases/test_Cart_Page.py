@@ -1,6 +1,4 @@
-import json
 import time
-
 import pytest
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
@@ -15,27 +13,30 @@ class TestCase005CartPage:
 
     logger = Log_Generator.log_gen()
 
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
+    data = ReadConfig.get_json_data()
+    try:
+        cart_page_text = data["Cart_Page"]["cart_page_text"]
+        place_order_text = data["Cart_Page"]["place_order_text"]
+        order_success_message = data["Cart_Page"]["order_success_message"]
+        order_success_ok_button = data["Cart_Page"]["order_success_ok_button"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
-    cart_page_text = data["Cart_Page"]["cart_page_text"]
-    place_order_text = data["Cart_Page"]["place_order_text"]
-    order_success_message = data["Cart_Page"]["order_success_message"]
-    order_success_ok_button = data["Cart_Page"]["order_success_ok_button"]
-
-    name = ReadConfig.get_cart_name()
-    no_name = ReadConfig.get_cart_no_name()
-    country = ReadConfig.get_cart_country()
-    no_country = ReadConfig.get_cart_no_country()
-    city = ReadConfig.get_cart_city()
-    no_city = ReadConfig.get_cart_no_city()
-    credit_card = ReadConfig.get_cart_credit_card()
-    no_credit_card = ReadConfig.get_cart_no_credit_card()
-    month = ReadConfig.get_cart_month()
-    no_month = ReadConfig.get_cart_no_month()
-    year = ReadConfig.get_cart_year()
-    no_year = ReadConfig.get_cart_no_year()
+    try:
+        name = ReadConfig.get_cart_name()
+        no_name = ReadConfig.get_cart_no_name()
+        country = ReadConfig.get_cart_country()
+        no_country = ReadConfig.get_cart_no_country()
+        city = ReadConfig.get_cart_city()
+        no_city = ReadConfig.get_cart_no_city()
+        credit_card = ReadConfig.get_cart_credit_card()
+        no_credit_card = ReadConfig.get_cart_no_credit_card()
+        month = ReadConfig.get_cart_month()
+        no_month = ReadConfig.get_cart_no_month()
+        year = ReadConfig.get_cart_year()
+        no_year = ReadConfig.get_cart_no_year()
+    except Exception as e:
+        print(f"{e}: No such element found in ini file.")
 
     @pytest.mark.regression
     @pytest.mark.sanity
@@ -575,8 +576,8 @@ class TestCase005CartPage:
             assert False
 
     @pytest.mark.regression
-    def test_case_020_validate_place_order_and_not_setting_any_field_and_without_adding_product(self, setup_and_teardown):
-        self.logger.info("-----test_case_018_validate_place_order_and_not_setting_any_field_and_without_adding_product-----")
+    def test_case_020_validate_place_order_not_setting_any_field_and_without_adding_product(self, setup_and_teardown):
+        self.logger.info("-----test_case_020_validate_place_order_not_setting_any_field_and_without_adding_product---")
         self.logger.info("-------------------Verifying------------------")
         self.driver = setup_and_teardown
         self.ct_page = Cart_page(self.driver)

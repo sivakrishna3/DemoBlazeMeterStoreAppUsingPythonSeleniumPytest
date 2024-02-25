@@ -1,48 +1,48 @@
-import json
-
-from selenium.webdriver import Chrome
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver import Chrome
+# from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support.wait import WebDriverWait
+from utilities.readProperties import ReadConfig
 
 
 class Home_page:
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
 
-    HOME_BUTTON = data["Home_Page"]["HOME_BUTTON"]
-    LOGO_HOMEPAGE = data["Home_Page"]["LOGO_HOMEPAGE"]
-    PREV_SLIDE = data["Home_Page"]["PREV_SLIDE"]
-    NEXT_SLIDE = data["Home_Page"]["NEXT_SLIDE"]
-    CATEGORIES = data["Home_Page"]["CATEGORIES"]
-    PHONES = data["Home_Page"]["PHONES"]
-    LAPTOPS = data["Home_Page"]["LAPTOPS"]
-    MONITORS = data["Home_Page"]["MONITORS"]
-    PREV_BUTTON = data["Home_Page"]["PREV_BUTTON"]
-    NEXT_BUTTON = data["Home_Page"]["NEXT_BUTTON"]
-    Add_To_Cart = data["Home_Page"]["Add_To_Cart"]
+    data = ReadConfig.get_json_data()
+    try:
+        HOME_BUTTON = data["Home_Page"]["HOME_BUTTON"]
+        LOGO_HOMEPAGE = data["Home_Page"]["LOGO_HOMEPAGE"]
+        PREV_SLIDE = data["Home_Page"]["PREV_SLIDE"]
+        NEXT_SLIDE = data["Home_Page"]["NEXT_SLIDE"]
+        CATEGORIES = data["Home_Page"]["CATEGORIES"]
+        PHONES = data["Home_Page"]["PHONES"]
+        LAPTOPS = data["Home_Page"]["LAPTOPS"]
+        MONITORS = data["Home_Page"]["MONITORS"]
+        PREV_BUTTON = data["Home_Page"]["PREV_BUTTON"]
+        NEXT_BUTTON = data["Home_Page"]["NEXT_BUTTON"]
+        Add_To_Cart = data["Home_Page"]["Add_To_Cart"]
 
-    # Phones details
-    Samsung_galaxy_s6 = data["Phones"]["Samsung_galaxy_s6"]
-    Nokia_lumia_1520 = data["Phones"]["Nokia_lumia_1520"]
-    Nexus_6 = data["Phones"]["Nexus_6"]
-    Samsung_galaxy_s7 = data["Phones"]["Samsung_galaxy_s7"]
-    Iphone_6_32_gb = data["Phones"]["Iphone_6_32_gb"]
-    Sony_xperia_z5 = data["Phones"]["Sony_xperia_z5"]
-    HTC_One_M9 = data["Phones"]["HTC_One_M9"]
+        # Phones details
+        Samsung_galaxy_s6 = data["Phones"]["Samsung_galaxy_s6"]
+        Nokia_lumia_1520 = data["Phones"]["Nokia_lumia_1520"]
+        Nexus_6 = data["Phones"]["Nexus_6"]
+        Samsung_galaxy_s7 = data["Phones"]["Samsung_galaxy_s7"]
+        Iphone_6_32_gb = data["Phones"]["Iphone_6_32_gb"]
+        Sony_xperia_z5 = data["Phones"]["Sony_xperia_z5"]
+        HTC_One_M9 = data["Phones"]["HTC_One_M9"]
 
-    # Laptops details
-    Sony_vaio_i5 = data["Laptops"]["Sony_vaio_i5"]
-    Sony_vaio_i7 = data["Laptops"]["Sony_vaio_i7"]
-    MacBook_air = data["Laptops"]["MacBook_air"]
-    Dell_i7_8_gb = data["Laptops"]["Dell_i7_8_gb"]
-    _2017_Dell_15_6_Inch = data["Laptops"]["_2017_Dell_15_6_Inch"]
-    MacBook_Pro = data["Laptops"]["MacBook_Pro"]
+        # Laptops details
+        Sony_vaio_i5 = data["Laptops"]["Sony_vaio_i5"]
+        Sony_vaio_i7 = data["Laptops"]["Sony_vaio_i7"]
+        MacBook_air = data["Laptops"]["MacBook_air"]
+        Dell_i7_8_gb = data["Laptops"]["Dell_i7_8_gb"]
+        _2017_Dell_15_6_Inch = data["Laptops"]["_2017_Dell_15_6_Inch"]
+        MacBook_Pro = data["Laptops"]["MacBook_Pro"]
 
-    # Monitors details
-    Apple_monitor_24 = data["Monitors"]["Apple_monitor_24"]
-    ASUS_Full_HD = data["Monitors"]["ASUS_Full_HD"]
+        # Monitors details
+        Apple_monitor_24 = data["Monitors"]["Apple_monitor_24"]
+        ASUS_Full_HD = data["Monitors"]["ASUS_Full_HD"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
     def __init__(self, driver):
         self.driver = driver
@@ -139,19 +139,19 @@ class Home_page:
 
     def Add_Dell_i7_8_gb(self):
         self.driver.find_element(By.XPATH, self.LAPTOPS).click()
-        self.driver.execute_script("window.scrollBy(0,900);")
+        self.driver.execute_script("window.scrollBy(0,850);")
         self.driver.find_element(By.XPATH, self.Dell_i7_8_gb).click()
         self.driver.find_element(By.XPATH, self.Add_To_Cart).click()
 
     def Add_2017_Dell_15_6_Inch(self):
         self.driver.find_element(By.XPATH, self.LAPTOPS).click()
-        self.driver.execute_script("window.scrollBy(0,900);")
+        self.driver.execute_script("window.scrollBy(0,850);")
         self.driver.find_element(By.XPATH, self._2017_Dell_15_6_Inch).click()
         self.driver.find_element(By.XPATH, self.Add_To_Cart).click()
 
     def Add_MacBook_Pro(self):
         self.driver.find_element(By.XPATH, self.LAPTOPS).click()
-        self.driver.execute_script("window.scrollBy(0,900);")
+        self.driver.execute_script("window.scrollBy(0,850);")
         self.driver.find_element(By.XPATH, self.MacBook_Pro).click()
         self.driver.find_element(By.XPATH, self.Add_To_Cart).click()
 

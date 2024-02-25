@@ -1,12 +1,12 @@
-import json
 import time
 import pytest
 from selenium.common import TimeoutException
-from selenium.webdriver import Chrome, ActionChains
+# from selenium.webdriver import Chrome, ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
 from pageObjects.About_Us_Page import About_us_Page
+from utilities.readProperties import ReadConfig
 from utilities.custom_Logger import Log_Generator
 
 
@@ -14,17 +14,19 @@ from utilities.custom_Logger import Log_Generator
 
 
 class TestCase004AboutUsPage:
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
 
-    About_us_open_message = data['About_Us_Page']["About_us_open_message"]
-    VIDEO_CLOSE_BUTTON = data['About_Us_Page']["VIDEO_CLOSE_BUTTON"]
-    VIDEO_CLOSE_X_MARK = data['About_Us_Page']["VIDEO_CLOSE_X_MARK"]
-    Pause_text = data['About_Us_Page']["Pause_text"]
-    unmute_text = data['About_Us_Page']["unmute_text"]
-    pic_in_pic = data['About_Us_Page']["pic_in_pic"]
-    non_full_screen = data['About_Us_Page']["non_full_screen"]
+    data = ReadConfig.get_json_data()
+    try:
+        About_us_open_message = data['About_Us_Page']["About_us_open_message"]
+        VIDEO_CLOSE_BUTTON = data['About_Us_Page']["VIDEO_CLOSE_BUTTON"]
+        VIDEO_CLOSE_X_MARK = data['About_Us_Page']["VIDEO_CLOSE_X_MARK"]
+        Pause_text = data['About_Us_Page']["Pause_text"]
+        unmute_text = data['About_Us_Page']["unmute_text"]
+        pic_in_pic = data['About_Us_Page']["pic_in_pic"]
+        non_full_screen = data['About_Us_Page']["non_full_screen"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
+
     logger = Log_Generator.log_gen()
 
     @pytest.mark.sanity
@@ -126,7 +128,7 @@ class TestCase004AboutUsPage:
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_about_us_page.png")
                 self.logger.error("----- Test case 004 is Failed--------------")
                 assert False
-        except TimeoutException as e:
+        except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_about_us_page.png")
             self.logger.error("----- Test case 004 is Failed--------------")
@@ -215,7 +217,6 @@ class TestCase004AboutUsPage:
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_about_us_page.png")
             self.logger.error("----- Test case 007 is Failed--------------")
             assert False
-
 
     @pytest.mark.sanity
     @pytest.mark.regression

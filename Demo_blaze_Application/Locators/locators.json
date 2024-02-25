@@ -15,7 +15,11 @@
         "Pause_text" : "//*[@id='example-video']/div[4]/button[1]/span[2]",
         "unmute_text" : "//span[normalize-space()='Unmute']",
         "pic_in_pic" : "//span[normalize-space()='Exit Picture-in-Picture']",
-        "non_full_screen" : "//span[normalize-space()='Non-Fullscreen']"},
+        "non_full_screen" : "//span[normalize-space()='Non-Fullscreen']",
+        "video_pause_clause" :  "vjs-play-control",
+        "volume_mute_clause" :"vjs-mute-control",
+        "video_pic_in_pic_clause" :  "vjs-picture-in-picture-control",
+        "video_full_screen_clause" :  "vjs-fullscreen-control"},
 
     "Cart_Page" : {
 

@@ -1,20 +1,18 @@
-import json
-
 from selenium.webdriver.common.by import By
-
+from utilities.readProperties import ReadConfig
 
 class Sign_Up_Page:
 
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
-
-    SIGN_UP_BUTTON = data["Sign_Up_Page"]["SIGN_UP_BUTTON"]
-    USERNAME = data["Sign_Up_Page"]["USERNAME"]
-    PASSWORD = data["Sign_Up_Page"]["PASSWORD"]
-    SIGN_UP_BUTTON_TO_PROCEED = data["Sign_Up_Page"]["SIGN_UP_BUTTON_TO_PROCEED"]
-    SIGN_UP_CLOSE_BUTTON = data["Sign_Up_Page"]["SIGN_UP_CLOSE_BUTTON"]
-    SIGN_UP_X_MARK = data["Sign_Up_Page"]["SIGN_UP_X_MARK"]
+    data = ReadConfig.get_json_data()
+    try:
+        SIGN_UP_BUTTON = data["Sign_Up_Page"]["SIGN_UP_BUTTON"]
+        USERNAME = data["Sign_Up_Page"]["USERNAME"]
+        PASSWORD = data["Sign_Up_Page"]["PASSWORD"]
+        SIGN_UP_BUTTON_TO_PROCEED = data["Sign_Up_Page"]["SIGN_UP_BUTTON_TO_PROCEED"]
+        SIGN_UP_CLOSE_BUTTON = data["Sign_Up_Page"]["SIGN_UP_CLOSE_BUTTON"]
+        SIGN_UP_X_MARK = data["Sign_Up_Page"]["SIGN_UP_X_MARK"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
     def __init__(self, driver):
         self.driver = driver

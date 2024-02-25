@@ -1,32 +1,32 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import json
+from utilities.readProperties import ReadConfig
 
 
 class Cart_page:
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
-
-    CART_BUTTON = data["Cart_Page"]["CART_BUTTON"]
-    CART_PAGE_TITLE = data["Cart_Page"]["CART_PAGE_TITLE"]
-    PLACE_ORDER = data["Cart_Page"]["PLACE_ORDER"]
-    DELETE_PRODUCT = data["Cart_Page"]["DELETE_PRODUCT"]
-    NAME = data["Cart_Page"]["NAME"]
-    COUNTRY = data["Cart_Page"]["COUNTRY"]
-    CITY = data["Cart_Page"]["CITY"]
-    CREDIT_CARD = data["Cart_Page"]["CREDIT_CARD"]
-    MONTH = data["Cart_Page"]["MONTH"]
-    YEAR = data["Cart_Page"]["YEAR"]
-    PURCHASE_BUTTON = data["Cart_Page"]["PURCHASE_BUTTON"]
-    PLACE_ORDER_CLOSE_BUTTON = data["Cart_Page"]["PLACE_ORDER_CLOSE_BUTTON"]
-    PLACE_ORDER_X_MARK = data["Cart_Page"]["PLACE_ORDER_X_MARK"]
-    ORDER_SUCCESSFUL_MSG = data["Cart_Page"]["ORDER_SUCCESSFUL_MSG"]
-    ORDER_SUCCESSFUL_OK_BUTTON = data["Cart_Page"]["ORDER_SUCCESSFUL_OK_BUTTON"]
-    HOME_BUTTON = data["Cart_Page"]["HOME_BUTTON"]
-    Samsung_galaxy_s6 = data["Cart_Page"]["Samsung_galaxy_s6"]
-    ADD_TO_CART = data["Cart_Page"]["ADD_TO_CART"]
+    data = ReadConfig.get_json_data()
+    try:
+        CART_BUTTON = data["Cart_Page"]["CART_BUTTON"]
+        CART_PAGE_TITLE = data["Cart_Page"]["CART_PAGE_TITLE"]
+        PLACE_ORDER = data["Cart_Page"]["PLACE_ORDER"]
+        DELETE_PRODUCT = data["Cart_Page"]["DELETE_PRODUCT"]
+        NAME = data["Cart_Page"]["NAME"]
+        COUNTRY = data["Cart_Page"]["COUNTRY"]
+        CITY = data["Cart_Page"]["CITY"]
+        CREDIT_CARD = data["Cart_Page"]["CREDIT_CARD"]
+        MONTH = data["Cart_Page"]["MONTH"]
+        YEAR = data["Cart_Page"]["YEAR"]
+        PURCHASE_BUTTON = data["Cart_Page"]["PURCHASE_BUTTON"]
+        PLACE_ORDER_CLOSE_BUTTON = data["Cart_Page"]["PLACE_ORDER_CLOSE_BUTTON"]
+        PLACE_ORDER_X_MARK = data["Cart_Page"]["PLACE_ORDER_X_MARK"]
+        ORDER_SUCCESSFUL_MSG = data["Cart_Page"]["ORDER_SUCCESSFUL_MSG"]
+        ORDER_SUCCESSFUL_OK_BUTTON = data["Cart_Page"]["ORDER_SUCCESSFUL_OK_BUTTON"]
+        HOME_BUTTON = data["Cart_Page"]["HOME_BUTTON"]
+        Samsung_galaxy_s6 = data["Cart_Page"]["Samsung_galaxy_s6"]
+        ADD_TO_CART = data["Cart_Page"]["ADD_TO_CART"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
     def __init__(self, driver):
         self.driver = driver

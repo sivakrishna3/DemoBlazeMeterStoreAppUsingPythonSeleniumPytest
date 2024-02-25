@@ -14,27 +14,30 @@ from utilities.custom_Logger import Log_Generator
 
 
 class TestCase001LoginPage:
-    valid_username = ReadConfig.get_username()
-    valid_password = ReadConfig.get_password()
-    invalid_username = ReadConfig.get_invalid_username()
-    invalid_password = ReadConfig.get_invalid_password()
-    no_username = ReadConfig.get_no_username()
-    no_password = ReadConfig.get_no_password()
-    username_with_spl_chars = ReadConfig.get_username_with_spl_chars()
-    password_with_spl_chars = ReadConfig.get_password_with_spl_chars()
-    username_with_space = ReadConfig.get_username_with_space()
-    password_with_space = ReadConfig.get_password_with_space()
-    username_with_numbers = ReadConfig.get_username_with_numbers()
-    password_with_numbers = ReadConfig.get_password_with_numbers()
+    try:
+        valid_username = ReadConfig.get_username()
+        valid_password = ReadConfig.get_password()
+        invalid_username = ReadConfig.get_invalid_username()
+        invalid_password = ReadConfig.get_invalid_password()
+        no_username = ReadConfig.get_no_username()
+        no_password = ReadConfig.get_no_password()
+        username_with_spl_chars = ReadConfig.get_username_with_spl_chars()
+        password_with_spl_chars = ReadConfig.get_password_with_spl_chars()
+        username_with_space = ReadConfig.get_username_with_space()
+        password_with_space = ReadConfig.get_password_with_space()
+        username_with_numbers = ReadConfig.get_username_with_numbers()
+        password_with_numbers = ReadConfig.get_password_with_numbers()
+    except Exception as e:
+        print(f"{e}: No such element found in ini file.")
 
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
-
-    CLOSE_BUTTON = data["Login_Page"]["CLOSE_BUTTON"]
-    Logout_Button = data["Login_Page"]["Logout_Button"]
-    expected_message = ["User does not exist.", "Wrong password.", "Please fill out Username and Password."]
-    logger = Log_Generator.log_gen()
+    data = ReadConfig.get_json_data()
+    try:
+        CLOSE_BUTTON = data["Login_Page"]["CLOSE_BUTTON"]
+        Logout_Button = data["Login_Page"]["Logout_Button"]
+        expected_message = ["User does not exist.", "Wrong password.", "Please fill out Username and Password."]
+        logger = Log_Generator.log_gen()
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
     @pytest.mark.regression
     @pytest.mark.sanity

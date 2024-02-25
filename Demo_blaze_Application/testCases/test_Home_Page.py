@@ -1,7 +1,4 @@
-import json
-
 import pytest
-# from selenium.webdriver import Chrome
 import time
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
@@ -14,11 +11,12 @@ from utilities.readProperties import ReadConfig
 
 class TestCase002HomePage:
 
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
+    data = ReadConfig.get_json_data()
+    try:
+        HOME_BUTTON = data["Home_Page"]["HOME_BUTTON"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
-    HOME_BUTTON = data["Home_Page"]["HOME_BUTTON"]
     logger = Log_Generator.log_gen()
 
     @pytest.mark.regression
@@ -343,28 +341,6 @@ class TestCase002HomePage:
             print(e)
             self.logger.error("-----Iphone_6_32_gb Page not displayed-----")
 
-        self.hm_page.Add_Iphone_6_32_gb()
-        wait = WebDriverWait(self.driver, 10)
-        wait.until(EC.alert_is_present())
-        act_text = self.driver.switch_to.alert
-        actual_message = act_text.text
-        print(actual_message)
-        self.driver.switch_to.alert.accept()
-        self.driver.find_element(By.XPATH, self.HOME_BUTTON).click()
-        expected_message = "Product added"
-        try:
-            if actual_message == expected_message:
-                self.logger.info("-----Iphone_6_32_gb added-----")
-                lst_result.append('pass')
-            else:
-                time.sleep(5)
-                self.logger.error("-----Iphone_6_32_gb not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Iphone_6_32_gb.png")
-                lst_result.append('fail')
-        except Exception as e:
-            print(e)
-            self.logger.error("-----Iphone_6_32_gb Page not displayed-----")
-
         self.hm_page.Add_Sony_xperia_z5()
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.alert_is_present())
@@ -380,7 +356,7 @@ class TestCase002HomePage:
                 lst_result.append('pass')
             else:
                 time.sleep(5)
-                self.logger.error("-----Sony_xperia_z5 not added-----")
+                self.logger.error("----Sony_xperia_z5 not added-----")
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Sony_xperia_z5.png")
                 lst_result.append('fail')
         except Exception as e:

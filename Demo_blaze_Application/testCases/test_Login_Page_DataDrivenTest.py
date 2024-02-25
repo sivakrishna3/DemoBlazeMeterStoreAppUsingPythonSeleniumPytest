@@ -11,8 +11,6 @@ from utilities import Excel_Utils
 
 class Test_case_001_DDT:
 
-    Excel_file_path = ".\\Test_Data\\Test_Data_for_DDT.xlsx"
-
     json_file_path = "./Locators/locators.json"
     with open(json_file_path, 'r') as file:
         data = json.load(file)
@@ -34,7 +32,7 @@ class Test_case_001_DDT:
         self.logger.info("-----Verifying log in functionality-----")
         self.driver = setup_and_teardown
         self.lg_page = LoginPage(self.driver)
-        self.rows = Excel_Utils.get_row_count(self.Excel_file_path, 'Login_Data')
+        self.rows = Excel_Utils.get_row_count(Excel_Utils.get_row_count('Login_Data'))
         print("Number of rows in a Excel : ", self.rows)
 
         lst_status = []

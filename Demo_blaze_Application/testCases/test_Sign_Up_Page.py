@@ -1,4 +1,3 @@
-import json
 import random
 import string
 import time
@@ -18,25 +17,28 @@ class TestCase006SignUpPage:
     def generate_random_email(self):
         random_username = ''.join(random.choices(string.ascii_letters.lower(), k=8))
         return f'{random_username}@gmail.com'
+    try:
+        valid_username = ReadConfig.get_sign_up_username()
+        invalid_username = ReadConfig.get_sign_up_invalid_username()
+        username_with_space = ReadConfig.get_sign_up_username_with_space()
+        username_with_spl_chars = ReadConfig.get_sign_up_username_with_spl_chars()
+        username_with_numbers = ReadConfig.get_sign_up_username_with_numbers()
+        no_username = ReadConfig.get_sign_up_no_username()
+        valid_password = ReadConfig.get_sign_up_password()
+        invalid_password = ReadConfig.get_sign_up_invalid_password()
+        password_with_space = ReadConfig.get_sign_up_password_with_space()
+        password_with_spl_chars = ReadConfig.get_sign_up_password_with_spl_chars()
+        password_with_numbers = ReadConfig.get_sign_up_password_with_numbers()
+        no_password = ReadConfig.get_sign_up_no_password()
+    except Exception as e:
+        print(f"{e}: No such element found in ini file.")
 
-    valid_username = ReadConfig.get_sign_up_username()
-    invalid_username = ReadConfig.get_sign_up_invalid_username()
-    username_with_space = ReadConfig.get_sign_up_username_with_space()
-    username_with_spl_chars = ReadConfig.get_sign_up_username_with_spl_chars()
-    username_with_numbers = ReadConfig.get_sign_up_username_with_numbers()
-    no_username = ReadConfig.get_sign_up_no_username()
-    valid_password = ReadConfig.get_sign_up_password()
-    invalid_password = ReadConfig.get_sign_up_invalid_password()
-    password_with_space = ReadConfig.get_sign_up_password_with_space()
-    password_with_spl_chars = ReadConfig.get_sign_up_password_with_spl_chars()
-    password_with_numbers = ReadConfig.get_sign_up_password_with_numbers()
-    no_password = ReadConfig.get_sign_up_no_password()
+    data = ReadConfig.get_json_data()
+    try:
+        SIGN_UP_PAGE_TITLE = data["Sign_Up_Page"]["SIGN_UP_PAGE_TITLE"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
-
-    SIGN_UP_PAGE_TITLE = data["Sign_Up_Page"]["SIGN_UP_PAGE_TITLE"]
     logger = Log_Generator.log_gen()
 
     @pytest.mark.regression
@@ -128,7 +130,6 @@ class TestCase006SignUpPage:
             print(e)
             self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_003.png")
             self.logger.error("--------Sign up with invalid username and invalid password is Failed---------")
-
             assert False
 
     @pytest.mark.regression
@@ -163,7 +164,7 @@ class TestCase006SignUpPage:
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars(self, setup_and_teardown):
-        self.logger.info("-----test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars------")
+        self.logger.info("-----test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars----")
         self.logger.info("-----Verifying Sign Up Page------")
         self.driver = setup_and_teardown
         self.sg_page = Sign_Up_Page(self.driver)
@@ -186,7 +187,7 @@ class TestCase006SignUpPage:
         except Exception as e:
             print(e)
             self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_005.png")
-            self.logger.error("--------Sign up username with spl chars and password with spl chars is Failed---------")
+            self.logger.error("--------Sign up username with spl chars and password with spl chars is Failed-------")
             assert False
 
     @pytest.mark.regression

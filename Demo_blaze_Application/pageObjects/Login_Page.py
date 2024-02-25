@@ -1,25 +1,22 @@
-import json
-
-import pytest
-from selenium.webdriver import Chrome
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from utilities.readProperties import ReadConfig
 
 
 class LoginPage:
 
-    json_file_path = "./Locators/locators.json"
-    with open(json_file_path, 'r') as file:
-        data = json.load(file)
-
-    Login_Button = data["Login_Page"]["Login_Button"]
-    Login_Username_text = data["Login_Page"]["Login_Username_text"]
-    Login_Password_text = data["Login_Page"]["Login_Password_text"]
-    Login_button_proceed = data["Login_Page"]["Login_button_proceed"]
-    Login_close_button = data["Login_Page"]["Login_close_button"]
-    Logout_Button = data["Login_Page"]["Logout_Button"]
-    Welcome_button = data["Login_Page"]["Welcome_button"]
+    data = ReadConfig.get_json_data()
+    try:
+        Login_Button = data["Login_Page"]["Login_Button"]
+        Login_Username_text = data["Login_Page"]["Login_Username_text"]
+        Login_Password_text = data["Login_Page"]["Login_Password_text"]
+        Login_button_proceed = data["Login_Page"]["Login_button_proceed"]
+        Login_close_button = data["Login_Page"]["Login_close_button"]
+        Logout_Button = data["Login_Page"]["Logout_Button"]
+        Welcome_button = data["Login_Page"]["Welcome_button"]
+    except Exception as e:
+        print(f"{e}: No such element found in json file.")
 
     def __init__(self, driver):
         self.driver = driver
