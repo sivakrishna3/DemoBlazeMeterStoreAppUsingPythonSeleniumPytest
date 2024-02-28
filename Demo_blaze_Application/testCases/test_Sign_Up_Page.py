@@ -1,8 +1,9 @@
 import random
 import string
 import time
-
+import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,6 +13,8 @@ from utilities.custom_Logger import Log_Generator
 from utilities.readProperties import ReadConfig
 
 
+@allure.description("validate_sign_up_page")
+@allure.severity(allure.severity_level.BLOCKER)
 class TestCase006SignUpPage:
 
     def generate_random_email(self):
@@ -41,6 +44,8 @@ class TestCase006SignUpPage:
 
     logger = Log_Generator.log_gen()
 
+    @allure.description("validate_sign_up_button")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_cse_001_validate_sign_up_button(self, setup_and_teardown):
@@ -60,18 +65,17 @@ class TestCase006SignUpPage:
             else:
                 time.sleep(5)
                 self.logger.error("-----TimeoutException: Sign up page not displayed------")
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_001_timeout.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_001_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_sign_up_page.png")
                 assert False
 
-        except TimeoutException:
+        except (TimeoutException, AssertionError) as e:
+            print(e)
             self.logger.error("-----TimeoutException: Sign up page not displayed------")
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_001_timeout.png")
             print("TimeoutException: Sign up page not displayed")
-        except AssertionError as e:
-            self.logger.error(f"-----AssertionError: {e}------")
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_001_failure.png")
-            print(f"AssertionError: {e}")
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_002_validate_sign_up_with_valid_username_valid_password(self, setup_and_teardown):
@@ -94,15 +98,17 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_002.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_002_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 002 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_002.png")
             self.logger.error("--------Sign up with valid username and valid password is Failed---------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_003_validate_sign_up_with_invalid_username_invalid_password(self, setup_and_teardown):
@@ -123,15 +129,17 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_003.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_003_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 003 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_003.png")
             self.logger.error("--------Sign up with invalid username and invalid password is Failed---------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_004_validate_sign_up_username_with_space_and_password_with_space(self, setup_and_teardown):
@@ -152,15 +160,17 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_004.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_004_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 004 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_004.png")
             self.logger.error("--------Sign up username with space and password with space is Failed---------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars(self, setup_and_teardown):
@@ -181,15 +191,17 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_005.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_005_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 005 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_005.png")
             self.logger.error("--------Sign up username with spl chars and password with spl chars is Failed-------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_006_validate_sign_up_username_with_numbers_and_password_with_numbers(self, setup_and_teardown):
@@ -211,15 +223,17 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_006.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_006_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 006 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_006.png")
             self.logger.error("--------Sign up username with numbers and password with numbers is Failed---------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_007_validate_sign_up_with_no_username_and_no_password(self, setup_and_teardown):
@@ -240,15 +254,17 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_007.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 007 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_007.png")
             self.logger.error("--------Sign up with no username and no password is Failed---------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_cse_008_validate_clicking_on_sign_up_close_button(self, setup_and_teardown):
@@ -265,15 +281,17 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_008.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_008_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 008 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_009.png")
             self.logger.error("-------Clicking on sign up close button is Failed---------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_cse_009_validate_clicking_on_sign_up_x_mark(self, setup_and_teardown):
@@ -290,11 +308,12 @@ class TestCase006SignUpPage:
                 assert True
             else:
                 time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_009.png")
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_sign_up_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_sign_up_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("--------test case 009 is Failed--------")
                 assert False
         except Exception as e:
             print(e)
-            self.driver.save_screenshot(".\\ScreenShots\\Sign_Up_Page\\" + "test_case_009.png")
             self.logger.error("-------Clicking on sign up close button is Failed---------")
             assert False

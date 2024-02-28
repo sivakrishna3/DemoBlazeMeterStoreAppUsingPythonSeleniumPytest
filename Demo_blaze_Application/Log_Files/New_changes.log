@@ -1,388 +1,64 @@
-2024-02-28 17:49:44,414 - INFO - -----test_case_001_validate_about_us_button--------------
-2024-02-28 17:49:44,417 - INFO - -----Verifying About Us Page----------------
-2024-02-28 17:49:51,237 - INFO - -----test_case_002_validate_video_close_button--------------
-2024-02-28 17:49:51,237 - INFO - -----Verifying video_close_button----------------
-2024-02-28 17:49:55,271 - INFO - ----- Test case 002 is Passed------------------
-2024-02-28 17:50:01,036 - INFO - -----test_case_003_validate_video_close_x_mark--------------
-2024-02-28 17:50:01,037 - INFO - -----Verifying validate_video_close_x_mark----------------
-2024-02-28 17:50:05,367 - INFO - ----- Test case 003 is Passed------------------
-2024-02-28 17:50:11,473 - INFO - -----test_case_004_validate_clicking_on_video_button--------------
-2024-02-28 17:50:11,474 - INFO - -----Verifying clicking_on_video_button----------------
-2024-02-28 17:50:15,197 - INFO - ----- Test case 004 is Passed------------------
-2024-02-28 17:50:20,723 - INFO - -----test_case_005_validate_video_pause_button--------------
-2024-02-28 17:50:20,724 - INFO - -----Verifying video_pause_button----------------
-2024-02-28 17:50:27,583 - INFO - ----- Test case 005 is Passed-----
-2024-02-28 17:50:32,869 - INFO - -----test_case_006_validate_video_volume_mute_button--------------
-2024-02-28 17:50:32,870 - INFO - -----Verifying video_volume_mute_button----------------
-2024-02-28 17:50:40,079 - INFO - ----- Test case 006 is Passed-----
-2024-02-28 17:50:45,348 - INFO - -----test_case_007_validate_video_picture_in_picture_button--------------
-2024-02-28 17:50:45,348 - INFO - -----Verifying video_picture_in_picture_button----------------
-2024-02-28 17:50:52,550 - INFO - ----- Test case 007 is Passed-----
-2024-02-28 17:50:58,071 - INFO - -----test_case_008_validate_video_full_screen_button--------------
-2024-02-28 17:50:58,072 - INFO - -----Verifying video_full_screen_button----------------
-2024-02-28 17:51:05,112 - INFO - ----- Test case 008 is Passed-----
-2024-02-28 17:51:10,521 - INFO - -----test_case_001_validate_Cart_button-----
-2024-02-28 17:51:10,523 - INFO - -----Verifying Cart Page------
-2024-02-28 17:51:11,920 - INFO - -----test case 001 is Passed------
-2024-02-28 17:51:17,114 - INFO - -----test_case_002_validate_add_to_cart_button-----
-2024-02-28 17:51:17,130 - INFO - -------------------Verifying------------------
-2024-02-28 17:51:22,003 - INFO - -----test case 002 is Passed------
-2024-02-28 17:51:27,425 - INFO - -----test_case_003_validate_delete_the_product_button-----
-2024-02-28 17:51:27,425 - INFO - -------------------Verifying------------------
-2024-02-28 17:51:34,303 - INFO - -----test case 003 is Passed------
-2024-02-28 17:51:39,767 - INFO - -----test_case_004_validate_place_order_button-----
-2024-02-28 17:51:39,768 - INFO - -----Verifying Place order button-------
-2024-02-28 17:51:41,637 - INFO - -----test case 004 is Passed------
-2024-02-28 17:51:46,889 - INFO - -----test_case_005_validate_place_order_and_set_all_fields_with_adding_product-----
-2024-02-28 17:51:46,890 - INFO - -------------------Verifying------------------
-2024-02-28 17:51:57,892 - INFO - -----test case 005 is Passed------
-2024-02-28 17:52:03,901 - INFO - -----test_case_006_validate_place_order_and_set_all_fields_without_adding_product-----
-2024-02-28 17:52:03,902 - INFO - -------------------Verifying------------------
-2024-02-28 17:52:07,349 - INFO - -----test case 006 is Passed------
-2024-02-28 17:52:13,351 - INFO - -----test_case_007_validate_place_order_and_set_no_name_and_with_adding_product-----
-2024-02-28 17:52:13,352 - INFO - -------------------Verifying------------------
-2024-02-28 17:52:22,690 - INFO - -----test case 007 is Passed------
-2024-02-28 17:52:28,463 - INFO - -----test_case_008_validate_place_order_and_set_no_name_and_without_adding_product-----
-2024-02-28 17:52:28,464 - INFO - -------------------Verifying------------------
-2024-02-28 17:52:31,376 - INFO - -----test case 008 is Passed------
-2024-02-28 17:52:36,729 - INFO - -----test_case_009_validate_place_order_and_set_no_country_and_with_adding_product-----
-2024-02-28 17:52:36,730 - INFO - -------------------Verifying------------------
-2024-02-28 17:52:46,933 - INFO - -----test case 009 is Passed------
-2024-02-28 17:52:52,639 - INFO - -----test_case_010_validate_place_order_and_set_no_country_and_without_adding_product-----
-2024-02-28 17:52:52,640 - INFO - -------------------Verifying------------------
-2024-02-28 17:52:55,776 - INFO - -----test case 010 is Passed------
-2024-02-28 17:53:06,598 - INFO - -----test_case_012_validate_place_order_and_set_no_city_and_without_adding_product-----
-2024-02-28 17:53:06,599 - INFO - -------------------Verifying------------------
-2024-02-28 17:53:15,187 - INFO - -----test_case_013_validate_place_order_and_set_no_credit_card_and_with_adding_product-----
-2024-02-28 17:53:15,188 - INFO - -------------------Verifying------------------
-2024-02-28 17:53:24,034 - INFO - -----test case 013 is Passed------
-2024-02-28 17:53:30,514 - INFO - -----test_case_014_validate_place_order_and_set_no_country_and_without_adding_product-----
-2024-02-28 17:53:30,514 - INFO - -------------------Verifying------------------
-2024-02-28 17:53:33,522 - INFO - -----test case 014 is Passed------
-2024-02-28 17:53:39,536 - INFO - -----test_case_015_validate_place_order_and_set_no_month_and_with_adding_product-----
-2024-02-28 17:53:39,537 - INFO - -------------------Verifying------------------
-2024-02-28 17:53:48,872 - INFO - -----test case 015 is Passed------
-2024-02-28 17:53:54,620 - INFO - -----test_case_016_validate_place_order_and_set_no_month_and_without_adding_product-----
-2024-02-28 17:53:54,621 - INFO - -------------------Verifying------------------
-2024-02-28 17:53:58,807 - INFO - -----test case 016 is Passed------
-2024-02-28 17:54:04,571 - INFO - -----test_case_017_validate_place_order_and_set_no_year_and_with_adding_product-----
-2024-02-28 17:54:04,572 - INFO - -------------------Verifying------------------
-2024-02-28 17:54:14,690 - INFO - -----test case 017 is Passed------
-2024-02-28 17:54:20,250 - INFO - -----test_case_018_validate_place_order_and_set_no_year_and_without_adding_product-----
-2024-02-28 17:54:20,251 - INFO - -------------------Verifying------------------
-2024-02-28 17:54:23,361 - INFO - -----test case 018 is Passed------
-2024-02-28 17:54:29,372 - INFO - -----test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product---
-2024-02-28 17:54:29,373 - INFO - -------------------Verifying------------------
-2024-02-28 17:54:39,755 - INFO - -----test case 019 is Passed------
-2024-02-28 17:54:45,796 - INFO - -----test_case_020_validate_place_order_not_setting_any_field_and_without_adding_product---
-2024-02-28 17:54:45,797 - INFO - -------------------Verifying------------------
-2024-02-28 17:54:48,744 - INFO - -----test case 020 is Passed------
-2024-02-28 17:54:54,220 - INFO - -----test_case_021_validate_click_on_place_order_x_mark-----
-2024-02-28 17:54:54,220 - INFO - -----Verifying Place order form x mark button-------
-2024-02-28 17:54:56,030 - INFO - -----test case 021 is Passed------
-2024-02-28 17:55:01,832 - INFO - -----test_case_022_validate_close_button_and_set_all_fields-----
-2024-02-28 17:55:01,833 - INFO - -----Verifying Place order form x mark button-------
-2024-02-28 17:55:04,956 - INFO - -----test case 022 is Passed------
-2024-02-28 17:55:10,632 - INFO - -----test_case_001_validate_contact_with_valid_email_valid_name_valid_message-----
-2024-02-28 17:55:10,634 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:55:12,302 - INFO - -----test case 001 is Passed-----
-2024-02-28 17:55:17,795 - INFO - -----test_case_002_validate_contact_with_valid_email_valid_name_invalid_message-----
-2024-02-28 17:55:17,800 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:55:25,024 - ERROR - -----test case 002 is Failed-----
-2024-02-28 17:55:31,045 - INFO - -----test_case_003_validate_contact_with_valid_email_valid_name_no_message-----
-2024-02-28 17:55:31,045 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:55:38,493 - ERROR - -----test case 003 is Passed-----
-2024-02-28 17:55:44,325 - INFO - -----test_case_004_validate_contact_with_valid_email_invalid_name_valid_message-----
-2024-02-28 17:55:44,325 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:55:51,506 - ERROR - -----test case 004 is Passed-----
-2024-02-28 17:55:59,170 - INFO - -----test_case_005_validate_contact_with_valid_email_invalid_name_invalid_message-----
-2024-02-28 17:55:59,170 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:56:06,326 - ERROR - -----test case 005 is Passed-----
-2024-02-28 17:56:12,297 - INFO - -----test_case_006_validate_contact_with_valid_email_invalid_name_no_message-----
-2024-02-28 17:56:12,298 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:56:19,322 - ERROR - -----test case 006 is Passed-----
-2024-02-28 17:56:24,789 - INFO - -----test_case_007_validate_contact_with_valid_email_no_name_valid_message-----
-2024-02-28 17:56:24,790 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:56:31,879 - ERROR - -----test case 007 is Passed-----
-2024-02-28 17:56:37,595 - INFO - -----test_case_008_validate_contact_with_valid_email_no_name_invalid_message-----
-2024-02-28 17:56:37,595 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:56:45,007 - ERROR - -----test case 008 is Passed-----
-2024-02-28 17:56:51,210 - INFO - -----test_case_009_validate_contact_with_valid_email_no_name_no_message-----
-2024-02-28 17:56:51,211 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:56:58,244 - ERROR - -----test case 009 is Passed-----
-2024-02-28 17:57:04,224 - INFO - -----test_case_010_validate_contact_with_invalid_email_valid_name_valid_message-----
-2024-02-28 17:57:04,225 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:57:12,483 - ERROR - -----test case 010 is Passed-----
-2024-02-28 17:57:18,006 - INFO - -----test_case_011_validate_contact_with_invalid_email_valid_name_invalid_message-----
-2024-02-28 17:57:18,007 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:57:25,395 - ERROR - -----test case 011 is Passed-----
-2024-02-28 17:57:31,385 - INFO - -----test_case_012_validate_contact_with_invalid_email_valid_name_no_message-----
-2024-02-28 17:57:31,386 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:57:38,394 - ERROR - -----test case 012 is Passed-----
-2024-02-28 17:57:44,011 - INFO - -----test_case_013_validate_contact_with_invalid_email_invalid_name_valid_message-----
-2024-02-28 17:57:44,012 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:57:50,988 - ERROR - -----test case 013 is Passed-----
-2024-02-28 17:57:56,524 - INFO - -----test_case_014_validate_contact_with_invalid_email_invalid_name_invalid_message-----
-2024-02-28 17:57:56,526 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:58:03,777 - ERROR - -----test case 013 is Passed-----
-2024-02-28 17:58:09,760 - INFO - -----test_case_015_validate_contact_with_invalid_email_invalid_name_no_message-----
-2024-02-28 17:58:09,760 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:58:16,676 - ERROR - -----test case 015 is Passed-----
-2024-02-28 17:58:22,716 - INFO - -----test_case_016_validate_contact_with_invalid_email_no_name_valid_message-----
-2024-02-28 17:58:22,716 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:58:29,746 - ERROR - -----test case 016 is Passed-----
-2024-02-28 17:58:35,782 - INFO - -----test_case_017_validate_contact_with_invalid_email_no_name_invalid_message-----
-2024-02-28 17:58:35,783 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:58:42,794 - ERROR - -----test case 017 is Passed-----
-2024-02-28 17:58:48,761 - INFO - -----test_case_018_validate_contact_with_invalid_email_no_name_no_message-----
-2024-02-28 17:58:48,761 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:58:55,739 - ERROR - -----test case 018 is Passed-----
-2024-02-28 17:59:01,358 - INFO - -----test_case_019_validate_contact_with_email_with_spl_chars_valid_name_valid_message-----
-2024-02-28 17:59:01,359 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:59:08,620 - ERROR - -----test case 019 is Passed-----
-2024-02-28 17:59:14,691 - INFO - -----test_case_020_validate_contact_with_email_with_spl_chars_valid_name_invalid_message-----
-2024-02-28 17:59:14,692 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:59:21,842 - ERROR - -----test case 020 is Passed-----
-2024-02-28 17:59:27,566 - INFO - -----test_case_021_validate_contact_with_email_with_spl_chars_valid_name_no_message-----
-2024-02-28 17:59:27,566 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:59:34,508 - ERROR - -----test case 021 is Passed-----
-2024-02-28 17:59:40,672 - INFO - -----test_case_022_validate_contact_with_email_with_spl_chars_invalid_name_valid_message-----
-2024-02-28 17:59:40,673 - INFO - -----Verifying Contact Page-----
-2024-02-28 17:59:48,204 - ERROR - -----test case 022 is Passed-----
-2024-02-28 17:59:54,349 - INFO - -----test_case_023_validate_contact_with_email_with_spl_chars_invalid_name_invalid_message-----
-2024-02-28 17:59:54,351 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:00:01,604 - ERROR - -----test case 023 is Passed-----
-2024-02-28 18:00:07,650 - INFO - -----test_case_024_validate_contact_with_email_with_spl_chars_invalid_name_no_message-----
-2024-02-28 18:00:07,651 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:00:14,584 - ERROR - -----test case 024 is Passed-----
-2024-02-28 18:00:21,863 - INFO - -----test_case_025_validate_contact_with_email_with_spl_chars_no_name_valid_message-----
-2024-02-28 18:00:21,864 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:00:28,949 - ERROR - -----test case 025 is Passed-----
-2024-02-28 18:00:34,787 - INFO - -----test_case_026_validate_contact_with_email_with_spl_chars_no_name_invalid_message-----
-2024-02-28 18:00:34,789 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:00:41,739 - ERROR - -----test case 026 is Passed-----
-2024-02-28 18:00:47,242 - INFO - -----test_case_027_validate_contact_with_email_with_spl_chars_no_name_no_message-----
-2024-02-28 18:00:47,242 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:00:53,937 - ERROR - -----test case 027 is Passed-----
-2024-02-28 18:00:59,509 - INFO - -----test_case_028_validate_contact_with_no_email_valid_name_valid_message-----
-2024-02-28 18:00:59,509 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:01:06,628 - ERROR - -----test case 028 is Passed-----
-2024-02-28 18:01:12,452 - INFO - -----test_case_029_validate_contact_with_no_email_valid_name_invalid_message-----
-2024-02-28 18:01:12,453 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:01:19,698 - ERROR - -----test case 029 is Passed-----
-2024-02-28 18:01:25,797 - INFO - -----test_case_030_validate_contact_with_no_email_valid_name_no_message-----
-2024-02-28 18:01:25,799 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:01:33,046 - ERROR - -----test case 030 is Passed-----
-2024-02-28 18:01:38,695 - INFO - -----test_case_031_validate_contact_with_no_email_invalid_name_valid_message-----
-2024-02-28 18:01:38,696 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:01:45,888 - ERROR - -----test case 031 is Passed-----
-2024-02-28 18:01:51,449 - INFO - -----test_case_032_validate_contact_with_no_email_invalid_name_invalid_message-----
-2024-02-28 18:01:51,450 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:01:58,660 - ERROR - -----test case 032 is Passed-----
-2024-02-28 18:02:04,161 - INFO - -----test_case_033_validate_contact_with_no_email_invalid_name_no_message-----
-2024-02-28 18:02:04,162 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:02:11,336 - ERROR - -----test case 033 is Passed-----
-2024-02-28 18:02:16,890 - INFO - -----test_case_034_validate_contact_with_no_email_no_name_valid_message-----
-2024-02-28 18:02:16,892 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:02:23,892 - ERROR - -----test case 034 is Passed-----
-2024-02-28 18:02:29,531 - INFO - -----test_case_035_validate_contact_with_no_email_no_name_invalid_message-----
-2024-02-28 18:02:29,532 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:02:36,553 - ERROR - -----test case 035 is Passed-----
-2024-02-28 18:02:42,300 - INFO - -----test_case_036_validate_contact_with_no_email_no_name_no_message-----
-2024-02-28 18:02:42,301 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:02:49,423 - ERROR - -----test case 036 is Passed-----
-2024-02-28 18:02:55,082 - INFO - 
-2024-02-28 18:02:55,083 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:02:56,201 - INFO - -----test case 037 is Passed------
-2024-02-28 18:03:02,713 - INFO - 
-2024-02-28 18:03:02,714 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:03:03,249 - INFO - -----test case 038 is Passed------
-2024-02-28 18:03:08,440 - INFO - 
-2024-02-28 18:03:08,442 - INFO - -----Verifying Contact Page-----
-2024-02-28 18:03:09,215 - INFO - -----test case 039 is Passed------
-2024-02-28 18:03:15,272 - INFO - -----test_case_001_validate_homepage_button-----
-2024-02-28 18:03:15,273 - INFO - -----Verifying Home Page-----
-2024-02-28 18:03:16,500 - INFO - -----Test case 001 Passed-----
-2024-02-28 18:03:22,099 - INFO - -----test_case_002_validate_homepage_logo_button-----
-2024-02-28 18:03:22,100 - INFO - -----Verifying Home Page-----
-2024-02-28 18:03:23,265 - INFO - -----Test case 002 Passed-----
-2024-02-28 18:03:29,045 - INFO - -----test_case_003_validate_next_and_previous_slide_buttons_in_homepage-----
-2024-02-28 18:03:29,046 - INFO - -----Verifying Home Page-----
-2024-02-28 18:03:29,920 - INFO - -----Test case 003 Passed-----
-2024-02-28 18:03:35,611 - INFO - -----test_case_004_validate_next_and_previous_buttons_at_below_the_homepage-----
-2024-02-28 18:03:35,613 - INFO - -----Verifying Home Page-----
-2024-02-28 18:03:36,162 - INFO - -----Test case 004 Passed-----
-2024-02-28 18:03:41,907 - INFO - -----test_case_005_validate_categories_button_in_homepage-----
-2024-02-28 18:03:41,908 - INFO - -----Verifying Home Page-----
-2024-02-28 18:03:42,837 - INFO - -----Test case 005 Passed-----
-2024-02-28 18:03:48,101 - INFO - -----test_case_006_validate_phones_in_categories_button_at_homepage-----
-2024-02-28 18:03:48,102 - INFO - -----Verifying Home Page-----
-2024-02-28 18:03:48,363 - INFO - -----Test case 006 Passed-----
-2024-02-28 18:03:54,015 - INFO - -----test_case_007_validate_Laptops_in_categories_button_at_homepage-----
-2024-02-28 18:03:54,016 - INFO - -----Verifying Home Page-----
-2024-02-28 18:03:54,252 - INFO - -----Test case 007 Passed-----
-2024-02-28 18:03:59,973 - INFO - -----test_case_008_validate_Monitors_in_categories_button_at_homepage-----
-2024-02-28 18:03:59,973 - INFO - -----Verifying Home Page-----
-2024-02-28 18:04:00,375 - INFO - -----Test case 008 Passed-----
-2024-02-28 18:04:06,006 - INFO - -----test_case_009_validate_phones_and_add_to_cart_the_products-----
-2024-02-28 18:04:06,007 - INFO - -----Verifying Phones and add to cart-----
-2024-02-28 18:04:10,696 - INFO - -----Samsung_galaxy_s6 added-----
-2024-02-28 18:04:14,238 - INFO - -----Nokia_lumia_1520 added-----
-2024-02-28 18:04:18,628 - INFO - -----Nexus_6 added-----
-2024-02-28 18:04:22,510 - INFO - -----Samsung_galaxy_s7 added-----
-2024-02-28 18:04:29,042 - INFO - -----test_case_010_validate_Laptops_add_to_cart_the_products-----
-2024-02-28 18:04:29,043 - INFO - -----Verifying Laptops in Home page-----
-2024-02-28 18:04:33,850 - INFO - -----Sony_vaio_i5 added-----
-2024-02-28 18:04:37,499 - INFO - -----Sony_vaio_i7 added-----
-2024-02-28 18:04:41,595 - INFO - -----MacBook_air added-----
-2024-02-28 18:04:44,552 - INFO - -----Dell_i7_8_gb added-----
-2024-02-28 18:04:48,872 - INFO - -----2017_Dell_15_6_Inch added-----
-2024-02-28 18:04:51,891 - INFO - -----MacBook_Pro added-----
-2024-02-28 18:04:51,891 - INFO - -----Laptops add to cart test case 010 is Passed-----
-2024-02-28 18:04:57,549 - INFO - -----test_case_011_validate_monitors_add_to_cart_the_products-----
-2024-02-28 18:04:57,552 - INFO - -----Verifying Laptops in Home page-----
-2024-02-28 18:05:02,657 - INFO - -----Apple_monitor_24 added-----
-2024-02-28 18:05:06,336 - INFO - -----ASUS_Full_HD added-----
-2024-02-28 18:05:06,336 - INFO - -----Monitors add to cart test case 011 is Passed-----
-2024-02-28 18:05:12,238 - INFO - -----test_case_001_validate_login_with_valid_username_valid_password-----------
-2024-02-28 18:05:12,239 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:05:13,429 - INFO - -----Test case 001 is Passed---------
-2024-02-28 18:05:19,061 - INFO - -----test_case_002_validate_login_with_valid_username_invalid_password-----------
-2024-02-28 18:05:19,062 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:05:21,607 - INFO - -----Test case 002 is Passed--------------
-2024-02-28 18:05:27,285 - INFO - -----test_case_003_validate_login_with_valid_username_password_with_spl_chars-----------
-2024-02-28 18:05:27,286 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:05:29,956 - INFO - -----Test case 003 is Passed-----------
-2024-02-28 18:05:35,719 - INFO - -----test_case_004_validate_login_with_valid_username_password_with_numbers-----------
-2024-02-28 18:05:35,720 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:05:38,200 - INFO - ------Test case 004 is Passed--------------
-2024-02-28 18:05:43,795 - INFO - -----test_case_005_validate_login_with_valid_username_password_with_space-----------
-2024-02-28 18:05:43,796 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:05:45,333 - INFO - -----Test case 005 is Passed--------------
-2024-02-28 18:05:50,908 - INFO - -----test_case_006_validate_login_with_valid_username_no_password-----------
-2024-02-28 18:05:50,910 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:05:52,317 - INFO - -----Test case 006 is Passed--------------
-2024-02-28 18:05:57,785 - INFO - -----test_case_007_validate_login_with_invalid_username_valid_password-----------
-2024-02-28 18:05:57,785 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:00,466 - INFO - -----Test case 007 is Passed--------------
-2024-02-28 18:06:05,705 - INFO - -----test_case_008_validate_login_invalid_username_and_invalid_password-----------
-2024-02-28 18:06:05,706 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:08,296 - INFO - -----Test case 008 is Passed--------------
-2024-02-28 18:06:13,828 - INFO - -----test_case_009_validate_login_with_invalid_username_and_password_with_spl_chars--------
-2024-02-28 18:06:13,829 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:15,291 - INFO - -----Test case 009 is Passed----------
-2024-02-28 18:06:21,034 - INFO - -----test_case_010_validate_login_invalid_username_and_password_with_numbers-----------
-2024-02-28 18:06:21,035 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:22,547 - INFO - -----Test case 010 is Passed-----------
-2024-02-28 18:06:28,034 - INFO - -----test_case_011_validate_login_with_valid_username_and_password_with_space-----------
-2024-02-28 18:06:28,035 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:29,392 - INFO - -----Test case 011 is Passed--------------
-2024-02-28 18:06:34,894 - INFO - -----test_case_012_validate_login_with_invalid_username_and_no_password-----------
-2024-02-28 18:06:34,895 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:36,362 - INFO - -----Test case 012 is Passed--------------
-2024-02-28 18:06:41,987 - INFO - -----test_case_013_validate_login_with_username_with_space_and_valid_password-----------
-2024-02-28 18:06:41,987 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:44,726 - INFO - -----Test case 013 is Passed--------------
-2024-02-28 18:06:50,414 - INFO - -----test_case_014_validate_login_with_username_with_invalid_password-----------
-2024-02-28 18:06:50,414 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:06:52,942 - INFO - -----Test case 014 is Passed--------------
-2024-02-28 18:06:58,587 - INFO - -----test_case_015_validate_login_with_username_with_space_and_password_with_spl_chars------
-2024-02-28 18:06:58,588 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:00,126 - INFO - -------Test case 015 is Passed------------
-2024-02-28 18:07:05,476 - INFO - -----test_case_016_validate_login_with_username_with_space_and_password_with_numbers--------
-2024-02-28 18:07:05,477 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:07,934 - INFO - -----Test case 016 is Passed--------------
-2024-02-28 18:07:13,272 - INFO - -----test_case_017_validate_login_with_username_with_space_and_password_with_space-----------
-2024-02-28 18:07:13,273 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:15,918 - INFO - -----Test case 017 is Passed--------------
-2024-02-28 18:07:21,768 - INFO - -----test_case_018_validate_login_with_username_with_space_and_no_password-----------
-2024-02-28 18:07:21,770 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:22,949 - INFO - -----Test case 018 is Passed--------------
-2024-02-28 18:07:28,579 - INFO - -----test_case_019_validate_login_username_with_spl_chars_and_valid_password-----------
-2024-02-28 18:07:28,580 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:30,083 - INFO - -----Test case 019 is Passed-----------
-2024-02-28 18:07:35,847 - INFO - -----test_case_020_validate_login_username_with_spl_chars_and_invalid_password-----------
-2024-02-28 18:07:35,848 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:38,331 - INFO - -----Test case 020 is Passed---------
-2024-02-28 18:07:43,828 - INFO - -----test_case_021_validate_login_username_with_spl_chars_and_password_with_spl_chars------
-2024-02-28 18:07:43,829 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:46,492 - INFO - -----Test case 021 is Passed-----
-2024-02-28 18:07:52,022 - INFO - -----test_case_022_validate_login_username_with_spl_chars_and_password_with_numbers---------
-2024-02-28 18:07:52,023 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:07:53,378 - INFO - -----Test case 022 is Passed---------
-2024-02-28 18:07:58,939 - INFO - -----test_case_023_validate_login_username_with_spl_chars_and_password_with_space------
-2024-02-28 18:07:58,940 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:01,391 - INFO - -----Test case 023 is Passed---------
-2024-02-28 18:08:06,812 - INFO - -----test_case_024_validate_login_username_with_spl_chars_and_no_password-----------
-2024-02-28 18:08:06,812 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:08,342 - INFO - -----Test case 024 is Passed--------------
-2024-02-28 18:08:14,065 - INFO - -----test_case_025_validate_login_username_with_numbers_and_valid_password-----------
-2024-02-28 18:08:14,066 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:16,431 - INFO - -----Test case 025 is Passed---------
-2024-02-28 18:08:21,761 - INFO - -----test_case_026_validate_login_username_with_numbers_and_invalid_password-----------
-2024-02-28 18:08:21,761 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:23,145 - INFO - -----Test case 026 is Passed---------
-2024-02-28 18:08:28,627 - INFO - -----test_case_027_validate_login_username_with_numbers_and_password_with_spl_chars--------
-2024-02-28 18:08:28,628 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:30,021 - INFO - -----Test case 027 is Passed---------
-2024-02-28 18:08:35,553 - INFO - -----test_case_028_validate_login_username_with_numbers_and_password_with_numbers-----------
-2024-02-28 18:08:35,554 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:38,033 - INFO - -----Test case 028 is Passed---------
-2024-02-28 18:08:43,666 - INFO - -----test_case_029_validate_login_username_with_numbers_and_password_with_space-----------
-2024-02-28 18:08:43,667 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:45,024 - INFO - -----Test case 029 is Passed---------
-2024-02-28 18:08:50,721 - INFO - -----test_case_030_validate_login_username_with_numbers_and_no_password-----------
-2024-02-28 18:08:50,723 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:52,364 - INFO - -----Test case 030 is Passed---------
-2024-02-28 18:08:58,224 - INFO - -----test_case_031_validate_login_with_no_username_and_valid_password-----------
-2024-02-28 18:08:58,225 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:08:59,873 - INFO - -----Test case 031 is Passed---------
-2024-02-28 18:09:05,574 - INFO - -----test_case_032_validate_login_with_no_username_and_invalid_password-----------
-2024-02-28 18:09:05,575 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:09:07,143 - INFO - -----Test case 032 is Passed---------
-2024-02-28 18:09:12,705 - INFO - -----test_case_033_validate_login_with_no_username_and_password_with_spl_chars-----------
-2024-02-28 18:09:12,706 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:09:14,086 - INFO - -----Test case 033 is Passed---------
-2024-02-28 18:09:19,894 - INFO - -----test_case_034_validate_login_with_no_username_and_password_with_numbers-----------
-2024-02-28 18:09:19,895 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:09:21,253 - INFO - -----Test case 034 is Passed---------
-2024-02-28 18:09:26,886 - INFO - -----test_case_035_validate_login_with_no_username_and_password_with_space-----------
-2024-02-28 18:09:26,886 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:09:28,180 - INFO - -----Test case 035 is Passed---------
-2024-02-28 18:09:33,949 - INFO - -----test_case_036_validate_login_with_no_username_and_no_password-----------
-2024-02-28 18:09:33,951 - INFO - -----Verifying Login functionality--------
-2024-02-28 18:09:35,452 - INFO - -----Test case 036 is Passed---------
-2024-02-28 18:09:41,076 - INFO - -----test_case_037_validate_logout_button-----------
-2024-02-28 18:09:41,077 - INFO - -----Verifying Logout functionality--------
-2024-02-28 18:09:48,271 - INFO - -----test_case_001_login_data_driven_test-----
-2024-02-28 18:09:48,272 - INFO - -----Verifying log in functionality-----
-2024-02-28 18:09:59,806 - INFO - -----Login successful and test case Passed----
-2024-02-28 18:12:42,090 - INFO - -----Login test DDT is Passed-----
-2024-02-28 18:12:47,590 - INFO - -----test_cse_001_validate_sign_up_button------
-2024-02-28 18:12:47,591 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:12:48,636 - INFO - -----test case 001 is Passed------
-2024-02-28 18:12:54,661 - INFO - -----test_case_002_validate_sign_up_with_valid_username_valid_password------
-2024-02-28 18:12:54,662 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:12:57,191 - INFO - --------test case 002 is Passed---------
-2024-02-28 18:13:02,911 - INFO - -----test_case_003_validate_sign_up_with_invalid_username_invalid_password------
-2024-02-28 18:13:02,911 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:13:04,151 - INFO - --------test case 003 is Passed---------
-2024-02-28 18:13:09,985 - INFO - -----test_case_004_validate_sign_up_username_with_space_and_password_with_space------
-2024-02-28 18:13:09,986 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:13:11,297 - INFO - --------test case 004 is Passed---------
-2024-02-28 18:13:17,007 - INFO - -----test_case_005_validate_sign_up_username_with_spl_chars_and_password_with_spl_chars----
-2024-02-28 18:13:17,009 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:13:19,170 - INFO - --------test case 005 is Passed---------
-2024-02-28 18:13:24,909 - INFO - -----test_case_006_validate_sign_up_username_with_numbers_and_password_with_numbers------
-2024-02-28 18:13:24,910 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:13:32,817 - ERROR - --------test case 006 is Failed--------
-2024-02-28 18:13:33,450 - ERROR - --------Sign up username with numbers and password with numbers is Failed---------
-2024-02-28 18:13:39,172 - INFO - -----test_case_007_validate_sign_up_with_no_username_and_no_password------
-2024-02-28 18:13:39,173 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:13:40,601 - INFO - --------test case 007 is Passed---------
-2024-02-28 18:13:46,193 - INFO - -----test_cse_008_validate_clicking_on_sign_up_close_button------
-2024-02-28 18:13:46,194 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:13:46,925 - INFO - --------test case 008 is Passed---------
-2024-02-28 18:13:52,556 - INFO - -----test_cse_009_validate_clicking_on_sign_up_x_mark------
-2024-02-28 18:13:52,557 - INFO - -----Verifying Sign Up Page------
-2024-02-28 18:13:53,124 - INFO - --------test case 009 is Passed---------
+2024-02-28 20:00:25,860 - INFO - -----test_case_001_validate_Cart_button-----
+2024-02-28 20:00:25,861 - INFO - -----Verifying Cart Page------
+2024-02-28 20:00:27,390 - INFO - -----test case 001 is Passed------
+2024-02-28 20:00:34,322 - INFO - -----test_case_002_validate_add_to_cart_button-----
+2024-02-28 20:00:34,323 - INFO - -------------------Verifying------------------
+2024-02-28 20:00:39,826 - INFO - -----test case 002 is Passed------
+2024-02-28 20:00:46,037 - INFO - -----test_case_003_validate_delete_the_product_button-----
+2024-02-28 20:00:46,038 - INFO - -------------------Verifying------------------
+2024-02-28 20:00:53,353 - INFO - -----test case 003 is Passed------
+2024-02-28 20:00:58,851 - INFO - -----test_case_004_validate_place_order_button-----
+2024-02-28 20:00:58,852 - INFO - -----Verifying Place order button-------
+2024-02-28 20:01:01,000 - INFO - -----test case 004 is Passed------
+2024-02-28 20:01:06,760 - INFO - -----test_case_005_validate_place_order_and_set_all_fields_with_adding_product-----
+2024-02-28 20:01:06,760 - INFO - -------------------Verifying------------------
+2024-02-28 20:01:23,112 - INFO - -----test_case_006_validate_place_order_and_set_all_fields_without_adding_product-----
+2024-02-28 20:01:23,112 - INFO - -------------------Verifying------------------
+2024-02-28 20:01:26,401 - INFO - -----test case 006 is Passed------
+2024-02-28 20:01:31,917 - INFO - -----test_case_007_validate_place_order_and_set_no_name_and_with_adding_product-----
+2024-02-28 20:01:31,918 - INFO - -------------------Verifying------------------
+2024-02-28 20:01:41,491 - INFO - -----test case 007 is Passed------
+2024-02-28 20:01:47,283 - INFO - -----test_case_008_validate_place_order_and_set_no_name_and_without_adding_product-----
+2024-02-28 20:01:47,284 - INFO - -------------------Verifying------------------
+2024-02-28 20:01:50,543 - INFO - -----test case 008 is Passed------
+2024-02-28 20:01:56,175 - INFO - -----test_case_009_validate_place_order_and_set_no_country_and_with_adding_product-----
+2024-02-28 20:01:56,177 - INFO - -------------------Verifying------------------
+2024-02-28 20:02:05,483 - INFO - -----test case 009 is Passed------
+2024-02-28 20:02:11,667 - INFO - -----test_case_010_validate_place_order_and_set_no_country_and_without_adding_product-----
+2024-02-28 20:02:11,667 - INFO - -------------------Verifying------------------
+2024-02-28 20:02:14,848 - INFO - -----test case 010 is Passed------
+2024-02-28 20:02:20,453 - INFO - -----test_case_011_validate_place_order_and_set_no_city_and_with_adding_product-----
+2024-02-28 20:02:20,453 - INFO - -------------------Verifying------------------
+2024-02-28 20:02:29,436 - INFO - -----test case 011 is Passed------
+2024-02-28 20:02:35,319 - INFO - -----test_case_012_validate_place_order_and_set_no_city_and_without_adding_product-----
+2024-02-28 20:02:35,320 - INFO - -------------------Verifying------------------
+2024-02-28 20:02:38,829 - INFO - -----test case 012 is Passed------
+2024-02-28 20:02:44,245 - INFO - -----test_case_013_validate_place_order_and_set_no_credit_card_and_with_adding_product-----
+2024-02-28 20:02:44,245 - INFO - -------------------Verifying------------------
+2024-02-28 20:02:57,438 - INFO - -----test case 013 is Passed------
+2024-02-28 20:03:03,787 - INFO - -----test_case_014_validate_place_order_and_set_no_country_and_without_adding_product-----
+2024-02-28 20:03:03,787 - INFO - -------------------Verifying------------------
+2024-02-28 20:03:07,339 - INFO - -----test case 014 is Passed------
+2024-02-28 20:03:13,292 - INFO - -----test_case_015_validate_place_order_and_set_no_month_and_with_adding_product-----
+2024-02-28 20:03:13,293 - INFO - -------------------Verifying------------------
+2024-02-28 20:03:23,525 - INFO - -----test case 015 is Passed------
+2024-02-28 20:03:29,646 - INFO - -----test_case_016_validate_place_order_and_set_no_month_and_without_adding_product-----
+2024-02-28 20:03:29,646 - INFO - -------------------Verifying------------------
+2024-02-28 20:03:33,375 - INFO - -----test case 016 is Passed------
+2024-02-28 20:03:39,813 - INFO - -----test_case_017_validate_place_order_and_set_no_year_and_with_adding_product-----
+2024-02-28 20:03:39,813 - INFO - -------------------Verifying------------------
+2024-02-28 20:03:48,967 - INFO - -----test case 017 is Passed------
+2024-02-28 20:03:55,095 - INFO - -----test_case_018_validate_place_order_and_set_no_year_and_without_adding_product-----
+2024-02-28 20:03:55,095 - INFO - -------------------Verifying------------------
+2024-02-28 20:04:04,412 - INFO - -----test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product---
+2024-02-28 20:04:04,413 - INFO - -------------------Verifying------------------
+2024-02-28 20:04:13,635 - INFO - -----test case 019 is Passed------
+2024-02-28 20:04:19,591 - INFO - -----test_case_020_validate_place_order_not_setting_any_field_and_without_adding_product---
+2024-02-28 20:04:19,593 - INFO - -------------------Verifying------------------
+2024-02-28 20:04:23,307 - INFO - -----test case 020 is Passed------
+2024-02-28 20:04:28,848 - INFO - -----test_case_021_validate_click_on_place_order_x_mark-----
+2024-02-28 20:04:28,849 - INFO - -----Verifying Place order form x mark button-------
+2024-02-28 20:04:30,862 - INFO - -----test case 021 is Passed------
+2024-02-28 20:04:36,786 - INFO - -----test_case_022_validate_close_button_and_set_all_fields-----
+2024-02-28 20:04:36,790 - INFO - -----Verifying Place order form x mark button-------
+2024-02-28 20:04:40,015 - INFO - -----test case 022 is Passed------

@@ -1,5 +1,8 @@
+import allure
 import pytest
 import time
+
+from allure_commons.types import AttachmentType
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -9,6 +12,8 @@ from pageObjects.Home_Page import Home_page
 from utilities.readProperties import ReadConfig
 
 
+@allure.description("validate_home_page")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestCase002HomePage:
 
     data = ReadConfig.get_json_data()
@@ -19,6 +24,8 @@ class TestCase002HomePage:
 
     logger = Log_Generator.log_gen()
 
+    @allure.description("validate_homepage_button")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_001_validate_homepage_button(self, setup_and_teardown):
         self.logger.info("-----test_case_001_validate_homepage_button-----")
@@ -36,14 +43,20 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\Screenshots\\" + "test_case_001_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_001_Home_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 001 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_001_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 001 is Failed------")
             assert False
 
+    @allure.description("validate_homepage_logo_button")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_002_validate_homepage_logo_button(self, setup_and_teardown):
         self.logger.info("-----test_case_002_validate_homepage_logo_button-----")
@@ -61,14 +74,19 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\Screenshots\\" + "test_case_002_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_002_Home_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 002 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_002_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 002 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_003_validate_next_and_previous_slide_buttons_in_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_003_validate_next_and_previous_slide_buttons_in_homepage-----")
@@ -76,24 +94,31 @@ class TestCase002HomePage:
         self.driver = setup_and_teardown
         self.hm_page = Home_page(self.driver)
         self.hm_page.click_on_next_and_previous_slide_buttons()
-        # actual_title = self.driver.title
-        # expected_title = 'STORE'
-        # print(actual_title)
+        actual_title = self.driver.title
+        expected_title = 'STORE'
+        print(actual_title)
         try:
             WebDriverWait(self.driver, 10).until(EC.title_is('STORE'))
-            self.logger.info("-----Test case 003 Passed-----")
-            assert True
-        except AssertionError:
-            time.sleep(5)
-            self.driver.save_screenshot(".\\Screenshots\\" + "test_case_003_Home_page.png")
-            self.logger.error("-----test case 003 is Failed-----")
-            assert False
-        except TimeoutException:
+            if actual_title == expected_title:
+                self.logger.info("-----Test case 003 Passed-----")
+                assert True
+            else:
+                time.sleep(5)
+                self.driver.save_screenshot(".\\Screenshots\\" + "test_case_003_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_003_Home_page",
+                              attachment_type=AttachmentType.PNG)
+                self.logger.error("-----test case 003 is Failed-----")
+                assert False
+        except (TimeoutException, AssertionError) as e:
+            print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_003_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 003 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_004_validate_next_and_previous_buttons_at_below_the_homepage(self, setup_and_teardown):
         self.logger.info("-----test_case_004_validate_next_and_previous_buttons_at_below_the_homepage-----")
@@ -111,14 +136,19 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\Screenshots\\" + "test_case_004_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_004_Home_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 004 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_004_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 004 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_005_validate_categories_button_in_homepage(self, setup_and_teardown):
@@ -137,14 +167,19 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\Screenshots\\" + "test_case_005_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_005_Home_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 005 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_005_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 005 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_006_validate_phones_in_categories_button_at_homepage(self, setup_and_teardown):
@@ -163,14 +198,19 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\Screenshots\\" + "test_case_006_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_006_Home_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 006 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_006_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 006 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_007_validate_Laptops_in_categories_button_at_homepage(self, setup_and_teardown):
@@ -189,14 +229,19 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\Screenshots\\" + "test_case_007_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_Home_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 007 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 007 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_008_validate_Monitors_in_categories_button_at_homepage(self, setup_and_teardown):
@@ -215,14 +260,19 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\Screenshots\\" + "test_case_008_Home_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_008_Home_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 008 is Failed-----")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_Home_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_008_Home_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 008 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_009_validate_phones_and_add_to_cart_the_products(self, setup_and_teardown):
@@ -247,6 +297,8 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Samsung_galaxy_s6 not added-----")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_Samsung_galaxy_s6",
+                              attachment_type=AttachmentType.PNG)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Samsung_galaxy_s6.png")
                 lst_result.append('fail')
         except Exception as e:
@@ -269,6 +321,8 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Nokia_lumia_1520 not added-----")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_Nokia_lumia_1520",
+                              attachment_type=AttachmentType.PNG)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Nokia_lumia_1520.png")
                 lst_result.append('fail')
         except Exception as e:
@@ -291,6 +345,8 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Nexus_6 not added-----")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_Nexus_6",
+                              attachment_type=AttachmentType.PNG)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Nexus_6.png")
                 lst_result.append('fail')
         except Exception as e:
@@ -313,6 +369,8 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Samsung_galaxy_s7 not added-----")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_Samsung_galaxy_s7",
+                              attachment_type=AttachmentType.PNG)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Samsung_galaxy_s7.png")
                 lst_result.append('fail')
         except Exception as e:
@@ -335,6 +393,8 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Iphone_6_32_gb not added-----")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_Iphone_6_32_gb",
+                              attachment_type=AttachmentType.PNG)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Iphone_6_32_gb.png")
                 lst_result.append('fail')
         except Exception as e:
@@ -357,6 +417,8 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("----Sony_xperia_z5 not added-----")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_Sony_xperia_z5",
+                              attachment_type=AttachmentType.PNG)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Sony_xperia_z5.png")
                 lst_result.append('fail')
         except Exception as e:
@@ -379,6 +441,8 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----HTC_One_M9 not added-----")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_HTC_One_M9",
+                              attachment_type=AttachmentType.PNG)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_HTC_One_M9.png")
                 lst_result.append('fail')
         except Exception as e:
@@ -395,6 +459,7 @@ class TestCase002HomePage:
         except TimeoutException:
             self.logger.error("-----Phones add to cart Test case 009 is not executed(Failed)-----")
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_010_validate_Laptops_add_to_cart_the_products(self, setup_and_teardown):
@@ -419,7 +484,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Sony_vaio_i5 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Sony_vaio_i5.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_Sony_vaio_i5",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_Sony_vaio_i5.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -441,7 +508,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Sony_vaio_i7 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Sony_vaio_i7.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_Sony_vaio_i7",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_Sony_vaio_i7.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -463,7 +532,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----MacBook_air not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_MacBook_air.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_MacBook_air",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_MacBook_air.png")
                 lst_result.append('fail')
 
         except Exception as e:
@@ -486,7 +557,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Dell_i7_8_gb not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Dell_i7_8_gb.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_Dell_i7_8_gb",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_Dell_i7_8_gb.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -508,7 +581,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----2017_Dell_15_6_Inch not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_2017_Dell_15_6_Inch.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_2017_Dell_15_6_Inch",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_2017_Dell_15_6_Inch.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -530,7 +605,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----MacBook_Pro not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_MacBook_Pro.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_MacBook_Pro",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_MacBook_Pro.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -546,6 +623,7 @@ class TestCase002HomePage:
         except TimeoutException:
             self.logger.error("-----Laptops add to cart Test case 010 not executed(Failed)-----")
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_011_validate_monitors_add_to_cart_the_products(self, setup_and_teardown):
@@ -570,7 +648,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----Apple_monitor_24 not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_Apple_monitor_24.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_011_Apple_monitor_24",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_Apple_monitor_24.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)
@@ -593,7 +673,9 @@ class TestCase002HomePage:
             else:
                 time.sleep(5)
                 self.logger.error("-----ASUS_Full_HD not added-----")
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_ASUS_Full_HD.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_011_ASUS_Full_HD",
+                              attachment_type=AttachmentType.PNG)
+                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_ASUS_Full_HD.png")
                 lst_result.append('fail')
         except Exception as e:
             print(e)

@@ -1,5 +1,7 @@
 import time
+import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium.common import TimeoutException
 # from selenium.webdriver import Chrome, ActionChains
 from selenium.webdriver.common.by import By
@@ -13,6 +15,8 @@ from utilities.custom_Logger import Log_Generator
 # import logging
 
 
+@allure.description("validate_about_us_page")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestCase004AboutUsPage:
 
     data = ReadConfig.get_json_data()
@@ -29,8 +33,10 @@ class TestCase004AboutUsPage:
 
     logger = Log_Generator.log_gen()
 
+    @allure.description("validate_about_us_button")
     @pytest.mark.sanity
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_case_001_validate_about_us_button(self, setup_and_teardown):
         self.logger.info("-----test_case_001_validate_about_us_button--------------")
         self.logger.info("-----Verifying About Us Page----------------")
@@ -47,16 +53,21 @@ class TestCase004AboutUsPage:
                 else:
                     time.sleep(5)
                     self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_about_us_page.png")
+                    allure.attach(self.driver.get_screenshot_as_png(), name="test_case_001_about_us_page",
+                                  attachment_type=AttachmentType.PNG)
                     self.logger.error("-----Test case 001 is Failed --------------")
                     assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_001_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----Test case 001 is not executed (Failed)--------------")
             assert False
 
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.MINOR)
     def test_case_002_validate_video_close_button(self, setup_and_teardown):
         self.logger.info("-----test_case_002_validate_video_close_button--------------")
         self.logger.info("-----Verifying video_close_button----------------")
@@ -74,16 +85,21 @@ class TestCase004AboutUsPage:
                 else:
                     time.sleep(5)
                     self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_about_us_page.png")
+                    allure.attach(self.driver.get_screenshot_as_png(), name="test_case_002_about_us_page",
+                                  attachment_type=AttachmentType.PNG)
                     self.logger.error("----- Test case 002 is Failed--------------")
                     assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_002_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----Test case 002 is no executed (Failed)--------------")
             assert False
 
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.MINOR)
     def test_case_003_validate_video_close_x_mark(self, setup_and_teardown):
         self.logger.info("-----test_case_003_validate_video_close_x_mark--------------")
         self.logger.info("-----Verifying validate_video_close_x_mark----------------")
@@ -100,16 +116,21 @@ class TestCase004AboutUsPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_about_us_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_003_about_us_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("----- Test case 003 is Failed--------------")
                 assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_003_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("----- Test case 003 is  not executed (Failed)--------------")
             assert False
 
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.MINOR)
     def test_case_004_validate_clicking_on_video_button(self, setup_and_teardown):
         self.logger.info("-----test_case_004_validate_clicking_on_video_button--------------")
         self.logger.info("-----Verifying clicking_on_video_button----------------")
@@ -126,16 +147,21 @@ class TestCase004AboutUsPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_about_us_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_004_about_us_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("----- Test case 004 is Failed--------------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_004_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("----- Test case 004 is Failed--------------")
             assert False
 
     @pytest.mark.sanity
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.MINOR)
     def test_case_005_validate_video_pause_button(self, setup_and_teardown):
         self.logger.info("-----test_case_005_validate_video_pause_button--------------")
         self.logger.info("-----Verifying video_pause_button----------------")
@@ -151,17 +177,22 @@ class TestCase004AboutUsPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_about_us_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_005_about_us_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("----- Test case 005 is Failed-----")
                 assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_005_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("----- Test case 005 is Failed--------------")
             assert False
 
     @pytest.mark.sanity
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.MINOR)
     def test_case_006_validate_video_volume_mute_button(self, setup_and_teardown):
         self.logger.info("-----test_case_006_validate_video_volume_mute_button--------------")
         self.logger.info("-----Verifying video_volume_mute_button----------------")
@@ -180,17 +211,22 @@ class TestCase004AboutUsPage:
                 else:
                     time.sleep(5)
                     self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_about_us_page.png")
+                    allure.attach(self.driver.get_screenshot_as_png(), name="test_case_006_about_us_page",
+                                  attachment_type=AttachmentType.PNG)
                     self.logger.error("----- Test case 006 is Failed-----")
                     assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_006_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("----- Test case 006 is Failed--------------")
             assert False
 
     @pytest.mark.sanity
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.MINOR)
     def test_case_007_validate_video_picture_in_picture_button(self, setup_and_teardown):
         self.logger.info("-----test_case_007_validate_video_picture_in_picture_button--------------")
         self.logger.info("-----Verifying video_picture_in_picture_button----------------")
@@ -209,17 +245,22 @@ class TestCase004AboutUsPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_about_us_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_about_us_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("----- Test case 007 is Failed-----")
                 assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("----- Test case 007 is Failed--------------")
             assert False
 
     @pytest.mark.sanity
     @pytest.mark.regression
+    @allure.severity(allure.severity_level.MINOR)
     def test_case_008_validate_video_full_screen_button(self, setup_and_teardown):
         self.logger.info("-----test_case_008_validate_video_full_screen_button--------------")
         self.logger.info("-----Verifying video_full_screen_button----------------")
@@ -231,17 +272,21 @@ class TestCase004AboutUsPage:
             message = self.driver.find_element(By.XPATH, self.non_full_screen).text
             print(message)
             # if is_displayed:
-            if message == "Non-Fullscreen":
+            if message == "Non-Fullscreen..":
                 self.logger.info("----- Test case 008 is Passed-----")
                 assert True
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_about_us_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_008_about_us_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("----- Test case 008 is Failed-----")
                 assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_about_us_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_008_about_us_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("----- Test case 008 is Failed--------------")
             assert False

@@ -1,5 +1,8 @@
 import time
+
+import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -9,6 +12,8 @@ from pageObjects.Cart_Page import Cart_page
 from utilities.readProperties import ReadConfig
 
 
+@allure.description("validate_cart_page")
+@allure.severity(allure.severity_level.CRITICAL)
 class TestCase005CartPage:
 
     logger = Log_Generator.log_gen()
@@ -38,6 +43,8 @@ class TestCase005CartPage:
     except Exception as e:
         print(f"{e}: No such element found in ini file.")
 
+    @allure.description("validate_Cart_button")
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_001_validate_Cart_button(self, setup_and_teardown):
@@ -58,17 +65,22 @@ class TestCase005CartPage:
                 else:
                     time.sleep(5)
                     self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_cart_page.png")
+                    allure.attach(self.driver.get_screenshot_as_png(), name="test_case_001_cart_page",
+                                  attachment_type=AttachmentType.PNG)
                     self.logger.error("-----test case 001 is Failed.------")
                     assert False
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_001_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_001_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 001 is Failed. Cart Page not displayed------")
                 assert False
         except Exception as e:
             print(e)
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_002_validate_add_to_cart_button(self, setup_and_teardown):
@@ -91,14 +103,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_002_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 002 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_002_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_002_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 002 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_003_validate_delete_the_product_button(self, setup_and_teardown):
@@ -119,14 +136,19 @@ class TestCase005CartPage:
                 else:
                     time.sleep(5)
                     self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_cart_page.png")
+                    allure.attach(self.driver.get_screenshot_as_png(), name="test_case_003_cart_page",
+                                  attachment_type=AttachmentType.PNG)
                     self.logger.error("-----test case 003 is Failed.------")
                     assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_003_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_003_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 003 is Failed. Cart Page not displayed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     @pytest.mark.sanity
     def test_case_004_validate_place_order_button(self, setup_and_teardown):
@@ -147,14 +169,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_004_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 004 is Failed. Unexpected Place order button text------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_004_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_004_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 004 is Failed. Place order button not displayed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_005_validate_place_order_and_set_all_fields_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_005_validate_place_order_and_set_all_fields_with_adding_product-----")
@@ -174,14 +201,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_005_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 005 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_005_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_005_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 005 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_006_validate_place_order_and_set_all_fields_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_006_validate_place_order_and_set_all_fields_without_adding_product-----")
@@ -201,14 +233,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_006_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 006 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_006_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_006_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 006 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_007_validate_place_order_and_set_no_name_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_007_validate_place_order_and_set_no_name_and_with_adding_product-----")
@@ -231,14 +268,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 007 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 007 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_008_validate_place_order_and_set_no_name_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_008_validate_place_order_and_set_no_name_and_without_adding_product-----")
@@ -261,14 +303,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_008_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 008 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_008_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_008_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 008 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_009_validate_place_order_and_set_no_country_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_009_validate_place_order_and_set_no_country_and_with_adding_product-----")
@@ -288,14 +335,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 009 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_009_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_009_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 009 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_010_validate_place_order_and_set_no_country_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_010_validate_place_order_and_set_no_country_and_without_adding_product-----")
@@ -315,14 +367,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 010 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_010_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_010_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 010 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_011_validate_place_order_and_set_no_city_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_011_validate_place_order_and_set_no_city_and_with_adding_product-----")
@@ -342,14 +399,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_011_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 011 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_011_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_011_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 011 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_012_validate_place_order_and_set_no_city_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_012_validate_place_order_and_set_no_city_and_without_adding_product-----")
@@ -369,14 +431,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_012_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 012 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_012_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_012_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 012 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_013_validate_place_order_and_set_no_credit_card_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_013_validate_place_order_and_set_no_credit_card_and_with_adding_product-----")
@@ -399,14 +466,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_013_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 013 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_013_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_013_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 013 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.CRITICAL)
     @pytest.mark.regression
     def test_case_014_validate_place_order_and_set_no_credit_card_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_014_validate_place_order_and_set_no_country_and_without_adding_product-----")
@@ -429,14 +501,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_014_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_014_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 014 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_014_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_014_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 014 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_015_validate_place_order_and_set_no_month_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_015_validate_place_order_and_set_no_month_and_with_adding_product-----")
@@ -456,14 +533,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_015_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 015 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_015_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_015_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 015 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_016_validate_place_order_and_set_no_month_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_016_validate_place_order_and_set_no_month_and_without_adding_product-----")
@@ -483,14 +565,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_016_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 016 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_016_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_016_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 016 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_017_validate_place_order_and_set_no_year_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_017_validate_place_order_and_set_no_year_and_with_adding_product-----")
@@ -510,14 +597,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_017_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 017 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_017_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_017_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 017 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_018_validate_place_order_and_set_no_year_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_018_validate_place_order_and_set_no_year_and_without_adding_product-----")
@@ -537,14 +629,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_018_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 018 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_018_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_018_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 018 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_019_validate_place_order_and_not_setting_any_field_and_with_adding_product---")
@@ -567,14 +664,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_019_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 019 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_019_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_019_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 019 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_020_validate_place_order_not_setting_any_field_and_without_adding_product(self, setup_and_teardown):
         self.logger.info("-----test_case_020_validate_place_order_not_setting_any_field_and_without_adding_product---")
@@ -597,14 +699,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_020_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 020 is Failed------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_020_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_020_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 020 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_021_validate_click_on_place_order_x_mark(self, setup_and_teardown):
         self.logger.info("-----test_case_021_validate_click_on_place_order_x_mark-----")
@@ -622,14 +729,19 @@ class TestCase005CartPage:
             else:
                 time.sleep(5)
                 self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_cart_page.png")
+                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_021_cart_page",
+                              attachment_type=AttachmentType.PNG)
                 self.logger.error("-----test case 021 is Failed.------")
                 assert False
         except TimeoutException:
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_021_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_021_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 021 is Failed------")
             assert False
 
+    @allure.severity(allure.severity_level.MINOR)
     @pytest.mark.regression
     def test_case_022_validate_close_button_and_set_all_fields(self, setup_and_teardown):
         self.logger.info("-----test_case_022_validate_close_button_and_set_all_fields-----")
@@ -650,11 +762,15 @@ class TestCase005CartPage:
                 else:
                     time.sleep(5)
                     self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_cart_page.png")
+                    allure.attach(self.driver.get_screenshot_as_png(), name="test_case_022_cart_page",
+                                  attachment_type=AttachmentType.PNG)
                     self.logger.error("-----test case 022 is Failed.------")
                     assert False
         except TimeoutException:
 
             time.sleep(5)
             self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_022_cart_page.png")
+            allure.attach(self.driver.get_screenshot_as_png(), name="test_case_022_cart_page",
+                          attachment_type=AttachmentType.PNG)
             self.logger.error("-----test case 022 is Failed. Cart Page not displayed------")
             assert False
