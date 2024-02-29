@@ -234,21 +234,21 @@ class TestCase004AboutUsPage:
         self.abt_page = About_us_Page(self.driver)
         self.abt_page.click_on_pic_in_pic_button()
         try:
-            # is_displayed = self.driver.find_element(By.XPATH, self.pic_in_pic).is_displayed()
-            # if is_displayed:
-            message = self.driver.find_element(By.XPATH, self.pic_in_pic).text
-            print(message)
-            if message == "Exit Picture-in-Picture":
-                self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_BUTTON).click()
-                self.logger.info("----- Test case 007 is Passed-----")
-                assert True
-            else:
-                time.sleep(5)
-                self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_about_us_page.png")
-                allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_about_us_page",
-                              attachment_type=AttachmentType.PNG)
-                self.logger.error("----- Test case 007 is Failed-----")
-                assert False
+            is_displayed = self.driver.find_element(By.XPATH, self.pic_in_pic).is_displayed()
+            if is_displayed:
+                message = self.driver.find_element(By.XPATH, self.pic_in_pic).text
+                print(message)
+                if message == "Exit Picture-in-Picture":
+                    self.driver.find_element(By.XPATH, self.VIDEO_CLOSE_BUTTON).click()
+                    self.logger.info("----- Test case 007 is Passed-----")
+                    assert True
+                else:
+                    time.sleep(5)
+                    self.driver.save_screenshot(".\\ScreenShots\\" + "test_case_007_about_us_page.png")
+                    allure.attach(self.driver.get_screenshot_as_png(), name="test_case_007_about_us_page",
+                                  attachment_type=AttachmentType.PNG)
+                    self.logger.error("----- Test case 007 is Failed-----")
+                    assert False
         except TimeoutException as e:
             print(e)
             time.sleep(5)
@@ -272,7 +272,7 @@ class TestCase004AboutUsPage:
             message = self.driver.find_element(By.XPATH, self.non_full_screen).text
             print(message)
             # if is_displayed:
-            if message == "Non-Fullscreen..":
+            if message == "Non-Fullscreen":
                 self.logger.info("----- Test case 008 is Passed-----")
                 assert True
             else:
