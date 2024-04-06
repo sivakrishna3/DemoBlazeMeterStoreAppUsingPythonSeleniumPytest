@@ -1,4 +1,5 @@
 Demo Blaze Store Meter Application:
+-----------------------------------
 This repository contains the Demo Blaze Store Meter Application, a web application for showcasing various products and allowing users to browse and purchase items. Additionally, it includes automated tests using Python, Selenium, and pytest framework to ensure the functionality of the application.
 
 Features
