@@ -1,4 +1,55 @@
-# Python_automation_Testing_for_Demo_Blaze_Meter_store_Application_using Python_Selenium_Pytest
+Demo Blaze Store Meter Application:
+This repository contains the Demo Blaze Store Meter Application, a web application for showcasing various products and allowing users to browse and purchase items. Additionally, it includes automated tests using Python, Selenium, and pytest framework to ensure the functionality of the application.
+
+Features
+Browse different product categories
+Add products to the shopping cart
+Perform checkout process
+View product details
+
+Requirements:
+-------------
+Python 3.x
+Selenium
+pytest
+Allure Framework
+Setup
+
+Set up WebDriver:
+------------------
+Download the appropriate WebDriver for your browser and ensure it is in your system's PATH.
+
+Running Tests
+Execute the following command to run tests:
+------------------------------------------
+bash
+Copy code
+pytest --alluredir=allure-results
+Save to grepper
+Generating Allure Report
+
+After running the tests, generate the Allure report using the following command:
+-------------------------------------------------------------------------------
+bash
+Copy code
+allure serve allure-results
+Save to grepper
+Test Structure
+Tests are organized in the tests directory. Each test file represents a different functionality of the application.
+
+Tests are categorized based on severity levels:
+-----------------------------------------------
+Critical: Tests that cover critical functionalities of the application.
+High: Tests for important functionalities but not critical.
+Medium: Tests for minor functionalities or edge cases.
+Low: Tests for cosmetic or non-essential features.
+
+Fixtures:
+---------
+Fixtures are used to set up preconditions for tests. They are defined in the conftest.py file.
+
+Contributing
+Contributions are welcome! If you find any issues or would like to add new features, feel free to open a pull request.
 
 
 
